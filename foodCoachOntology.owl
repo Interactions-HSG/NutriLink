@@ -8,8 +8,55 @@
 @base <https://interactions.ics.unisg.ch/foodcoach#> .
 
 <https://interactions.ics.unisg.ch/foodcoach#> rdf:type owl:Ontology ;
-                                                owl:imports <file:/Users/jingwu/Documents/GitHub/foodcoach-ontology/dctype.rdf> ;
                                                 rdfs:comment "This is an ontology for FoodCoach project." .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+<http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+<http://purl.org/dc/elements/1.1/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/source
+<http://purl.org/dc/elements/1.1/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/type
+<http://purl.org/dc/elements/1.1/type> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/hasVersion
+<http://purl.org/dc/terms/hasVersion> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/isReferencedBy
+<http://purl.org/dc/terms/isReferencedBy> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/requires
+<http://purl.org/dc/terms/requires> rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
@@ -45,6 +92,24 @@ foodcoach:containsAllergen rdf:type owl:ObjectProperty ;
                            rdfs:range foodcoach:Allergen .
 
 
+###  https://interactions.ics.unisg.ch/foodcoach#containsBasket
+foodcoach:containsBasket rdf:type owl:ObjectProperty ;
+                         rdfs:domain foodcoach:BasketAggInfo ;
+                         rdfs:range foodcoach:Basket .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#containsItem
+foodcoach:containsItem rdf:type owl:ObjectProperty ;
+                       rdfs:domain foodcoach:Basket ;
+                       rdfs:range foodcoach:Item .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#containsNutritionInformation
+foodcoach:containsNutritionInformation rdf:type owl:ObjectProperty ;
+                                       rdfs:domain foodcoach:Product ;
+                                       rdfs:range foodcoach:NutritionInformation .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#distributesProduct
 foodcoach:distributesProduct rdf:type owl:ObjectProperty ;
                              rdfs:domain foodcoach:Retailer ;
@@ -76,14 +141,20 @@ foodcoach:isInfluencedByDisorder rdf:type owl:ObjectProperty ;
                                  rdfs:range foodcoach:Disorder .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#isManufacturedby
-foodcoach:isManufacturedby rdf:type owl:ObjectProperty ;
+###  https://interactions.ics.unisg.ch/foodcoach#isManufacturedBy
+foodcoach:isManufacturedBy rdf:type owl:ObjectProperty ;
                            rdfs:domain foodcoach:Product ;
                            rdfs:range foodcoach:Producer .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#isRegisteredin
-foodcoach:isRegisteredin rdf:type owl:ObjectProperty ;
+###  https://interactions.ics.unisg.ch/foodcoach#isOfUser
+foodcoach:isOfUser rdf:type owl:ObjectProperty ;
+                   rdfs:domain foodcoach:PiiData ;
+                   rdfs:range foodcoach:User .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#isRegisteredIn
+foodcoach:isRegisteredIn rdf:type owl:ObjectProperty ;
                          rdfs:domain foodcoach:User ;
                          rdfs:range foodcoach:Project .
 
@@ -226,7 +297,7 @@ foodcoach:bamID rdf:type owl:DatatypeProperty ;
 
 ###  https://interactions.ics.unisg.ch/foodcoach#children0-7
 foodcoach:children0-7 rdf:type owl:DatatypeProperty ;
-                      rdfs:domain foodcoach:LoyaltyCardSharing ;
+                      rdfs:domain foodcoach:User ;
                       rdfs:range xsd:integer .
 
 
@@ -250,13 +321,13 @@ foodcoach:consentRequestUid rdf:type owl:DatatypeProperty ;
 
 ###  https://interactions.ics.unisg.ch/foodcoach#coopCardUsage
 foodcoach:coopCardUsage rdf:type owl:DatatypeProperty ;
-                        rdfs:domain foodcoach:CoopShopping ;
+                        rdfs:domain foodcoach:User ;
                         rdfs:range xsd:integer .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#coopShoppingFreq
 foodcoach:coopShoppingFreq rdf:type owl:DatatypeProperty ;
-                           rdfs:domain foodcoach:CoopShopping ;
+                           rdfs:domain foodcoach:User ;
                            rdfs:range xsd:integer .
 
 
@@ -296,8 +367,8 @@ foodcoach:energyKcal rdf:type owl:DatatypeProperty ;
                      rdfs:range xsd:double .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#eventDataTs
-foodcoach:eventDataTs rdf:type owl:DatatypeProperty ;
+###  https://interactions.ics.unisg.ch/foodcoach#eventDateTs
+foodcoach:eventDateTs rdf:type owl:DatatypeProperty ;
                       rdfs:domain foodcoach:Basket ;
                       rdfs:range xsd:dateTimeStamp .
 
@@ -376,13 +447,13 @@ foodcoach:isFoundCount rdf:type owl:DatatypeProperty ;
 
 ###  https://interactions.ics.unisg.ch/foodcoach#lat
 foodcoach:lat rdf:type owl:DatatypeProperty ;
-              rdfs:domain foodcoach:OfficeGeoloc ;
+              rdfs:domain foodcoach:SpecificShop ;
               rdfs:range xsd:float .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#long
 foodcoach:long rdf:type owl:DatatypeProperty ;
-               rdfs:domain foodcoach:OfficeGeoloc ;
+               rdfs:domain foodcoach:SpecificShop ;
                rdfs:range xsd:float .
 
 
@@ -418,13 +489,13 @@ foodcoach:majorCategoryNameEn rdf:type owl:DatatypeProperty ;
 
 ###  https://interactions.ics.unisg.ch/foodcoach#migrosCardUsage
 foodcoach:migrosCardUsage rdf:type owl:DatatypeProperty ;
-                          rdfs:domain foodcoach:MigrosShopping ;
+                          rdfs:domain foodcoach:User ;
                           rdfs:range xsd:integer .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#migrosShoppingFreq
 foodcoach:migrosShoppingFreq rdf:type owl:DatatypeProperty ;
-                             rdfs:domain foodcoach:MigrosShopping ;
+                             rdfs:domain foodcoach:User ;
                              rdfs:range xsd:integer .
 
 
@@ -673,6 +744,12 @@ foodcoach:saturatedFat rdf:type owl:DatatypeProperty ;
                        rdfs:range xsd:double .
 
 
+###  https://interactions.ics.unisg.ch/foodcoach#shopName
+foodcoach:shopName rdf:type owl:DatatypeProperty ;
+                   rdfs:domain foodcoach:SpecificShop ;
+                   rdfs:range xsd:string .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#sodium
 foodcoach:sodium rdf:type owl:DatatypeProperty ;
                  rdfs:domain foodcoach:nutrients ;
@@ -699,7 +776,7 @@ foodcoach:sugars rdf:type owl:DatatypeProperty ;
 
 ###  https://interactions.ics.unisg.ch/foodcoach#teen3-13
 foodcoach:teen3-13 rdf:type owl:DatatypeProperty ;
-                   rdfs:domain foodcoach:LoyaltyCardSharing ;
+                   rdfs:domain foodcoach:User ;
                    rdfs:range xsd:integer .
 
 
@@ -759,13 +836,71 @@ foodcoach:weight rdf:type owl:DatatypeProperty ;
 
 ###  https://interactions.ics.unisg.ch/foodcoach#adults13+
 <https://interactions.ics.unisg.ch/foodcoach#adults13+> rdf:type owl:DatatypeProperty ;
-                                                        rdfs:domain foodcoach:LoyaltyCardSharing ;
+                                                        rdfs:domain foodcoach:User ;
                                                         rdfs:range xsd:integer .
 
 
 #################################################################
 #    Classes
 #################################################################
+
+###  http://purl.org/dc/dcmitype/Collection
+<http://purl.org/dc/dcmitype/Collection> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/dcmitype/Dataset
+<http://purl.org/dc/dcmitype/Dataset> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/dcmitype/Event
+<http://purl.org/dc/dcmitype/Event> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/dcmitype/Image
+<http://purl.org/dc/dcmitype/Image> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/dcmitype/InteractiveResource
+<http://purl.org/dc/dcmitype/InteractiveResource> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/dcmitype/MovingImage
+<http://purl.org/dc/dcmitype/MovingImage> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://purl.org/dc/dcmitype/Image> .
+
+
+###  http://purl.org/dc/dcmitype/PhysicalObject
+<http://purl.org/dc/dcmitype/PhysicalObject> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/dcmitype/Service
+<http://purl.org/dc/dcmitype/Service> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/dcmitype/Software
+<http://purl.org/dc/dcmitype/Software> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/dcmitype/Sound
+<http://purl.org/dc/dcmitype/Sound> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/dcmitype/StillImage
+<http://purl.org/dc/dcmitype/StillImage> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://purl.org/dc/dcmitype/Image> .
+
+
+###  http://purl.org/dc/dcmitype/Text
+<http://purl.org/dc/dcmitype/Text> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/DCMIType
+<http://purl.org/dc/terms/DCMIType> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/TypeScheme
+<http://purl.org/dc/terms/TypeScheme> rdf:type owl:Class .
+
 
 ###  https://interactions.ics.unisg.ch/foodcoach#Abstention
 foodcoach:Abstention rdf:type owl:Class .
@@ -780,13 +915,7 @@ foodcoach:Basket rdf:type owl:Class .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#BasketAggInfo
-foodcoach:BasketAggInfo rdf:type owl:Class ;
-                        rdfs:subClassOf foodcoach:Basket .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#CoopShopping
-foodcoach:CoopShopping rdf:type owl:Class ;
-                       rdfs:subClassOf foodcoach:User .
+foodcoach:BasketAggInfo rdf:type owl:Class .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#Disorder
@@ -794,13 +923,7 @@ foodcoach:Disorder rdf:type owl:Class .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#Item
-foodcoach:Item rdf:type owl:Class ;
-               rdfs:subClassOf foodcoach:Basket .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#LoyaltyCardSharing
-foodcoach:LoyaltyCardSharing rdf:type owl:Class ;
-                             rdfs:subClassOf foodcoach:User .
+foodcoach:Item rdf:type owl:Class .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#MajorCategory
@@ -811,29 +934,16 @@ foodcoach:MajorCategory rdf:type owl:Class .
 foodcoach:MarketRegion rdf:type owl:Class .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#MigrosShopping
-foodcoach:MigrosShopping rdf:type owl:Class ;
-                         rdfs:subClassOf foodcoach:User .
-
-
 ###  https://interactions.ics.unisg.ch/foodcoach#MinorCategory
-foodcoach:MinorCategory rdf:type owl:Class ;
-                        rdfs:subClassOf foodcoach:MajorCategory .
+foodcoach:MinorCategory rdf:type owl:Class .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#NutritionInformation
-foodcoach:NutritionInformation rdf:type owl:Class ;
-                               rdfs:subClassOf foodcoach:Product .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#OfficeGeoloc
-foodcoach:OfficeGeoloc rdf:type owl:Class ;
-                       rdfs:subClassOf foodcoach:SpecificShop .
+foodcoach:NutritionInformation rdf:type owl:Class .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#PiiData
-foodcoach:PiiData rdf:type owl:Class ;
-                  rdfs:subClassOf foodcoach:User .
+foodcoach:PiiData rdf:type owl:Class .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#Producer
@@ -883,6 +993,71 @@ foodcoach:ofComDetails rdf:type owl:Class ;
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://purl.org/dc/dcmitype/Collection
+<http://purl.org/dc/dcmitype/Collection> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/dc/terms/DCMIType> .
+
+
+###  http://purl.org/dc/dcmitype/Dataset
+<http://purl.org/dc/dcmitype/Dataset> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/dc/terms/DCMIType> .
+
+
+###  http://purl.org/dc/dcmitype/Event
+<http://purl.org/dc/dcmitype/Event> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/dc/terms/DCMIType> .
+
+
+###  http://purl.org/dc/dcmitype/Image
+<http://purl.org/dc/dcmitype/Image> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/dc/terms/DCMIType> .
+
+
+###  http://purl.org/dc/dcmitype/InteractiveResource
+<http://purl.org/dc/dcmitype/InteractiveResource> rdf:type owl:NamedIndividual ,
+                                                           <http://purl.org/dc/terms/DCMIType> .
+
+
+###  http://purl.org/dc/dcmitype/MovingImage
+<http://purl.org/dc/dcmitype/MovingImage> rdf:type owl:NamedIndividual ,
+                                                   <http://purl.org/dc/terms/DCMIType> .
+
+
+###  http://purl.org/dc/dcmitype/PhysicalObject
+<http://purl.org/dc/dcmitype/PhysicalObject> rdf:type owl:NamedIndividual ,
+                                                      <http://purl.org/dc/terms/DCMIType> .
+
+
+###  http://purl.org/dc/dcmitype/Service
+<http://purl.org/dc/dcmitype/Service> rdf:type owl:NamedIndividual ,
+                                               <http://purl.org/dc/terms/DCMIType> .
+
+
+###  http://purl.org/dc/dcmitype/Software
+<http://purl.org/dc/dcmitype/Software> rdf:type owl:NamedIndividual ,
+                                                <http://purl.org/dc/terms/DCMIType> .
+
+
+###  http://purl.org/dc/dcmitype/Sound
+<http://purl.org/dc/dcmitype/Sound> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/dc/terms/DCMIType> .
+
+
+###  http://purl.org/dc/dcmitype/StillImage
+<http://purl.org/dc/dcmitype/StillImage> rdf:type owl:NamedIndividual ,
+                                                  <http://purl.org/dc/terms/DCMIType> .
+
+
+###  http://purl.org/dc/dcmitype/Text
+<http://purl.org/dc/dcmitype/Text> rdf:type owl:NamedIndividual ,
+                                            <http://purl.org/dc/terms/DCMIType> .
+
+
+###  http://purl.org/dc/terms/DCMIType
+<http://purl.org/dc/terms/DCMIType> rdf:type owl:NamedIndividual ,
+                                             <http://purl.org/dc/terms/TypeScheme> .
+
 
 ###  https://interactions.ics.unisg.ch/foodcoach#Austria
 foodcoach:Austria rdf:type owl:NamedIndividual ,
@@ -1024,6 +1199,129 @@ foodcoach:migros rdf:type owl:NamedIndividual ,
 ###  https://interactions.ics.unisg.ch/foodcoach#volg
 foodcoach:volg rdf:type owl:NamedIndividual ,
                         foodcoach:Retailer .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://purl.org/dc/dcmitype/> <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
+                               <http://purl.org/dc/elements/1.1/publisher> "The Dublin Core Metadata Initiative"@en-us ;
+                               <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                               <http://purl.org/dc/terms/requires> <http://purl.org/dc/elements/1.1/> ;
+                               <http://purl.org/dc/elements/1.1/description> "The Dublin Core Types namespace provides URIs for the entries of the DCMI Type Vocabulary. Entries are declared using RDF Schema language to support RDF applications. The Schema will be updated according to dc-usage decisions."@en-us ;
+                               <http://purl.org/dc/terms/requires> <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
+                               <http://purl.org/dc/elements/1.1/title> "The DCMI Types namespace providing access to its content by means of an RDF Schema"@en-us ;
+                               <http://purl.org/dc/terms/isReferencedBy> <http://purl.org/dc/terms/> ;
+                               <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/usage/terms/> ;
+                               <http://purl.org/dc/elements/1.1/language> "English"@en-us ;
+                               <http://purl.org/dc/terms/modified> "2002-05-22" .
+
+
+<http://purl.org/dc/dcmitype/Collection> <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Collection-002> ;
+                                         <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                         <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                         rdfs:label "Collection"@en-us ;
+                                         rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                         rdfs:comment "An aggregation of resources."@en-us .
+
+
+<http://purl.org/dc/dcmitype/Dataset> rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                      <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                      <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                      rdfs:label "Dataset"@en-us ;
+                                      rdfs:comment "Data encoded in a defined structure."@en-us ;
+                                      <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Dataset-002> .
+
+
+<http://purl.org/dc/dcmitype/Event> <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                    <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Event-002> ;
+                                    rdfs:comment "A non-persistent, time-based occurrence."@en-us ;
+                                    rdfs:label "Event"@en-us ;
+                                    rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                    <http://purl.org/dc/terms/issued> "2000-07-11" .
+
+
+<http://purl.org/dc/dcmitype/Image> <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                    rdfs:comment "A visual representation other than text."@en-us ;
+                                    rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                    <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                    <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Image-003> ;
+                                    rdfs:label "Image"@en-us .
+
+
+<http://purl.org/dc/dcmitype/InteractiveResource> rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                                  rdfs:comment """A resource requiring interaction from the user to
+                 be understood, executed, or experienced."""@en-us ;
+                                                  rdfs:label "Interactive Resource"@en-us ;
+                                                  <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                                  <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#InteractiveResource-002> ;
+                                                  <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> .
+
+
+<http://purl.org/dc/dcmitype/MovingImage> <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                          rdfs:comment """A series of visual representations imparting
+                 an impression of motion when shown in succession."""@en-us ;
+                                          rdfs:label "Moving Image"@en-us ;
+                                          <http://purl.org/dc/terms/issued> "2003-11-18" ;
+                                          rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                          <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#MovingImage-002> .
+
+
+<http://purl.org/dc/dcmitype/PhysicalObject> rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                             <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                             rdfs:comment "An inanimate, three-dimensional object or substance."@en-us ;
+                                             <http://purl.org/dc/terms/issued> "2002-07-13" ;
+                                             rdfs:label "Physical Object"@en-us ;
+                                             <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#PhysicalObject-002> .
+
+
+<http://purl.org/dc/dcmitype/Service> rdfs:label "Service"@en-us ;
+                                      rdfs:comment "A system that provides one or more functions."@en-us ;
+                                      <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Service-002> ;
+                                      <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                      <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                      rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> .
+
+
+<http://purl.org/dc/dcmitype/Software> rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                       rdfs:label "Software"@en-us ;
+                                       <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Software-002> ;
+                                       <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                       rdfs:comment "A computer program in source or compiled form."@en-us ;
+                                       <http://purl.org/dc/terms/issued> "2000-07-11" .
+
+
+<http://purl.org/dc/dcmitype/Sound> <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                    <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Sound-002> ;
+                                    rdfs:comment "A resource primarily intended to be heard."@en-us ;
+                                    rdfs:label "Sound"@en-us ;
+                                    <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                    rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> .
+
+
+<http://purl.org/dc/dcmitype/StillImage> <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                         <http://purl.org/dc/terms/issued> "2003-11-18" ;
+                                         rdfs:label "Still Image"@en-us ;
+                                         <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#StillImage-002> ;
+                                         rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                         rdfs:comment "A static visual representation."@en-us .
+
+
+<http://purl.org/dc/dcmitype/Text> <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                   rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
+                                   rdfs:label "Text"@en-us ;
+                                   rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                   <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                   <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Text-002> .
+
+
+<http://purl.org/dc/terms/DCMIType> <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                    <http://purl.org/dc/elements/1.1/description> """
+	    The DCMI Type Vocabulary provides a general, cross-domain list of
+	    approved terms that may be used as values for the Resource Type
+	    element to identify the genre of a resource.
+	""" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
