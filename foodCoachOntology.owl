@@ -8,6 +8,11 @@
 @base <https://interactions.ics.unisg.ch/foodcoach#> .
 
 <https://interactions.ics.unisg.ch/foodcoach#> rdf:type owl:Ontology ;
+                                                owl:imports <http://qudt.org/2.1/schema/datatype> ,
+                                                            <http://qudt.org/2.1/schema/extensions/functions> ,
+                                                            <http://qudt.org/2.1/schema/extensions/imports> ,
+                                                            <http://qudt.org/2.1/schema/extensions/skos> ,
+                                                            <http://qudt.org/2.1/vocab/unit> ;
                                                 rdfs:comment "This is an ontology for FoodCoach project." .
 
 #################################################################
@@ -58,9 +63,44 @@
 <http://purl.org/dc/terms/requires> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#name
+foodcoach:name rdf:type owl:AnnotationProperty ;
+               rdfs:subPropertyOf <http://purl.org/dc/terms/title> .
+
+
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://qudt.org/schema/qudt/hasQuantityKind
+<http://qudt.org/schema/qudt/hasQuantityKind> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain foodcoach:BasketAggInfo ,
+                                                          foodcoach:Item ,
+                                                          foodcoach:Product ;
+                                              rdfs:range <http://qudt.org/schema/qudt/Unit> .
+
+
+###  http://qudt.org/schema/qudt/quantityValue
+<http://qudt.org/schema/qudt/quantityValue> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://qudt.org/schema/qudt/Quantity> ;
+                                            rdfs:range <http://qudt.org/schema/qudt/QuantityValue> .
+
+
+###  http://qudt.org/schema/qudt/unit
+<http://qudt.org/schema/qudt/unit> rdfs:domain <http://qudt.org/schema/qudt/QuantityValue> .
+
 
 ###  https://interactions.ics.unisg.ch/foodcoach#abstainsFrom
 foodcoach:abstainsFrom rdf:type owl:ObjectProperty ;
@@ -86,10 +126,10 @@ foodcoach:containsAllergen rdf:type owl:ObjectProperty ;
                            rdfs:range foodcoach:Allergen .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#containsBasket
-foodcoach:containsBasket rdf:type owl:ObjectProperty ;
-                         rdfs:domain foodcoach:BasketAggInfo ;
-                         rdfs:range foodcoach:Basket .
+###  https://interactions.ics.unisg.ch/foodcoach#containsInformationOfBasket
+foodcoach:containsInformationOfBasket rdf:type owl:ObjectProperty ;
+                                      rdfs:domain foodcoach:BasketAggInfo ;
+                                      rdfs:range foodcoach:Basket .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#containsItem
@@ -110,6 +150,13 @@ foodcoach:distributesItem rdf:type owl:ObjectProperty ;
                           rdfs:range foodcoach:Item .
 
 
+###  https://interactions.ics.unisg.ch/foodcoach#hasImage
+foodcoach:hasImage rdf:type owl:ObjectProperty ;
+                   rdfs:domain foodcoach:MinorCategory ,
+                               foodcoach:Product ;
+                   rdfs:range <http://purl.org/dc/dcmitype/Image> .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#isAllergicTo
 foodcoach:isAllergicTo rdf:type owl:ObjectProperty ;
                        rdfs:domain foodcoach:User ;
@@ -128,10 +175,10 @@ foodcoach:isAvailableIn rdf:type owl:ObjectProperty ;
                         rdfs:range foodcoach:MarketRegion .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#isFromShop
-foodcoach:isFromShop rdf:type owl:ObjectProperty ;
-                     rdfs:domain foodcoach:Basket ;
-                     rdfs:range foodcoach:Office .
+###  https://interactions.ics.unisg.ch/foodcoach#isFromOffice
+foodcoach:isFromOffice rdf:type owl:ObjectProperty ;
+                       rdfs:domain foodcoach:Basket ;
+                       rdfs:range foodcoach:Office .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#isInfluencedByDisorder
@@ -150,6 +197,15 @@ foodcoach:isOfMajorCategory rdf:type owl:ObjectProperty ;
 foodcoach:isOfMinorCategory rdf:type owl:ObjectProperty ;
                             rdfs:domain foodcoach:Product ;
                             rdfs:range foodcoach:MinorCategory .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#isOfQuantityValue
+foodcoach:isOfQuantityValue rdf:type owl:ObjectProperty ;
+                            rdfs:domain foodcoach:BasketAggInfo ,
+                                        foodcoach:Item ,
+                                        foodcoach:Nutrient ,
+                                        foodcoach:Product ;
+                            rdfs:range <http://qudt.org/schema/qudt/QuantityValue> .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#isOfUser
@@ -187,6 +243,36 @@ foodcoach:mayContainAllergen rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
+###  http://qudt.org/schema/qudt/id
+<http://qudt.org/schema/qudt/id> rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain foodcoach:MajorCategory ,
+                                             foodcoach:MinorCategory ,
+                                             foodcoach:Product ,
+                                             foodcoach:Project ,
+                                             foodcoach:User ;
+                                 rdfs:range xsd:int ,
+                                            xsd:string ;
+                                 rdfs:comment """The id of Product, MinorCategory and MajorCategory should be of type int.
+The id of User and Project should be of type string."""@en .
+
+
+###  http://www.linkedmodel.org/schema/vaem#name
+<http://www.linkedmodel.org/schema/vaem#name> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain foodcoach:Item ,
+                                                          foodcoach:MajorCategory ,
+                                                          foodcoach:MinorCategory ,
+                                                          foodcoach:Nutrient ,
+                                                          foodcoach:Office ,
+                                                          foodcoach:Producer ,
+                                                          foodcoach:Product ,
+                                                          foodcoach:Project ;
+                                              rdfs:range xsd:string ;
+                                              foodcoach:name ""@de ,
+                                                             ""@en ,
+                                                             ""@fr ,
+                                                             ""@it .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#aggNutriScore
 foodcoach:aggNutriScore rdf:type owl:DatatypeProperty ;
                         rdfs:domain foodcoach:BasketAggInfo ;
@@ -199,111 +285,22 @@ foodcoach:aggOfcom rdf:type owl:DatatypeProperty ;
                    rdfs:range xsd:integer .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#allergenCellery
-foodcoach:allergenCellery rdf:type owl:DatatypeProperty ;
-                          rdfs:domain foodcoach:Allergen ;
-                          rdfs:range xsd:string .
+###  https://interactions.ics.unisg.ch/foodcoach#aggOfcomValue
+foodcoach:aggOfcomValue rdf:type owl:DatatypeProperty ;
+                        rdfs:domain foodcoach:BasketAggInfo ;
+                        rdfs:range xsd:float .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#allergenCrustacean
-foodcoach:allergenCrustacean rdf:type owl:DatatypeProperty ;
-                             rdfs:domain foodcoach:Allergen ;
-                             rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenEgg
-foodcoach:allergenEgg rdf:type owl:DatatypeProperty ;
-                      rdfs:domain foodcoach:Allergen ;
-                      rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenFish
-foodcoach:allergenFish rdf:type owl:DatatypeProperty ;
-                       rdfs:domain foodcoach:Allergen ;
-                       rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenGluten
-foodcoach:allergenGluten rdf:type owl:DatatypeProperty ;
-                         rdfs:domain foodcoach:Allergen ;
-                         rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenLupin
-foodcoach:allergenLupin rdf:type owl:DatatypeProperty ;
-                        rdfs:domain foodcoach:Allergen ;
-                        rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenMilk
-foodcoach:allergenMilk rdf:type owl:DatatypeProperty ;
-                       rdfs:domain foodcoach:Allergen ;
-                       rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenMollusc
-foodcoach:allergenMollusc rdf:type owl:DatatypeProperty ;
-                          rdfs:domain foodcoach:Allergen ;
-                          rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenMustard
-foodcoach:allergenMustard rdf:type owl:DatatypeProperty ;
-                          rdfs:domain foodcoach:Allergen ;
-                          rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenPeanut
-foodcoach:allergenPeanut rdf:type owl:DatatypeProperty ;
-                         rdfs:domain foodcoach:Allergen ;
-                         rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenSesameSeed
-foodcoach:allergenSesameSeed rdf:type owl:DatatypeProperty ;
-                             rdfs:domain foodcoach:Allergen ;
-                             rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenSoy
-foodcoach:allergenSoy rdf:type owl:DatatypeProperty ;
-                      rdfs:domain foodcoach:Allergen ;
-                      rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenSulphite
-foodcoach:allergenSulphite rdf:type owl:DatatypeProperty ;
-                           rdfs:domain foodcoach:Allergen ;
-                           rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenTreeNut
-foodcoach:allergenTreeNut rdf:type owl:DatatypeProperty ;
-                          rdfs:domain foodcoach:Allergen ;
-                          rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#amount
-foodcoach:amount rdf:type owl:DatatypeProperty ;
-                 rdfs:domain foodcoach:Item ;
-                 rdfs:range xsd:float .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#article
-foodcoach:article rdf:type owl:DatatypeProperty ;
-                  rdfs:domain foodcoach:Item ;
-                  rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#backImage
-foodcoach:backImage rdf:type owl:DatatypeProperty ;
-                    rdfs:domain foodcoach:Product .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#bamID
-foodcoach:bamID rdf:type owl:DatatypeProperty ;
+###  https://interactions.ics.unisg.ch/foodcoach#bamId
+foodcoach:bamId rdf:type owl:DatatypeProperty ;
                 rdfs:domain foodcoach:PiiData ;
                 rdfs:range xsd:string .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#basektAggEnergy
+foodcoach:basektAggEnergy rdf:type owl:DatatypeProperty ;
+                          rdfs:domain foodcoach:BasketAggInfo ;
+                          rdfs:range xsd:double .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#basketDateTs
@@ -336,26 +333,20 @@ foodcoach:consentRequestUid rdf:type owl:DatatypeProperty ;
                             rdfs:range xsd:string .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#coopCardUsage
-foodcoach:coopCardUsage rdf:type owl:DatatypeProperty ;
-                        rdfs:domain foodcoach:User ;
-                        rdfs:range xsd:integer .
+###  https://interactions.ics.unisg.ch/foodcoach#coopCardUsagePercentage
+foodcoach:coopCardUsagePercentage rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain foodcoach:User ;
+                                  rdfs:range xsd:integer .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#coopShoppingFreq
-foodcoach:coopShoppingFreq rdf:type owl:DatatypeProperty ;
-                           rdfs:domain foodcoach:User ;
-                           rdfs:range xsd:integer .
+###  https://interactions.ics.unisg.ch/foodcoach#coopShoppingFreqPercentage
+foodcoach:coopShoppingFreqPercentage rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain foodcoach:User ;
+                                     rdfs:range xsd:integer .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#created
-foodcoach:created rdf:type owl:DatatypeProperty ;
-                  rdfs:domain foodcoach:Product ;
-                  rdfs:range xsd:dateTimeStamp .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#dateofBirth
-foodcoach:dateofBirth rdf:type owl:DatatypeProperty ;
+###  https://interactions.ics.unisg.ch/foodcoach#dateOfBirth
+foodcoach:dateOfBirth rdf:type owl:DatatypeProperty ;
                       rdfs:domain foodcoach:User ;
                       rdfs:range xsd:dateTime .
 
@@ -408,33 +399,14 @@ foodcoach:height rdf:type owl:DatatypeProperty ;
                  rdfs:range xsd:decimal .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#image
-foodcoach:image rdf:type owl:DatatypeProperty ;
-                rdfs:domain foodcoach:Product .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#ingredientDe
-foodcoach:ingredientDe rdf:type owl:DatatypeProperty ;
-                       rdfs:domain foodcoach:Product ;
-                       rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#ingredientEn
-foodcoach:ingredientEn rdf:type owl:DatatypeProperty ;
-                       rdfs:domain foodcoach:Product ;
-                       rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#ingredientFr
-foodcoach:ingredientFr rdf:type owl:DatatypeProperty ;
-                       rdfs:domain foodcoach:Product ;
-                       rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#ingredientIt
-foodcoach:ingredientIt rdf:type owl:DatatypeProperty ;
-                       rdfs:domain foodcoach:Product ;
-                       rdfs:range xsd:string .
+###  https://interactions.ics.unisg.ch/foodcoach#ingredientString
+foodcoach:ingredientString rdf:type owl:DatatypeProperty ;
+                           rdfs:domain foodcoach:Product ;
+                           rdfs:range xsd:string ;
+                           foodcoach:name ""@de ,
+                                          ""@en ,
+                                          ""@fr ,
+                                          ""@it .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#isFoundCount
@@ -442,12 +414,6 @@ foodcoach:isFoundCount rdf:type owl:DatatypeProperty ;
                        rdfs:domain foodcoach:Product ;
                        rdfs:range xsd:integer ;
                        rdfs:comment "How many times the product has been queried." .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#itemPrice
-foodcoach:itemPrice rdf:type owl:DatatypeProperty ;
-                    rdfs:domain foodcoach:Item ;
-                    rdfs:range xsd:double .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#lat
@@ -462,76 +428,22 @@ foodcoach:long rdf:type owl:DatatypeProperty ;
                rdfs:range xsd:float .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#majorCategoryID
-foodcoach:majorCategoryID rdf:type owl:DatatypeProperty ;
-                          rdfs:domain foodcoach:MajorCategory ;
-                          rdfs:range xsd:integer .
+###  https://interactions.ics.unisg.ch/foodcoach#migrosCardUsagePercentage
+foodcoach:migrosCardUsagePercentage rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain foodcoach:User ;
+                                    rdfs:range xsd:integer .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#majorCategoryNameDe
-foodcoach:majorCategoryNameDe rdf:type owl:DatatypeProperty ;
-                              rdfs:domain foodcoach:MajorCategory ;
-                              rdfs:range xsd:string .
+###  https://interactions.ics.unisg.ch/foodcoach#migrosShoppingFreqPercentage
+foodcoach:migrosShoppingFreqPercentage rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain foodcoach:User ;
+                                       rdfs:range xsd:integer .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#majorCategoryNameEn
-foodcoach:majorCategoryNameEn rdf:type owl:DatatypeProperty ;
-                              rdfs:domain foodcoach:MajorCategory ;
-                              rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#majorCategoryNameFr
-foodcoach:majorCategoryNameFr rdf:type owl:DatatypeProperty ;
-                              rdfs:domain foodcoach:MajorCategory ;
-                              rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#majorCategoryNameIt
-foodcoach:majorCategoryNameIt rdf:type owl:DatatypeProperty ;
-                              rdfs:domain foodcoach:MajorCategory ;
-                              rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#migrosCardUsage
-foodcoach:migrosCardUsage rdf:type owl:DatatypeProperty ;
-                          rdfs:domain foodcoach:User ;
-                          rdfs:range xsd:integer .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#migrosShoppingFreq
-foodcoach:migrosShoppingFreq rdf:type owl:DatatypeProperty ;
-                             rdfs:domain foodcoach:User ;
-                             rdfs:range xsd:integer .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#minorCategoryID
-foodcoach:minorCategoryID rdf:type owl:DatatypeProperty ;
-                          rdfs:domain foodcoach:MinorCategory ;
-                          rdfs:range xsd:integer .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#minorCategoryNameDe
-foodcoach:minorCategoryNameDe rdf:type owl:DatatypeProperty ;
-                              rdfs:domain foodcoach:MinorCategory ;
-                              rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#minorCategoryNameEn
-foodcoach:minorCategoryNameEn rdf:type owl:DatatypeProperty ;
-                              rdfs:domain foodcoach:MinorCategory ;
-                              rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#minorCategoryNameFr
-foodcoach:minorCategoryNameFr rdf:type owl:DatatypeProperty ;
-                              rdfs:domain foodcoach:MinorCategory ;
-                              rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#minorCategoryNameIt
-foodcoach:minorCategoryNameIt rdf:type owl:DatatypeProperty ;
-                              rdfs:domain foodcoach:MinorCategory ;
-                              rdfs:range xsd:string .
+###  https://interactions.ics.unisg.ch/foodcoach#nutPercentage
+foodcoach:nutPercentage rdf:type owl:DatatypeProperty ;
+                        rdfs:domain foodcoach:FvpnFactor ;
+                        rdfs:range xsd:decimal .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#nutriScoreCalculated
@@ -562,30 +474,6 @@ foodcoach:nutriScoreFinal rdf:type owl:DatatypeProperty ;
 foodcoach:nutriScoreNumberofErrors rdf:type owl:DatatypeProperty ;
                                    rdfs:domain foodcoach:NutriScore ;
                                    rdfs:range xsd:integer .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#nutrientAmount
-foodcoach:nutrientAmount rdf:type owl:DatatypeProperty ;
-                         rdfs:domain foodcoach:Nutrient ;
-                         rdfs:range xsd:double .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#nutrientName
-foodcoach:nutrientName rdf:type owl:DatatypeProperty ;
-                       rdfs:domain foodcoach:Nutrient ;
-                       rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#nutrientUnitOfMeasure
-foodcoach:nutrientUnitOfMeasure rdf:type owl:DatatypeProperty ;
-                                rdfs:domain foodcoach:Nutrient ;
-                                rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#nutsPercentage
-foodcoach:nutsPercentage rdf:type owl:DatatypeProperty ;
-                         rdfs:domain foodcoach:FvpnFactor ;
-                         rdfs:range xsd:decimal .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#ofcomNEnergyKJ
@@ -678,81 +566,18 @@ foodcoach:ofcomValue rdf:type owl:DatatypeProperty ;
                      rdfs:range xsd:integer .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#officeName
-foodcoach:officeName rdf:type owl:DatatypeProperty ;
-                     rdfs:domain foodcoach:Office ;
-                     rdfs:range xsd:string .
+###  https://interactions.ics.unisg.ch/foodcoach#price
+foodcoach:price rdf:type owl:DatatypeProperty ;
+                rdfs:domain foodcoach:BasketAggInfo ,
+                            foodcoach:Item ,
+                            foodcoach:Product ;
+                rdfs:range xsd:double .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#orignalImageURL
-foodcoach:orignalImageURL rdf:type owl:DatatypeProperty ;
-                          rdfs:domain foodcoach:Product .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#producerName
-foodcoach:producerName rdf:type owl:DatatypeProperty ;
-                       rdfs:domain foodcoach:Producer ;
-                       rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#productID
-foodcoach:productID rdf:type owl:DatatypeProperty ;
-                    rdfs:domain foodcoach:Product ;
-                    rdfs:range xsd:integer .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#productNameDe
-foodcoach:productNameDe rdf:type owl:DatatypeProperty ;
-                        rdfs:domain foodcoach:Product ;
-                        rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#productNameEn
-foodcoach:productNameEn rdf:type owl:DatatypeProperty ;
-                        rdfs:domain foodcoach:Product ;
-                        rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#productNameFr
-foodcoach:productNameFr rdf:type owl:DatatypeProperty ;
-                        rdfs:domain foodcoach:Product ;
-                        rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#productNameIt
-foodcoach:productNameIt rdf:type owl:DatatypeProperty ;
-                        rdfs:domain foodcoach:Product ;
-                        rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#productPrice
-foodcoach:productPrice rdf:type owl:DatatypeProperty ;
-                       rdfs:domain foodcoach:Product ;
-                       rdfs:range xsd:double .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#productSize
-foodcoach:productSize rdf:type owl:DatatypeProperty ;
-                      rdfs:domain foodcoach:Product ;
-                      rdfs:range xsd:double .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#productSizeUnitofMeasure
-foodcoach:productSizeUnitofMeasure rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain foodcoach:Product ;
-                                   rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#projectID
-foodcoach:projectID rdf:type owl:DatatypeProperty ;
-                    rdfs:domain foodcoach:Project ;
-                    rdfs:range xsd:string .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#projectName
-foodcoach:projectName rdf:type owl:DatatypeProperty ;
-                      rdfs:domain foodcoach:Project ;
-                      rdfs:range xsd:string .
+###  https://interactions.ics.unisg.ch/foodcoach#productCreatedAt
+foodcoach:productCreatedAt rdf:type owl:DatatypeProperty ;
+                           rdfs:domain foodcoach:Product ;
+                           rdfs:range xsd:dateTimeStamp .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#pulsesPercentage
@@ -783,18 +608,6 @@ foodcoach:sourceChecked rdf:type owl:DatatypeProperty ;
 foodcoach:teen3-13 rdf:type owl:DatatypeProperty ;
                    rdfs:domain foodcoach:User ;
                    rdfs:range xsd:integer .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#totalEnergy
-foodcoach:totalEnergy rdf:type owl:DatatypeProperty ;
-                      rdfs:domain foodcoach:BasketAggInfo ;
-                      rdfs:range xsd:double .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#totalPrice
-foodcoach:totalPrice rdf:type owl:DatatypeProperty ;
-                     rdfs:domain foodcoach:BasketAggInfo ;
-                     rdfs:range xsd:double .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#updated
@@ -901,12 +714,65 @@ foodcoach:weightedProduct rdf:type owl:DatatypeProperty ;
 <http://purl.org/dc/terms/TypeScheme> rdf:type owl:Class .
 
 
+###  http://qudt.org/schema/qudt/QuantityValue
+<http://qudt.org/schema/qudt/QuantityValue> rdf:type owl:Class .
+
+
+###  http://qudt.org/schema/qudt/Unit
+<http://qudt.org/schema/qudt/Unit> rdf:type owl:Class .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#Abstention
-foodcoach:Abstention rdf:type owl:Class .
+foodcoach:Abstention rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Class ;
+                                           owl:oneOf ( foodcoach:AbstentionMeat
+                                                       foodcoach:AllergenCellery
+                                                       foodcoach:AllergenCrustacean
+                                                       foodcoach:AllergenEgg
+                                                       foodcoach:AllergenFish
+                                                       foodcoach:AllergenGluten
+                                                       foodcoach:AllergenLupin
+                                                       foodcoach:AllergenMilk
+                                                       foodcoach:AllergenMollusc
+                                                       foodcoach:AllergenMustard
+                                                       foodcoach:AllergenPeanut
+                                                       foodcoach:AllergenSesameSeed
+                                                       foodcoach:AllergenSoy
+                                                       foodcoach:AllergenSulphite
+                                                       foodcoach:AllergenTreeNut
+                                                     )
+                                         ] .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AdditionalImage
+foodcoach:AdditionalImage rdf:type owl:Class ;
+                          rdfs:subClassOf <http://purl.org/dc/dcmitype/StillImage> .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#Allergen
-foodcoach:Allergen rdf:type owl:Class .
+foodcoach:Allergen rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Class ;
+                                         owl:oneOf ( foodcoach:AllergenCellery
+                                                     foodcoach:AllergenCrustacean
+                                                     foodcoach:AllergenEgg
+                                                     foodcoach:AllergenFish
+                                                     foodcoach:AllergenGluten
+                                                     foodcoach:AllergenLupin
+                                                     foodcoach:AllergenMilk
+                                                     foodcoach:AllergenMollusc
+                                                     foodcoach:AllergenMustard
+                                                     foodcoach:AllergenPeanut
+                                                     foodcoach:AllergenSesameSeed
+                                                     foodcoach:AllergenSoy
+                                                     foodcoach:AllergenSulphite
+                                                     foodcoach:AllergenTreeNut
+                                                   )
+                                       ] .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#BackImage
+foodcoach:BackImage rdf:type owl:Class ;
+                    rdfs:subClassOf <http://purl.org/dc/dcmitype/StillImage> .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#Basket
@@ -921,6 +787,11 @@ foodcoach:BasketAggInfo rdf:type owl:Class .
 foodcoach:Disorder rdf:type owl:Class .
 
 
+###  https://interactions.ics.unisg.ch/foodcoach#FrontImage
+foodcoach:FrontImage rdf:type owl:Class ;
+                     rdfs:subClassOf <http://purl.org/dc/dcmitype/StillImage> .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#FvpnFactor
 foodcoach:FvpnFactor rdf:type owl:Class ;
                      rdfs:subClassOf foodcoach:Nutrient .
@@ -931,7 +802,11 @@ foodcoach:Item rdf:type owl:Class .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#MajorCategory
-foodcoach:MajorCategory rdf:type owl:Class .
+foodcoach:MajorCategory rdf:type owl:Class ;
+                        foodcoach:name ""@de ,
+                                       ""@en ,
+                                       ""@fr ,
+                                       ""@it .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#MarketRegion
@@ -939,7 +814,11 @@ foodcoach:MarketRegion rdf:type owl:Class .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#MinorCategory
-foodcoach:MinorCategory rdf:type owl:Class .
+foodcoach:MinorCategory rdf:type owl:Class ;
+                        foodcoach:name ""@de ,
+                                       ""@en ,
+                                       ""@fr ,
+                                       ""@it .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#NutriScore
@@ -978,7 +857,11 @@ foodcoach:Producer rdf:type owl:Class .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#Product
-foodcoach:Product rdf:type owl:Class .
+foodcoach:Product rdf:type owl:Class ;
+                  foodcoach:name ""@de ,
+                                 ""@en ,
+                                 ""@fr ,
+                                 ""@it .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#Project
@@ -1062,6 +945,151 @@ foodcoach:User rdf:type owl:Class .
                                              <http://purl.org/dc/terms/TypeScheme> .
 
 
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionCellery
+foodcoach:AbstentionCellery rdf:type owl:NamedIndividual ,
+                                     foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionCrustacean
+foodcoach:AbstentionCrustacean rdf:type owl:NamedIndividual ,
+                                        foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionEgg
+foodcoach:AbstentionEgg rdf:type owl:NamedIndividual ,
+                                 foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionFish
+foodcoach:AbstentionFish rdf:type owl:NamedIndividual ,
+                                  foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionGluten
+foodcoach:AbstentionGluten rdf:type owl:NamedIndividual ,
+                                    foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionLupin
+foodcoach:AbstentionLupin rdf:type owl:NamedIndividual ,
+                                   foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionMeat
+foodcoach:AbstentionMeat rdf:type owl:NamedIndividual ,
+                                  foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionMilk
+foodcoach:AbstentionMilk rdf:type owl:NamedIndividual ,
+                                  foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionMollusc
+foodcoach:AbstentionMollusc rdf:type owl:NamedIndividual ,
+                                     foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionMustard
+foodcoach:AbstentionMustard rdf:type owl:NamedIndividual ,
+                                     foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionPeanut
+foodcoach:AbstentionPeanut rdf:type owl:NamedIndividual ,
+                                    foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionSesameSeed
+foodcoach:AbstentionSesameSeed rdf:type owl:NamedIndividual ,
+                                        foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionSoy
+foodcoach:AbstentionSoy rdf:type owl:NamedIndividual ,
+                                 foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionSulphite
+foodcoach:AbstentionSulphite rdf:type owl:NamedIndividual ,
+                                      foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AbstentionTreeNut
+foodcoach:AbstentionTreeNut rdf:type owl:NamedIndividual ,
+                                     foodcoach:Abstention .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenCellery
+foodcoach:AllergenCellery rdf:type owl:NamedIndividual ,
+                                   foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenCrustacean
+foodcoach:AllergenCrustacean rdf:type owl:NamedIndividual ,
+                                      foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenEgg
+foodcoach:AllergenEgg rdf:type owl:NamedIndividual ,
+                               foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenFish
+foodcoach:AllergenFish rdf:type owl:NamedIndividual ,
+                                foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenGluten
+foodcoach:AllergenGluten rdf:type owl:NamedIndividual ,
+                                  foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenLupin
+foodcoach:AllergenLupin rdf:type owl:NamedIndividual ,
+                                 foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenMilk
+foodcoach:AllergenMilk rdf:type owl:NamedIndividual ,
+                                foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenMollusc
+foodcoach:AllergenMollusc rdf:type owl:NamedIndividual ,
+                                   foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenMustard
+foodcoach:AllergenMustard rdf:type owl:NamedIndividual ,
+                                   foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenPeanut
+foodcoach:AllergenPeanut rdf:type owl:NamedIndividual ,
+                                  foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenSesameSeed
+foodcoach:AllergenSesameSeed rdf:type owl:NamedIndividual ,
+                                      foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenSoy
+foodcoach:AllergenSoy rdf:type owl:NamedIndividual ,
+                               foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenSulphite
+foodcoach:AllergenSulphite rdf:type owl:NamedIndividual ,
+                                    foodcoach:Allergen .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#AllergenTreeNut
+foodcoach:AllergenTreeNut rdf:type owl:NamedIndividual ,
+                                   foodcoach:Allergen .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#Austria
 foodcoach:Austria rdf:type owl:NamedIndividual ,
                            foodcoach:MarketRegion .
@@ -1077,13 +1105,6 @@ foodcoach:Germany rdf:type owl:NamedIndividual ,
                            foodcoach:MarketRegion .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#HimbeerVanillePlunder7613404430903
-foodcoach:HimbeerVanillePlunder7613404430903 rdf:type owl:NamedIndividual ,
-                                                      foodcoach:Product ;
-                                             foodcoach:containsAllergen foodcoach:allergenMilk ;
-                                             foodcoach:productNameDe "Himbeer- Vanille Plunder"^^xsd:string .
-
-
 ###  https://interactions.ics.unisg.ch/foodcoach#Italy
 foodcoach:Italy rdf:type owl:NamedIndividual ,
                          foodcoach:MarketRegion .
@@ -1092,86 +1113,6 @@ foodcoach:Italy rdf:type owl:NamedIndividual ,
 ###  https://interactions.ics.unisg.ch/foodcoach#Switzerland
 foodcoach:Switzerland rdf:type owl:NamedIndividual ,
                                foodcoach:MarketRegion .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionCellery
-foodcoach:abstentionCellery rdf:type owl:NamedIndividual ,
-                                     foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionCrustacean
-foodcoach:abstentionCrustacean rdf:type owl:NamedIndividual ,
-                                        foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionEggs
-foodcoach:abstentionEggs rdf:type owl:NamedIndividual ,
-                                  foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionFish
-foodcoach:abstentionFish rdf:type owl:NamedIndividual ,
-                                  foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionGluten
-foodcoach:abstentionGluten rdf:type owl:NamedIndividual ,
-                                    foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionLupin
-foodcoach:abstentionLupin rdf:type owl:NamedIndividual ,
-                                   foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionMeat
-foodcoach:abstentionMeat rdf:type owl:NamedIndividual ,
-                                  foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionMilk
-foodcoach:abstentionMilk rdf:type owl:NamedIndividual ,
-                                  foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionMolluscs
-foodcoach:abstentionMolluscs rdf:type owl:NamedIndividual ,
-                                      foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionMustard
-foodcoach:abstentionMustard rdf:type owl:NamedIndividual ,
-                                     foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionPeanuts
-foodcoach:abstentionPeanuts rdf:type owl:NamedIndividual ,
-                                     foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionSesameSeeds
-foodcoach:abstentionSesameSeeds rdf:type owl:NamedIndividual ,
-                                         foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionSoy
-foodcoach:abstentionSoy rdf:type owl:NamedIndividual ,
-                                 foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionSulphites
-foodcoach:abstentionSulphites rdf:type owl:NamedIndividual ,
-                                       foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#abstentionTreeNuts
-foodcoach:abstentionTreeNuts rdf:type owl:NamedIndividual ,
-                                      foodcoach:Abstention .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#allergenMilk
-foodcoach:allergenMilk rdf:type owl:NamedIndividual ,
-                                foodcoach:Allergen .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#coop
@@ -1215,10 +1156,10 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                <http://purl.org/dc/elements/1.1/description> "The Dublin Core Types namespace provides URIs for the entries of the DCMI Type Vocabulary. Entries are declared using RDF Schema language to support RDF applications. The Schema will be updated according to dc-usage decisions."@en-us ;
                                <http://purl.org/dc/terms/requires> <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
                                <http://purl.org/dc/elements/1.1/title> "The DCMI Types namespace providing access to its content by means of an RDF Schema"@en-us ;
-                               <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/usage/terms/> ;
                                <http://purl.org/dc/terms/isReferencedBy> <http://purl.org/dc/terms/> ;
-                               <http://purl.org/dc/terms/modified> "2002-05-22" ;
-                               <http://purl.org/dc/elements/1.1/language> "English"@en-us .
+                               <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/usage/terms/> ;
+                               <http://purl.org/dc/elements/1.1/language> "English"@en-us ;
+                               <http://purl.org/dc/terms/modified> "2002-05-22" .
 
 
 <http://purl.org/dc/dcmitype/Collection> <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Collection-002> ;
@@ -1240,8 +1181,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 <http://purl.org/dc/dcmitype/Event> <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                     <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Event-002> ;
                                     rdfs:comment "A non-persistent, time-based occurrence."@en-us ;
-                                    rdfs:label "Event"@en-us ;
                                     rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                    rdfs:label "Event"@en-us ;
                                     <http://purl.org/dc/terms/issued> "2000-07-11" .
 
 
@@ -1280,8 +1221,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 
 
 <http://purl.org/dc/dcmitype/Service> rdfs:label "Service"@en-us ;
-                                      rdfs:comment "A system that provides one or more functions."@en-us ;
                                       <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Service-002> ;
+                                      rdfs:comment "A system that provides one or more functions."@en-us ;
                                       <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                       <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                       rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> .
@@ -1291,8 +1232,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                        rdfs:label "Software"@en-us ;
                                        <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Software-002> ;
                                        <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
-                                       <http://purl.org/dc/terms/issued> "2000-07-11" ;
-                                       rdfs:comment "A computer program in source or compiled form."@en-us .
+                                       rdfs:comment "A computer program in source or compiled form."@en-us ;
+                                       <http://purl.org/dc/terms/issued> "2000-07-11" .
 
 
 <http://purl.org/dc/dcmitype/Sound> <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
@@ -1311,11 +1252,11 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                          rdfs:comment "A static visual representation."@en-us .
 
 
-<http://purl.org/dc/dcmitype/Text> rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
-                                   <http://purl.org/dc/terms/issued> "2000-07-11" ;
+<http://purl.org/dc/dcmitype/Text> <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                   rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
                                    rdfs:label "Text"@en-us ;
-                                   rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                    <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                   rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                    <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Text-002> .
 
 
