@@ -594,12 +594,14 @@ foodcoach:pulsesPercentageDried rdf:type owl:DatatypeProperty ;
 
 ###  https://interactions.ics.unisg.ch/foodcoach#source
 foodcoach:source rdf:type owl:DatatypeProperty ;
+		 rdfs:comment "This refers to where we get the product information from. "@en ;
                  rdfs:domain foodcoach:Product ;
                  rdfs:range xsd:string .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#sourceChecked
 foodcoach:sourceChecked rdf:type owl:DatatypeProperty ;
+			 rdfs:comment "This refers to whether the product information has been manually confirmed. "@en ;
                         rdfs:domain foodcoach:Product ;
                         rdfs:range xsd:boolean .
 
