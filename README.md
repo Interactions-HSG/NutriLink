@@ -10,3 +10,5 @@ Changed has been made so that the ontology is different from EatFit.
 The following properties have been deleted while they were barely used in the past.
 1. Product: serving_size, comment, health_percentage
 4. Minor category: nwd_subcategory_id
+
+This is the ontology for receipts from bam, matched products from eatfit and basket level information. An item(Class: Item) matches a product (Class: Product) in EatFit. Based on timestamps, baskets can be identified. Correspondingly, prices, energy, ofcom values and Nutri-Score of baskets can be calculated via another piece of software. The calculated single-basket-values will be stored in the graphdb.
