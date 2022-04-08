@@ -67,6 +67,11 @@
 <http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
 
 
+###  http://qudt.org/schema/qudt/unit
+<http://qudt.org/schema/qudt/unit> rdf:type owl:AnnotationProperty ;
+                                   rdfs:domain <http://qudt.org/schema/qudt/QuantityValue> .
+
+
 ###  http://www.w3.org/2004/02/skos/core#altLabel
 <http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
 
@@ -96,10 +101,6 @@ foodcoach:name rdf:type owl:AnnotationProperty ;
 <http://qudt.org/schema/qudt/quantityValue> rdf:type owl:ObjectProperty ;
                                             rdfs:domain <http://qudt.org/schema/qudt/Quantity> ;
                                             rdfs:range <http://qudt.org/schema/qudt/QuantityValue> .
-
-
-###  http://qudt.org/schema/qudt/unit
-<http://qudt.org/schema/qudt/unit> rdfs:domain <http://qudt.org/schema/qudt/QuantityValue> .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#abstainsFrom
@@ -282,13 +283,7 @@ foodcoach:aggNutriScore rdf:type owl:DatatypeProperty ;
 ###  https://interactions.ics.unisg.ch/foodcoach#aggOfcom
 foodcoach:aggOfcom rdf:type owl:DatatypeProperty ;
                    rdfs:domain foodcoach:BasketAggInfo ;
-                   rdfs:range xsd:integer .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#aggOfcomValue
-foodcoach:aggOfcomValue rdf:type owl:DatatypeProperty ;
-                        rdfs:domain foodcoach:BasketAggInfo ;
-                        rdfs:range xsd:float .
+                   rdfs:range xsd:float .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#bamId
@@ -566,14 +561,6 @@ foodcoach:ofcomValue rdf:type owl:DatatypeProperty ;
                      rdfs:range xsd:integer .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#price
-foodcoach:price rdf:type owl:DatatypeProperty ;
-                rdfs:domain foodcoach:BasketAggInfo ,
-                            foodcoach:Item ,
-                            foodcoach:Product ;
-                rdfs:range xsd:double .
-
-
 ###  https://interactions.ics.unisg.ch/foodcoach#productCreatedAt
 foodcoach:productCreatedAt rdf:type owl:DatatypeProperty ;
                            rdfs:domain foodcoach:Product ;
@@ -590,6 +577,14 @@ foodcoach:pulsesPercentage rdf:type owl:DatatypeProperty ;
 foodcoach:pulsesPercentageDried rdf:type owl:DatatypeProperty ;
                                 rdfs:domain foodcoach:FvpnFactor ;
                                 rdfs:range xsd:decimal .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#simplePrice
+foodcoach:simplePrice rdf:type owl:DatatypeProperty ;
+                      rdfs:domain foodcoach:BasketAggInfo ,
+                                  foodcoach:Item ,
+                                  foodcoach:Product ;
+                      rdfs:range xsd:double .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#source
@@ -1165,8 +1160,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 <http://purl.org/dc/dcmitype/Collection> <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Collection-002> ;
                                          <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                          <http://purl.org/dc/terms/issued> "2000-07-11" ;
-                                         rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                          rdfs:label "Collection"@en-us ;
+                                         rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                          rdfs:comment "An aggregation of resources."@en-us .
 
 
@@ -1198,8 +1193,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                                   rdfs:comment """A resource requiring interaction from the user to
                  be understood, executed, or experienced."""@en-us ;
                                                   rdfs:label "Interactive Resource"@en-us ;
-                                                  <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#InteractiveResource-002> ;
                                                   <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                                  <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#InteractiveResource-002> ;
                                                   <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> .
 
 
@@ -1255,8 +1250,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 <http://purl.org/dc/dcmitype/Text> <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                    rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
                                    rdfs:label "Text"@en-us ;
-                                   <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                    rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                   <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                    <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Text-002> .
 
 
