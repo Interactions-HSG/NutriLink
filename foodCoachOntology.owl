@@ -758,8 +758,8 @@ foodcoach:teen3-13 rdf:type owl:DatatypeProperty ;
                    rdfs:comment "The number of teenagers aged 3-13 sharing the loyalty cards with the user."@en .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#timeStamp
-foodcoach:timeStamp rdf:type owl:DatatypeProperty ;
+###  https://interactions.ics.unisg.ch/foodcoach#timestamp
+foodcoach:timestamp rdf:type owl:DatatypeProperty ;
                     rdfs:domain foodcoach:Basket ,
                                 foodcoach:Recommendation ;
                     rdfs:range xsd:dateTimeStamp ;
