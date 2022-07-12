@@ -112,10 +112,6 @@ foodcoach:name rdf:type owl:AnnotationProperty ;
 <http://qudt.org/schema/qudt/unit> rdfs:domain <http://qudt.org/schema/qudt/Quantity> .
 
 
-###  http://qudt.org/schema/qudt/value
-<http://qudt.org/schema/qudt/value> rdfs:domain <http://qudt.org/schema/qudt/Quantity> .
-
-
 ###  https://interactions.ics.unisg.ch/foodcoach#abstainsFrom
 foodcoach:abstainsFrom rdf:type owl:ObjectProperty ;
                        rdfs:domain foodcoach:User ;
@@ -194,6 +190,13 @@ foodcoach:hasWeight rdf:type owl:ObjectProperty ;
                     rdfs:range <http://qudt.org/schema/qudt/Quantity> .
 
 
+###  https://interactions.ics.unisg.ch/foodcoach#isAboutUser
+foodcoach:isAboutUser rdf:type owl:ObjectProperty ;
+                      rdfs:domain foodcoach:Recommendation ;
+                      rdfs:range foodcoach:User ;
+                      rdfs:comment "It indicates the recommendation regards which user, i.e., is based on the food purchasing data of which user."@en .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#isAllergicTo
 foodcoach:isAllergicTo rdf:type owl:ObjectProperty ;
                        rdfs:domain foodcoach:User ;
@@ -227,6 +230,20 @@ foodcoach:isInfluencedByDisorder rdf:type owl:ObjectProperty ;
                                  rdfs:domain foodcoach:User ;
                                  rdfs:range foodcoach:Disorder ;
                                  rdfs:comment "specifies the disorder(s) that influence a user."@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#isOfDietCoachMajorCategory
+foodcoach:isOfDietCoachMajorCategory rdf:type owl:ObjectProperty ;
+                                     rdfs:domain foodcoach:DietCoachMinorCategory ;
+                                     rdfs:range foodcoach:DietCoachMajorCategory ;
+                                     rdfs:comment "It specifies which DietCoachMinorCategory belong to DietCoachMajorCategory."@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#isOfDietCoachMinorCategory
+foodcoach:isOfDietCoachMinorCategory rdf:type owl:ObjectProperty ;
+                                     rdfs:domain foodcoach:MinorCategory ;
+                                     rdfs:range foodcoach:DietCoachMinorCategory ;
+                                     rdfs:comment "It specifies which MinorCategory on EatFit belong to DietCoachMinorCategory."@en .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#isOfMajorCategory
@@ -286,10 +303,28 @@ foodcoach:mayContainAllergen rdf:type owl:ObjectProperty ;
                              rdfs:comment "specifies an allergen that the product may contain."@en .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#receivesRecommendation
-foodcoach:receivesRecommendation rdf:type owl:ObjectProperty ;
-                                 rdfs:domain foodcoach:User ;
-                                 rdfs:range foodcoach:Recommendation .
+###  https://interactions.ics.unisg.ch/foodcoach#productCreatedAt
+foodcoach:productCreatedAt rdf:type owl:ObjectProperty ;
+                           rdfs:domain foodcoach:Product .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#productUpdatedAt
+foodcoach:productUpdatedAt rdf:type owl:ObjectProperty ;
+                           rdfs:domain foodcoach:Product .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#targetsDietCoachMinorCategory
+foodcoach:targetsDietCoachMinorCategory rdf:type owl:ObjectProperty ;
+                                        rdfs:domain foodcoach:Recommendation ;
+                                        rdfs:range foodcoach:DietCoachMinorCategory ;
+                                        rdfs:comment "It indicates which DietCoachMinorCategory the recommendation targets"@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#targetsNutrient
+foodcoach:targetsNutrient rdf:type owl:ObjectProperty ;
+                          rdfs:domain foodcoach:Recommendation ;
+                          rdfs:range foodcoach:Nutrient ;
+                          rdfs:comment "It indicates which FSA score categories (nutrients and other elements) the recommendation targets"@en .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#usesLoyaltyCard
@@ -318,6 +353,10 @@ foodcoach:usesLoyaltyCard rdf:type owl:ObjectProperty ;
                                             xsd:string ;
                                  rdfs:comment """The id of Product, MinorCategory and MajorCategory should be of type int.
 The id of User and Project should be of type string."""@en .
+
+
+###  http://qudt.org/schema/qudt/value
+<http://qudt.org/schema/qudt/value> rdfs:domain <http://qudt.org/schema/qudt/Quantity> .
 
 
 ###  http://www.linkedmodel.org/schema/vaem#name
@@ -383,7 +422,7 @@ foodcoach:children0-7 rdf:type owl:DatatypeProperty ;
 ###  https://interactions.ics.unisg.ch/foodcoach#consentRecordCreatedat
 foodcoach:consentRecordCreatedat rdf:type owl:DatatypeProperty ;
                                  rdfs:domain foodcoach:PiiData ;
-                                 rdfs:range xsd:dateTimeStamp ;
+                                 rdfs:range xsd:dateTime ;
                                  rdfs:comment "When the consent record is created."@en .
 
 
@@ -422,11 +461,32 @@ foodcoach:dateOfBirth rdf:type owl:DatatypeProperty ;
                       rdfs:comment "The date of birth of a user."@en .
 
 
+###  https://interactions.ics.unisg.ch/foodcoach#dietCoachPatientId
+foodcoach:dietCoachPatientId rdf:type owl:DatatypeProperty ;
+                             rdfs:domain foodcoach:User ;
+                             rdfs:range xsd:string ;
+                             rdfs:comment "A user has a dietCoachpatientId if and only if he/she joins the DietCoach study via Inselspital."@en .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#discount
 foodcoach:discount rdf:type owl:DatatypeProperty ;
                    rdfs:domain foodcoach:Item ;
                    rdfs:range xsd:double ;
                    rdfs:comment "The discount (in Swiss Francs) of a product."@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#endDateOfBaskets
+foodcoach:endDateOfBaskets rdf:type owl:DatatypeProperty ;
+                           rdfs:domain foodcoach:Recommendation ;
+                           rdfs:range xsd:date ;
+                           rdfs:comment "It indicates the end date of the time window that dieticians look at when she/he gives the recommendations."@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#externalId
+foodcoach:externalId rdf:type owl:DatatypeProperty ;
+                     rdfs:domain foodcoach:PiiData ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "A user gets assigned an externalId when he/she registers him/herself via BAM links. One BAM user (identified by e.g. userHash) could have multiple externalIds, if he/she registers multiple times using different links."@en .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#foodTrackingAppBefore
@@ -492,6 +552,13 @@ foodcoach:highestCompletedEducation rdf:type owl:DatatypeProperty ;
                                     rdfs:comment "The highest completed education of a user."@en .
 
 
+###  https://interactions.ics.unisg.ch/foodcoach#increaseContent
+foodcoach:increaseContent rdf:type owl:DatatypeProperty ;
+                          rdfs:domain foodcoach:Recommendation ;
+                          rdfs:range xsd:boolean ;
+                          rdfs:comment "It indicates if users should increase or decrease the purchase of a nutrient from a food category."@en .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#ingredientString
 foodcoach:ingredientString rdf:type owl:DatatypeProperty ;
                            rdfs:domain foodcoach:Product ;
@@ -508,6 +575,13 @@ foodcoach:isFoundCount rdf:type owl:DatatypeProperty ;
                        rdfs:domain foodcoach:Product ;
                        rdfs:range xsd:integer ;
                        rdfs:comment "The number of times a product has been queried using the EatFit API."@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#isSentToUser
+foodcoach:isSentToUser rdf:type owl:DatatypeProperty ;
+                       rdfs:domain foodcoach:Recommendation ;
+                       rdfs:range xsd:boolean ;
+                       rdfs:comment "It indicates whether the recommendations are already sent to users, i.e., whether users actuallly receive the recommendations."@en .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#lat
@@ -687,18 +761,19 @@ foodcoach:physicalActivityLevelAtWork rdf:type owl:DatatypeProperty ;
                                       rdfs:comment "The physical activity level at work of a user."@en .
 
 
+###  https://interactions.ics.unisg.ch/foodcoach#priorityRanking
+foodcoach:priorityRanking rdf:type owl:DatatypeProperty ;
+                          rdfs:domain foodcoach:Recommendation ;
+                          rdfs:range xsd:int ;
+                          rdfs:comment "The priorityRanking indicates which recommendation is of the highest importance. There are 5 recommendations with different rankings from dieticians at once."@en .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#productCreatedAt
-foodcoach:productCreatedAt rdf:type owl:DatatypeProperty ;
-                           rdfs:domain foodcoach:Product ;
-                           rdfs:range xsd:dateTimeStamp ;
-                           rdfs:comment "The time when a product is first created in the EatFit database."@en .
+foodcoach:productCreatedAt rdf:type owl:DatatypeProperty .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#productUpdatedAt
-foodcoach:productUpdatedAt rdf:type owl:DatatypeProperty ;
-                           rdfs:domain foodcoach:Product ;
-                           rdfs:range xsd:dateTimeStamp ;
-                           rdfs:comment "The last time that the product information is updated."@en .
+foodcoach:productUpdatedAt rdf:type owl:DatatypeProperty .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#pulsePercentage
@@ -719,6 +794,13 @@ foodcoach:pulsePercentageDried rdf:type owl:DatatypeProperty ;
 foodcoach:recommendationContent rdf:type owl:DatatypeProperty ;
                                 rdfs:domain foodcoach:Recommendation ;
                                 rdfs:range xsd:string .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#segmengId
+foodcoach:segmengId rdf:type owl:DatatypeProperty ;
+                    rdfs:domain foodcoach:PiiData ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "A segmentId is used to differentiate different projects that users participate in. E.g., BF2021 stands for BrainFood2021"@en .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#simplePrice
@@ -751,6 +833,13 @@ foodcoach:sportFrequency rdf:type owl:DatatypeProperty ;
                          rdfs:comment "The frequency of users doing sports at least 30 minutes per week."@en .
 
 
+###  https://interactions.ics.unisg.ch/foodcoach#startDateOfBaskets
+foodcoach:startDateOfBaskets rdf:type owl:DatatypeProperty ;
+                             rdfs:domain foodcoach:Recommendation ;
+                             rdfs:range xsd:date ;
+                             rdfs:comment "It indicates the start date of the time window that dieticians look at when she/he gives the recommendations."@en .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#teen3-13
 foodcoach:teen3-13 rdf:type owl:DatatypeProperty ;
                    rdfs:domain foodcoach:User ;
@@ -763,7 +852,7 @@ foodcoach:timestamp rdf:type owl:DatatypeProperty ;
                     rdfs:domain foodcoach:Basket ,
                                 foodcoach:Recommendation ;
                     rdfs:range xsd:dateTimeStamp ;
-                    rdfs:comment "The timestamp."@en .
+                    rdfs:comment "It indicates the exact timestamps when the items/baskets were purchased or the recommendations were given."@en .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#userHash
@@ -878,6 +967,10 @@ foodcoach:weightedProduct rdf:type owl:DatatypeProperty ;
 <http://qudt.org/schema/qudt/Unit> rdf:type owl:Class .
 
 
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#Abstention
 foodcoach:Abstention rdf:type owl:Class ;
                      owl:equivalentClass [ rdf:type owl:Class ;
@@ -941,6 +1034,16 @@ foodcoach:Basket rdf:type owl:Class ;
 ###  https://interactions.ics.unisg.ch/foodcoach#BasketAggInfo
 foodcoach:BasketAggInfo rdf:type owl:Class ;
                         rdfs:comment "The aggregated information of a single basket."@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#DietCoachMajorCategory
+foodcoach:DietCoachMajorCategory rdf:type owl:Class ;
+                                 rdfs:comment "Major categories that are created for DietCoach application, originally based on minor categories on EatFit food composition database."@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#DietCoachMinorCategory
+foodcoach:DietCoachMinorCategory rdf:type owl:Class ;
+                                 rdfs:comment "Minor categories that are created for DietCoach application, based on minor categories on EatFit food composition database."@en .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#Dietician
@@ -1445,23 +1548,23 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 #################################################################
 
 <http://purl.org/dc/dcmitype/> <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
-                               <http://purl.org/dc/elements/1.1/publisher> "The Dublin Core Metadata Initiative"@en-us ;
                                <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                               <http://purl.org/dc/elements/1.1/publisher> "The Dublin Core Metadata Initiative"@en-us ;
                                <http://purl.org/dc/terms/requires> <http://purl.org/dc/elements/1.1/> ;
                                <http://purl.org/dc/elements/1.1/description> "The Dublin Core Types namespace provides URIs for the entries of the DCMI Type Vocabulary. Entries are declared using RDF Schema language to support RDF applications. The Schema will be updated according to dc-usage decisions."@en-us ;
                                <http://purl.org/dc/terms/requires> <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
                                <http://purl.org/dc/elements/1.1/title> "The DCMI Types namespace providing access to its content by means of an RDF Schema"@en-us ;
-                               <http://purl.org/dc/terms/isReferencedBy> <http://purl.org/dc/terms/> ;
                                <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/usage/terms/> ;
-                               <http://purl.org/dc/elements/1.1/language> "English"@en-us ;
-                               <http://purl.org/dc/terms/modified> "2002-05-22" .
+                               <http://purl.org/dc/terms/isReferencedBy> <http://purl.org/dc/terms/> ;
+                               <http://purl.org/dc/terms/modified> "2002-05-22" ;
+                               <http://purl.org/dc/elements/1.1/language> "English"@en-us .
 
 
 <http://purl.org/dc/dcmitype/Collection> <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Collection-002> ;
                                          <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                          <http://purl.org/dc/terms/issued> "2000-07-11" ;
-                                         rdfs:label "Collection"@en-us ;
                                          rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                         rdfs:label "Collection"@en-us ;
                                          rdfs:comment "An aggregation of resources."@en-us .
 
 
@@ -1493,8 +1596,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                                   rdfs:comment """A resource requiring interaction from the user to
                  be understood, executed, or experienced."""@en-us ;
                                                   rdfs:label "Interactive Resource"@en-us ;
-                                                  <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#InteractiveResource-002> ;
                                                   <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                                  <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#InteractiveResource-002> ;
                                                   <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> .
 
 
@@ -1547,11 +1650,11 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                          rdfs:comment "A static visual representation."@en-us .
 
 
-<http://purl.org/dc/dcmitype/Text> <http://purl.org/dc/terms/issued> "2000-07-11" ;
-                                   rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
+<http://purl.org/dc/dcmitype/Text> rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
+                                   <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                    rdfs:label "Text"@en-us ;
-                                   <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                    rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                   <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                    <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Text-002> .
 
 
@@ -1561,6 +1664,12 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 	    approved terms that may be used as values for the Resource Type
 	    element to identify the genre of a resource.
 	""" .
+
+
+foodcoach:productCreatedAt rdfs:comment "The time when a product is first created in the EatFit database."@en .
+
+
+foodcoach:productUpdatedAt rdfs:comment "The last time that the product information is updated."@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
