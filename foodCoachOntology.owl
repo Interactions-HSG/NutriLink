@@ -69,8 +69,26 @@
 <http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
 
 
+###  http://qudt.org/schema/qudt/hasQuantity
+<http://qudt.org/schema/qudt/hasQuantity> rdf:type owl:AnnotationProperty ;
+                                          rdfs:domain foodcoach:BasketAggInfo ,
+                                                      foodcoach:Item ,
+                                                      foodcoach:Nutrient ,
+                                                      foodcoach:Product .
+
+
+###  http://qudt.org/schema/qudt/height
+<http://qudt.org/schema/qudt/height> rdf:type owl:AnnotationProperty ;
+                                     rdfs:domain foodcoach:User .
+
+
 ###  http://qudt.org/schema/qudt/unit
-<http://qudt.org/schema/qudt/unit> rdf:type owl:AnnotationProperty .
+<http://qudt.org/schema/qudt/unit> rdf:type owl:AnnotationProperty ;
+                                   rdfs:domain <http://qudt.org/schema/qudt/Quantity> .
+
+
+###  http://qudt.org/schema/qudt/value
+<http://qudt.org/schema/qudt/value> rdfs:domain <http://qudt.org/schema/qudt/Quantity> .
 
 
 ###  http://www.w3.org/2004/02/skos/core#altLabel
@@ -90,13 +108,6 @@ foodcoach:name rdf:type owl:AnnotationProperty ;
 #    Object Properties
 #################################################################
 
-###  http://qudt.org/schema/qudt/hasQuantity
-<http://qudt.org/schema/qudt/hasQuantity> rdfs:domain foodcoach:BasketAggInfo ,
-                                                      foodcoach:Item ,
-                                                      foodcoach:Nutrient ,
-                                                      foodcoach:Product .
-
-
 ###  http://qudt.org/schema/qudt/hasQuantityKind
 <http://qudt.org/schema/qudt/hasQuantityKind> rdf:type owl:ObjectProperty .
 
@@ -106,10 +117,6 @@ foodcoach:name rdf:type owl:AnnotationProperty ;
                                                      owl:SymmetricProperty ;
                                             rdfs:domain <http://qudt.org/schema/qudt/Quantity> ;
                                             rdfs:range <http://qudt.org/schema/qudt/QuantityValue> .
-
-
-###  http://qudt.org/schema/qudt/unit
-<http://qudt.org/schema/qudt/unit> rdfs:domain <http://qudt.org/schema/qudt/Quantity> .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#abstainsFrom
@@ -338,10 +345,6 @@ foodcoach:usesLoyaltyCard rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://qudt.org/schema/qudt/height
-<http://qudt.org/schema/qudt/height> rdfs:domain foodcoach:User .
-
-
 ###  http://qudt.org/schema/qudt/id
 <http://qudt.org/schema/qudt/id> rdf:type owl:DatatypeProperty ;
                                  rdfs:domain foodcoach:MajorCategory ,
@@ -355,13 +358,10 @@ foodcoach:usesLoyaltyCard rdf:type owl:ObjectProperty ;
 The id of User and Project should be of type string."""@en .
 
 
-###  http://qudt.org/schema/qudt/value
-<http://qudt.org/schema/qudt/value> rdfs:domain <http://qudt.org/schema/qudt/Quantity> .
-
-
 ###  http://www.linkedmodel.org/schema/vaem#name
 <http://www.linkedmodel.org/schema/vaem#name> rdf:type owl:DatatypeProperty ;
-                                              rdfs:domain foodcoach:Item ,
+                                              rdfs:domain foodcoach:Dietician ,
+                                                          foodcoach:Item ,
                                                           foodcoach:MajorCategory ,
                                                           foodcoach:MinorCategory ,
                                                           foodcoach:Nutrient ,
@@ -478,7 +478,7 @@ foodcoach:discount rdf:type owl:DatatypeProperty ;
 ###  https://interactions.ics.unisg.ch/foodcoach#endDateOfBaskets
 foodcoach:endDateOfBaskets rdf:type owl:DatatypeProperty ;
                            rdfs:domain foodcoach:Recommendation ;
-                           rdfs:range xsd:date ;
+                           rdfs:range xsd:dateTime ;
                            rdfs:comment "It indicates the end date of the time window that dieticians look at when she/he gives the recommendations."@en .
 
 
@@ -761,13 +761,6 @@ foodcoach:physicalActivityLevelAtWork rdf:type owl:DatatypeProperty ;
                                       rdfs:comment "The physical activity level at work of a user."@en .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#priorityRanking
-foodcoach:priorityRanking rdf:type owl:DatatypeProperty ;
-                          rdfs:domain foodcoach:Recommendation ;
-                          rdfs:range xsd:int ;
-                          rdfs:comment "The priorityRanking indicates which recommendation is of the highest importance. There are 5 recommendations with different rankings from dieticians at once."@en .
-
-
 ###  https://interactions.ics.unisg.ch/foodcoach#productCreatedAt
 foodcoach:productCreatedAt rdf:type owl:DatatypeProperty .
 
@@ -796,8 +789,15 @@ foodcoach:recommendationContent rdf:type owl:DatatypeProperty ;
                                 rdfs:range xsd:string .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#segmengId
-foodcoach:segmengId rdf:type owl:DatatypeProperty ;
+###  https://interactions.ics.unisg.ch/foodcoach#recommendationPriority
+foodcoach:recommendationPriority rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain foodcoach:Recommendation ;
+                                 rdfs:range xsd:int ;
+                                 rdfs:comment "The priorityRanking indicates which recommendation is of the highest importance. There are 5 recommendations with different rankings from dieticians at once."@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#segmentId
+foodcoach:segmentId rdf:type owl:DatatypeProperty ;
                     rdfs:domain foodcoach:PiiData ;
                     rdfs:range xsd:string ;
                     rdfs:comment "A segmentId is used to differentiate different projects that users participate in. E.g., BF2021 stands for BrainFood2021"@en .
@@ -851,7 +851,7 @@ foodcoach:teen3-13 rdf:type owl:DatatypeProperty ;
 foodcoach:timestamp rdf:type owl:DatatypeProperty ;
                     rdfs:domain foodcoach:Basket ,
                                 foodcoach:Recommendation ;
-                    rdfs:range xsd:dateTimeStamp ;
+                    rdfs:range xsd:dateTime ;
                     rdfs:comment "It indicates the exact timestamps when the items/baskets were purchased or the recommendations were given."@en .
 
 
@@ -957,6 +957,10 @@ foodcoach:weightedProduct rdf:type owl:DatatypeProperty ;
 
 ###  http://purl.org/dc/terms/TypeScheme
 <http://purl.org/dc/terms/TypeScheme> rdf:type owl:Class .
+
+
+###  http://qudt.org/schema/qudt/Quantity
+<http://qudt.org/schema/qudt/Quantity> rdf:type owl:Class .
 
 
 ###  http://qudt.org/schema/qudt/QuantityValue
@@ -1548,8 +1552,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 #################################################################
 
 <http://purl.org/dc/dcmitype/> <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
-                               <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                <http://purl.org/dc/elements/1.1/publisher> "The Dublin Core Metadata Initiative"@en-us ;
+                               <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                <http://purl.org/dc/terms/requires> <http://purl.org/dc/elements/1.1/> ;
                                <http://purl.org/dc/elements/1.1/description> "The Dublin Core Types namespace provides URIs for the entries of the DCMI Type Vocabulary. Entries are declared using RDF Schema language to support RDF applications. The Schema will be updated according to dc-usage decisions."@en-us ;
                                <http://purl.org/dc/terms/requires> <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
@@ -1596,8 +1600,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                                   rdfs:comment """A resource requiring interaction from the user to
                  be understood, executed, or experienced."""@en-us ;
                                                   rdfs:label "Interactive Resource"@en-us ;
-                                                  <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                                   <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#InteractiveResource-002> ;
+                                                  <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                                   <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> .
 
 
@@ -1630,8 +1634,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                        rdfs:label "Software"@en-us ;
                                        <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Software-002> ;
                                        <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
-                                       <http://purl.org/dc/terms/issued> "2000-07-11" ;
-                                       rdfs:comment "A computer program in source or compiled form."@en-us .
+                                       rdfs:comment "A computer program in source or compiled form."@en-us ;
+                                       <http://purl.org/dc/terms/issued> "2000-07-11" .
 
 
 <http://purl.org/dc/dcmitype/Sound> <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
@@ -1650,11 +1654,11 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                          rdfs:comment "A static visual representation."@en-us .
 
 
-<http://purl.org/dc/dcmitype/Text> rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
-                                   <http://purl.org/dc/terms/issued> "2000-07-11" ;
+<http://purl.org/dc/dcmitype/Text> <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                   rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
                                    rdfs:label "Text"@en-us ;
-                                   rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                    <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                   rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                    <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Text-002> .
 
 
