@@ -290,6 +290,13 @@ foodcoach:isProducedBy rdf:type owl:ObjectProperty ;
                        rdfs:comment "specifies the producer of a product."@en .
 
 
+###  https://interactions.ics.unisg.ch/foodcoach#isRecruitedVia
+foodcoach:isRecruitedVia rdf:type owl:ObjectProperty ;
+                         rdfs:domain foodcoach:User ;
+                         rdfs:range foodcoach:Collaborator ;
+                         rdfs:comment "This is to indicate from the channels of which collaborators the users are recruited."@en .
+
+
 ###  https://interactions.ics.unisg.ch/foodcoach#isRegisteredIn
 foodcoach:isRegisteredIn rdf:type owl:ObjectProperty ;
                          rdfs:domain foodcoach:User ;
@@ -556,7 +563,7 @@ foodcoach:highestCompletedEducation rdf:type owl:DatatypeProperty ;
 foodcoach:idFromCollaborator rdf:type owl:DatatypeProperty ;
                              rdfs:domain foodcoach:User ;
                              rdfs:range xsd:string ;
-                             rdfs:comment "A user has a dietCoachpatientId if and only if he/she joins the DietCoach study via Inselspital."@en .
+                             rdfs:comment "A user has an idFromCollaborator if and only if he/she joins the study via a collaborator."@en .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#increaseContent
@@ -1041,7 +1048,8 @@ foodcoach:BasketAggInfo rdf:type owl:Class ;
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#Collaborator
-foodcoach:Collaborator rdf:type owl:Class .
+foodcoach:Collaborator rdf:type owl:Class ;
+                       rdfs:comment "A collaborator helps recruit users. Users recruited via collaborators might have different chracteristics."@en .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#DietCoachMajorCategory
@@ -1562,8 +1570,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                <http://purl.org/dc/elements/1.1/description> "The Dublin Core Types namespace provides URIs for the entries of the DCMI Type Vocabulary. Entries are declared using RDF Schema language to support RDF applications. The Schema will be updated according to dc-usage decisions."@en-us ;
                                <http://purl.org/dc/terms/requires> <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
                                <http://purl.org/dc/elements/1.1/title> "The DCMI Types namespace providing access to its content by means of an RDF Schema"@en-us ;
-                               <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/usage/terms/> ;
                                <http://purl.org/dc/terms/isReferencedBy> <http://purl.org/dc/terms/> ;
+                               <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/usage/terms/> ;
                                <http://purl.org/dc/elements/1.1/language> "English"@en-us ;
                                <http://purl.org/dc/terms/modified> "2002-05-22" .
 
@@ -1626,9 +1634,9 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                              <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#PhysicalObject-002> .
 
 
-<http://purl.org/dc/dcmitype/Service> <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Service-002> ;
+<http://purl.org/dc/dcmitype/Service> rdfs:label "Service"@en-us ;
                                       rdfs:comment "A system that provides one or more functions."@en-us ;
-                                      rdfs:label "Service"@en-us ;
+                                      <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Service-002> ;
                                       <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                       <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                       rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> .
@@ -1638,8 +1646,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                        rdfs:label "Software"@en-us ;
                                        <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Software-002> ;
                                        <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
-                                       <http://purl.org/dc/terms/issued> "2000-07-11" ;
-                                       rdfs:comment "A computer program in source or compiled form."@en-us .
+                                       rdfs:comment "A computer program in source or compiled form."@en-us ;
+                                       <http://purl.org/dc/terms/issued> "2000-07-11" .
 
 
 <http://purl.org/dc/dcmitype/Sound> <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
@@ -1661,8 +1669,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 <http://purl.org/dc/dcmitype/Text> rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
                                    <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                    rdfs:label "Text"@en-us ;
-                                   rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                    <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                   rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                    <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Text-002> .
 
 
