@@ -82,6 +82,10 @@
 <http://qudt.org/schema/qudt/unit> rdf:type owl:AnnotationProperty .
 
 
+###  http://qudt.org/schema/qudt/value
+<http://qudt.org/schema/qudt/value> rdfs:domain <http://qudt.org/schema/qudt/Quantity> .
+
+
 ###  http://www.w3.org/2004/02/skos/core#altLabel
 <http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
 
@@ -181,14 +185,6 @@ foodcoach:distributesItem rdf:type owl:ObjectProperty ;
 foodcoach:givesRecommendation rdf:type owl:ObjectProperty ;
                               rdfs:domain foodcoach:Dietician ;
                               rdfs:range foodcoach:Recommendation .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#hasImage
-foodcoach:hasImage rdf:type owl:ObjectProperty ;
-                   rdfs:domain foodcoach:MinorCategory ,
-                               foodcoach:Product ;
-                   rdfs:range <http://purl.org/dc/dcmitype/Image> ;
-                   rdfs:comment "specifies the image(s) of a product or the icon of a minor food category."@en .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#hasWeight
@@ -365,10 +361,6 @@ foodcoach:usesLoyaltyCard rdf:type owl:ObjectProperty ;
                                             xsd:string ;
                                  rdfs:comment """The id of Product, MinorCategory and MajorCategory should be of type int.
 The id of User and Project should be of type string."""@en .
-
-
-###  http://qudt.org/schema/qudt/value
-<http://qudt.org/schema/qudt/value> rdfs:domain <http://qudt.org/schema/qudt/Quantity> .
 
 
 ###  http://www.linkedmodel.org/schema/vaem#name
@@ -550,6 +542,13 @@ foodcoach:gtin rdf:type owl:DatatypeProperty ;
                rdfs:domain foodcoach:Product ;
                rdfs:range xsd:integer ;
                rdfs:comment "The global trade item number of a product."@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#hasImage
+foodcoach:hasImage rdf:type owl:DatatypeProperty ;
+                   rdfs:domain foodcoach:MinorCategory ,
+                               foodcoach:Product ;
+                   rdfs:range xsd:string .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#highestCompletedEducation
@@ -1579,8 +1578,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 <http://purl.org/dc/dcmitype/Collection> <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Collection-002> ;
                                          <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                          <http://purl.org/dc/terms/issued> "2000-07-11" ;
-                                         rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                          rdfs:label "Collection"@en-us ;
+                                         rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                          rdfs:comment "An aggregation of resources."@en-us .
 
 
@@ -1595,8 +1594,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 <http://purl.org/dc/dcmitype/Event> <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                     <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Event-002> ;
                                     rdfs:comment "A non-persistent, time-based occurrence."@en-us ;
-                                    rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                     rdfs:label "Event"@en-us ;
+                                    rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                     <http://purl.org/dc/terms/issued> "2000-07-11" .
 
 
@@ -1634,9 +1633,9 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                              <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#PhysicalObject-002> .
 
 
-<http://purl.org/dc/dcmitype/Service> rdfs:label "Service"@en-us ;
+<http://purl.org/dc/dcmitype/Service> <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Service-002> ;
+                                      rdfs:label "Service"@en-us ;
                                       rdfs:comment "A system that provides one or more functions."@en-us ;
-                                      <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Service-002> ;
                                       <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                       <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                       rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> .
@@ -1646,8 +1645,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                        rdfs:label "Software"@en-us ;
                                        <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Software-002> ;
                                        <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
-                                       rdfs:comment "A computer program in source or compiled form."@en-us ;
-                                       <http://purl.org/dc/terms/issued> "2000-07-11" .
+                                       <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                       rdfs:comment "A computer program in source or compiled form."@en-us .
 
 
 <http://purl.org/dc/dcmitype/Sound> <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
@@ -1666,11 +1665,11 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                          rdfs:comment "A static visual representation."@en-us .
 
 
-<http://purl.org/dc/dcmitype/Text> rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
-                                   <http://purl.org/dc/terms/issued> "2000-07-11" ;
+<http://purl.org/dc/dcmitype/Text> <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                   rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
                                    rdfs:label "Text"@en-us ;
-                                   <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                    rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                   <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                    <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Text-002> .
 
 
