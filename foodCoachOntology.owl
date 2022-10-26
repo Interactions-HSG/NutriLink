@@ -474,6 +474,13 @@ foodcoach:discount rdf:type owl:DatatypeProperty ;
                    rdfs:comment "The discount (in Swiss Francs) of a product."@en .
 
 
+###  https://interactions.ics.unisg.ch/foodcoach#amount
+foodcoach:amount rdf:type owl:DatatypeProperty ;
+                   rdfs:domain foodcoach:Item ;
+                   rdfs:range xsd:double ;
+                   rdfs:comment "The bought amount of an item. The unit depends on the item."@en .
+		   
+		   
 ###  https://interactions.ics.unisg.ch/foodcoach#endDateOfBaskets
 foodcoach:endDateOfBaskets rdf:type owl:DatatypeProperty ;
                            rdfs:domain foodcoach:Recommendation ;
