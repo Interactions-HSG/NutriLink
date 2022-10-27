@@ -169,7 +169,8 @@ foodcoach:containsItem rdf:type owl:ObjectProperty ;
 
 ###  https://interactions.ics.unisg.ch/foodcoach#containsNutritionInformation
 foodcoach:containsNutritionInformation rdf:type owl:ObjectProperty ;
-                                       rdfs:domain foodcoach:Product ;
+                                       rdfs:domain foodcoach:BasketAggInfo ,
+                                                   foodcoach:Product ;
                                        rdfs:range foodcoach:NutritionInformation ;
                                        rdfs:comment "A product contains nutrition information."@en .
 
@@ -390,20 +391,6 @@ foodcoach:adults13Plus rdf:type owl:DatatypeProperty ;
                        rdfs:comment "The number of people who are older than 13 and share the loyalty cards with the user, including himself/herself."@en .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#aggNutriScore
-foodcoach:aggNutriScore rdf:type owl:DatatypeProperty ;
-                        rdfs:domain foodcoach:BasketAggInfo ;
-                        rdfs:range xsd:string ;
-                        rdfs:comment "The aggregated Nutri-Score of a basket, which is transferred from the basket-level energy-weighted FSA (Food Standards Agency) scores."@en .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#aggOfcom
-foodcoach:aggOfcom rdf:type owl:DatatypeProperty ;
-                   rdfs:domain foodcoach:BasketAggInfo ;
-                   rdfs:range xsd:float ;
-                   rdfs:comment "The basket-level energy-weighted FSA (Food Standards Agency) scores."@en .
-
-
 ###  https://interactions.ics.unisg.ch/foodcoach#bamId
 foodcoach:bamId rdf:type owl:DatatypeProperty ;
                 rdfs:domain foodcoach:PiiData ;
@@ -416,6 +403,12 @@ foodcoach:basektAggEnergy rdf:type owl:DatatypeProperty ;
                           rdfs:domain foodcoach:BasketAggInfo ;
                           rdfs:range xsd:double ;
                           rdfs:comment "The energy sum of a basket."@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#basketSimplePrice
+foodcoach:basketSimplePrice rdf:type owl:DatatypeProperty ;
+                            rdfs:domain foodcoach:BasketAggInfo ;
+                            rdfs:range xsd:float .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#children0-7
@@ -683,20 +676,6 @@ foodcoach:ofComNEnergyKJMixed rdf:type owl:DatatypeProperty ;
                               rdfs:comment "The energy ofcom point (Food Standard Agency FSA score), considering the product as mixed of a product."@en .
 
 
-###  https://interactions.ics.unisg.ch/foodcoach#ofComNSalt
-foodcoach:ofComNSalt rdf:type owl:DatatypeProperty ;
-                     rdfs:domain foodcoach:OfComDetail ;
-                     rdfs:range xsd:integer ;
-                     rdfs:comment "The salt ofcom point (Food Standard Agency FSA score) of a product."@en .
-
-
-###  https://interactions.ics.unisg.ch/foodcoach#ofComNSaltMixed
-foodcoach:ofComNSaltMixed rdf:type owl:DatatypeProperty ;
-                          rdfs:domain foodcoach:OfComDetail ;
-                          rdfs:range xsd:integer ;
-                          rdfs:comment "The salt ofcom point (Food Standard Agency FSA score) of a product, considering the product as mixed."@en .
-
-
 ###  https://interactions.ics.unisg.ch/foodcoach#ofComNSaturatedFat
 foodcoach:ofComNSaturatedFat rdf:type owl:DatatypeProperty ;
                              rdfs:domain foodcoach:OfComDetail ;
@@ -709,6 +688,20 @@ foodcoach:ofComNSaturatedFatMixed rdf:type owl:DatatypeProperty ;
                                   rdfs:domain foodcoach:OfComDetail ;
                                   rdfs:range xsd:integer ;
                                   rdfs:comment "The saturated fat ofcom point (Food Standard Agency FSA score) of a product, considering the product as mixed."@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#ofComNSodium
+foodcoach:ofComNSodium rdf:type owl:DatatypeProperty ;
+                       rdfs:domain foodcoach:OfComDetail ;
+                       rdfs:range xsd:integer ;
+                       rdfs:comment "The sodium ofcom point (Food Standard Agency FSA score) of a product."@en .
+
+
+###  https://interactions.ics.unisg.ch/foodcoach#ofComNSodiumMixed
+foodcoach:ofComNSodiumMixed rdf:type owl:DatatypeProperty ;
+                            rdfs:domain foodcoach:OfComDetail ;
+                            rdfs:range xsd:integer ;
+                            rdfs:comment "The sodium ofcom point (Food Standard Agency FSA score) of a product, considering the product as mixed."@en .
 
 
 ###  https://interactions.ics.unisg.ch/foodcoach#ofComNSugar
@@ -1570,14 +1563,14 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 #################################################################
 
 <http://purl.org/dc/dcmitype/> <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
-                               <http://purl.org/dc/elements/1.1/publisher> "The Dublin Core Metadata Initiative"@en-us ;
                                <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                               <http://purl.org/dc/elements/1.1/publisher> "The Dublin Core Metadata Initiative"@en-us ;
                                <http://purl.org/dc/terms/requires> <http://purl.org/dc/elements/1.1/> ;
                                <http://purl.org/dc/elements/1.1/description> "The Dublin Core Types namespace provides URIs for the entries of the DCMI Type Vocabulary. Entries are declared using RDF Schema language to support RDF applications. The Schema will be updated according to dc-usage decisions."@en-us ;
                                <http://purl.org/dc/terms/requires> <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
                                <http://purl.org/dc/elements/1.1/title> "The DCMI Types namespace providing access to its content by means of an RDF Schema"@en-us ;
-                               <http://purl.org/dc/terms/isReferencedBy> <http://purl.org/dc/terms/> ;
                                <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/usage/terms/> ;
+                               <http://purl.org/dc/terms/isReferencedBy> <http://purl.org/dc/terms/> ;
                                <http://purl.org/dc/elements/1.1/language> "English"@en-us ;
                                <http://purl.org/dc/terms/modified> "2002-05-22" .
 
@@ -1585,8 +1578,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 <http://purl.org/dc/dcmitype/Collection> <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Collection-002> ;
                                          <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                          <http://purl.org/dc/terms/issued> "2000-07-11" ;
-                                         rdfs:label "Collection"@en-us ;
                                          rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                         rdfs:label "Collection"@en-us ;
                                          rdfs:comment "An aggregation of resources."@en-us .
 
 
@@ -1618,8 +1611,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                                   rdfs:comment """A resource requiring interaction from the user to
                  be understood, executed, or experienced."""@en-us ;
                                                   rdfs:label "Interactive Resource"@en-us ;
-                                                  <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#InteractiveResource-002> ;
                                                   <http://purl.org/dc/terms/issued> "2000-07-11" ;
+                                                  <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#InteractiveResource-002> ;
                                                   <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> .
 
 
@@ -1641,8 +1634,8 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
 
 
 <http://purl.org/dc/dcmitype/Service> <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Service-002> ;
-                                      rdfs:label "Service"@en-us ;
                                       rdfs:comment "A system that provides one or more functions."@en-us ;
+                                      rdfs:label "Service"@en-us ;
                                       <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                       <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                       rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> .
@@ -1672,11 +1665,11 @@ foodcoach:volg rdf:type owl:NamedIndividual ,
                                          rdfs:comment "A static visual representation."@en-us .
 
 
-<http://purl.org/dc/dcmitype/Text> <http://purl.org/dc/terms/issued> "2000-07-11" ;
-                                   rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
+<http://purl.org/dc/dcmitype/Text> rdfs:comment "A resource consisting primarily of words for reading."@en-us ;
+                                   <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                    rdfs:label "Text"@en-us ;
-                                   rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                    <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
+                                   rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                    <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Text-002> .
 
 
