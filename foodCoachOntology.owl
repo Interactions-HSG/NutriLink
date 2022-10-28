@@ -564,6 +564,12 @@ foodcoach:idFromCollaborator rdf:type owl:DatatypeProperty ;
                              rdfs:range xsd:string ;
                              rdfs:comment "A user has an idFromCollaborator if and only if he/she joins the study via a collaborator."@en .
 
+###  https://interactions.ics.unisg.ch/foodcoach#isNonFood
+foodcoach:isNonFood rdf:type owl:DatatypeProperty ;
+                          rdfs:domain foodcoach:Item ;
+                          rdfs:range xsd:boolean ;
+                          rdfs:comment "This indicates whether an item is non-food."@en .
+
 
 ###  https://interactions.ics.unisg.ch/foodcoach#increaseContent
 foodcoach:increaseContent rdf:type owl:DatatypeProperty ;
