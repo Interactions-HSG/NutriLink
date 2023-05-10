@@ -1,0 +1,39 @@
+PREFIX graph: <ANONYMIZATION>
+PREFIX vaem: <http://www.linkedmodel.org/schema/vaem#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX qudt: <http://qudt.org/schema/qudt#>
+
+select distinct ?externalId ?bamId ?basketTimestamp ?gtin ?itemName ?itemQuantity ?finalPrice ?productSize ?energyKcalValue ?minorCategoryNameEn where { 
+	#user part 
+    ?user a graph:User.
+    ?user graph:userHash ?userHash.
+    ?piiData graph:isOfUser ?user.
+    ?piiData graph:segmentId ?segmentId FILTER (str(?segmentId) = "BF2021").
+    ?piiData graph:bamId ?bamId.
+    ?piiData graph:externalId ?externalId.
+    ?user graph:buysBasket ?basket.
+    
+    #basket part
+    ?basket graph:containsItem ?item.
+    ?basket graph:timestamp ?basketTimestamp.
+    
+    #item part
+    ?item vaem:name ?itemName.
+    ?item graph:amount ?itemQuantity.  #should use qudt
+    ?item graph:price ?price. 
+    ?price qudt:value ?finalPrice.
+    ?item graph:matches ?product.
+    
+    #product part
+    ?product graph:gtin ?gtin.
+    ?product qudt:hasQuantity ?productQuantity.
+    ?productQuantity qudt:value ?productSize. 
+    ?product graph:isOfMinorCategory ?minorCategory.
+    ?minorCategory rdfs:label ?minorCategoryNameEn filter langMatches(lang(?minorCategoryNameEn), "en").
+   
+    ?product graph:containsNutritionInformation ?energyKcal.
+    ?energyKcal vaem:name ?energyKcalName FILTER (str(?energyKcalName) = "energyKcal").
+    ?energyKcal qudt:hasQuantity ?energyKcalQuantity.
+    ?energyKcalQuantity qudt:value ?energyKcalValue.
+
+}
