@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://xmlns.com/foaf/0.1/" uri="http://xmlns.com/foaf/spec/"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/vocab/unit" uri="unit/VOCAB_QUDT-UNITS-ALL-v2.1.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/extensions/skos" uri="schema/extensions/SCHEMA_QUDT-skos-subset.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/extensions/imports" uri="schema/extensions/SCHEMA_QUDT-graph-imports.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/extensions/functions" uri="schema/extensions/FUNCTIONS_QUDT-v2.1.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/datatype" uri="schema/SCHEMA_QUDT-DATATYPE-v2.1.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/vocab/prefix" uri="http://qudt.org/2.1/vocab/prefix"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/qudt" uri="http://qudt.org/schema/qudt/"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/qudt" uri="http://qudt.org/schema/qudt"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>

@@ -1,0 +1,37 @@
+PREFIX graph: <ANONYMIZATION>
+PREFIX vaem: <http://www.linkedmodel.org/schema/vaem#>
+
+select distinct ?basket ?date ?itemName ?itemQuantity ?itemPrice ?productNutriScoreFinal ?basketNutriScoreCalculated ?basketOfComValue ?productImage
+where
+{
+    ?userData graph:isOfUser ?user.
+    ?userData graph:externalId "USER_IDENTIFIER".
+    ?userData graph:segmentId "FC2022".
+    ?user graph:buysBasket ?basket.
+    
+	?basket graph:timestamp ?date FILTER ( ?date > 1682892000 && ?date <= 1680300000).
+    ?basket graph:containsItem ?item.
+
+    ?item graph:amount ?itemQuantity.
+    ?item graph:simplePrice ?itemPrice.
+    ?item vaem:name ?itemName.
+        
+    optional {
+        ?item graph:matches ?product.
+        
+        ?product graph:hasImage ?productImage.
+        ?product graph:containsNutritionInformation ?productNutriScore.
+        ?productNutriScore graph:nutriScoreFinal ?productNutriScoreFinal.
+        
+        ?basketAggInfo a graph:BasketAggInfo.
+        #F stands for Nutri-Score unknown
+    	?basketNutriScore a graph:NutriScore;
+                      graph:nutriScoreCalculated ?basketNutriScoreCalculated filter (?basketNutriScoreCalculated != "F").
+        ?basketAggInfo graph:containsInformationOfBasket ?basket.
+        ?basketAggInfo graph:containsNutritionInformation ?basketNutriScore.  
+        ?basketAggInfo graph:containsNutritionInformation ?basketOfComDetail.
+        #-20.0 stands for FSA score unknown
+        ?basketOfComDetail graph:ofComValue ?basketOfComValue filter (?basketOfComValue != 20.0).  
+    }
+}
+ORDER BY DESC(?date)
