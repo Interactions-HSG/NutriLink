@@ -1,0 +1,103 @@
+PREFIX graph: <ANONYMIZATION>
+PREFIX vaem: <http://www.linkedmodel.org/schema/vaem#>
+PREFIX qudt: <http://qudt.org/schema/qudt#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+select 	
+	DISTINCT ?basket ?date ?itemName ?gtin ?minorCategoryName ?majorCategoryName ?itemQuantity ?productQuantityValue 
+    ?energyKJValue ?energyKcalValue ?totalCarbohydrateValue ?sugarValue ?totalFatValue 
+	?saturatedFatValue ?saltValue ?sodiumValue ?dietaryFiberValue ?proteinValue ?fvpnValue 
+    ?itemPrice ?ofComValue ?ofComNEnergyKJ ?ofComNSugar ?ofComNSaturatedFat ?ofComNSodium 
+    ?ofComPFVPN  ?ofComPDietaryFiber ?ofComPProtein ?nutriScoreFinal
+where { 
+    ?userData graph:isOfUser ?user.
+    ?userData graph:externalId ?id.
+    ?userData graph:segmentId ?segmentId FILTER (str(?segmentId) = "SEGMENT_ID").
+    ?user graph:buysBasket ?basket filter (str(?basket) in BASKETLIST).
+    ?basket graph:containsItem ?item.
+    #TODO: Replace static value to variable
+    ?basket graph:timestamp ?date.
+	?item graph:matches ?product.
+    ?item graph:amount ?itemQuantity.
+    ?item graph:simplePrice ?itemPrice.
+    ?item vaem:name ?itemName.
+    
+    ?product graph:gtin ?gtin.
+    ?product qudt:hasQuantity ?productQuantity.
+    ?productQuantity qudt:value ?productQuantityValue.
+    
+    ?product graph:isOfMinorCategory ?minorCategory.
+    ?minorCategory rdfs:label ?minorCategoryName FILTER (LANG(?minorCategoryName) = "en").
+    ?minorCategory graph:isOfMajorCategory ?majorCategory.
+    ?majorCategory rdfs:label ?majorCategoryName FILTER (LANG(?majorCategoryName) = "en").
+
+    ?product graph:containsNutritionInformation ?nutriScore.
+    ?nutriScore graph:nutriScoreFinal ?nutriScoreFinal. 
+    
+    ?product graph:containsNutritionInformation ?salt.
+    ?salt vaem:name ?saltName FILTER (str(?saltName) = "salt").
+    ?salt qudt:hasQuantity ?saltQuantity.
+    ?saltQuantity qudt:value ?saltValue.
+    
+    ?product graph:containsNutritionInformation ?protein.
+    ?protein vaem:name ?proteinName FILTER (str(?proteinName) = "protein").
+    ?protein qudt:hasQuantity ?proteinQuantity.
+    ?proteinQuantity qudt:value ?proteinValue.
+    
+	?product graph:containsNutritionInformation ?energyKJ.
+    ?energyKJ vaem:name ?energyKJName FILTER (str(?energyKJName) = "energyKJ").
+    ?energyKJ qudt:hasQuantity ?energyKJQuantity.
+    ?energyKJQuantity qudt:value ?energyKJValue.
+
+    ?product graph:containsNutritionInformation ?energyKcal.
+    ?energyKcal vaem:name ?energyKcalName FILTER (str(?energyKcalName) = "energyKcal").
+    ?energyKcal qudt:hasQuantity ?energyKcalQuantity.
+    ?energyKcalQuantity qudt:value ?energyKcalValue.
+
+    ?product graph:containsNutritionInformation ?totalCarbohydrate.
+    ?totalCarbohydrate vaem:name ?totalCarbohydrateName FILTER (str(?totalCarbohydrateName) = "totalCarbohydrate").
+    ?totalCarbohydrate qudt:hasQuantity ?totalCarbohydrateQuantity.
+    ?totalCarbohydrateQuantity qudt:value ?totalCarbohydrateValue.
+
+    ?product graph:containsNutritionInformation ?totalFat.
+    ?totalFat vaem:name ?totalFatName FILTER (str(?totalFatName) = "totalFat").
+    ?totalFat qudt:hasQuantity ?totalFatQuantity.
+    ?totalFatQuantity qudt:value ?totalFatValue.
+    
+    #TODO change totalFat to sugar
+    ?product graph:containsNutritionInformation ?sugar.
+    ?sugar vaem:name ?sugarName FILTER (str(?sugarName) = "totalFat").
+    ?sugar qudt:hasQuantity ?sugarQuantity.
+    ?sugarQuantity qudt:value ?sugarValue.
+    
+    ?product graph:containsNutritionInformation ?saturatedFat.
+    ?saturatedFat vaem:name ?saturatedFatName FILTER (str(?saturatedFatName) = "saturatedFat").
+    ?saturatedFat qudt:hasQuantity ?saturatedFatQuantity.
+    ?saturatedFatQuantity qudt:value ?saturatedFatValue.
+    
+    ?product graph:containsNutritionInformation ?sodium.
+    ?sodium vaem:name ?sodiumName FILTER (str(?sodiumName) = "sodium").
+    ?sodium qudt:hasQuantity ?sodiumQuantity.
+    ?sodiumQuantity qudt:value ?sodiumValue.
+    
+    ?product graph:containsNutritionInformation ?dietaryFiber.
+    ?dietaryFiber vaem:name ?dietaryFiberName FILTER (str(?dietaryFiberName) = "dietaryFiber").
+    ?dietaryFiber qudt:hasQuantity ?dietaryFiberQuantity.
+    ?dietaryFiberQuantity qudt:value ?dietaryFiberValue.
+    
+    ?product graph:containsNutritionInformation ?FVPN.
+    ?FVPN vaem:name ?FVPNName FILTER (str(?FVPNName) = "FVPN").
+    ?FVPN qudt:hasQuantity ?FVPNQuantity.
+    ?FVPNQuantity qudt:value ?fvpnValue.
+
+    ?product graph:containsNutritionInformation ?ofComDetail.
+    ?ofComDetail graph:ofComValue ?ofComValue.
+    ?ofComDetail graph:ofComNEnergyKJ ?ofComNEnergyKJ.
+    ?ofComDetail graph:ofComNSugar ?ofComNSugar.
+    ?ofComDetail graph:ofComNSaturatedFat ?ofComNSaturatedFat.
+    ?ofComDetail graph:ofComNSalt ?ofComNSodium.
+    ?ofComDetail graph:ofComPFVPN ?ofComPFVPN.
+    ?ofComDetail graph:ofComPDietaryFiber ?ofComPDietaryFiber.
+    ?ofComDetail graph:ofComPProtein ?ofComPProtein.
+}
