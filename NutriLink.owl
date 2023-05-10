@@ -129,42 +129,42 @@ foodcoach:name rdf:type owl:AnnotationProperty ;
 foodcoach:abstainsFrom rdf:type owl:ObjectProperty ;
                        rdfs:domain foodcoach:User ;
                        rdfs:range foodcoach:Abstention ;
-                       rdfs:comment "specifies a user's food abstentions."@en .
+                       rdfs:comment "Links a User to their food Abstentions."@en .
 
 
 ###  ANONYMIZATION:belongsToRetailer
 foodcoach:belongsToRetailer rdf:type owl:ObjectProperty ;
                             rdfs:domain foodcoach:Office ;
                             rdfs:range foodcoach:Retailer ;
-                            rdfs:comment "specifies which retailer a specific supermarket (office) belongs to."@en .
+                            rdfs:comment "Links a specific supermarket Office to its Retailer."@en .
 
 
 ###  ANONYMIZATION:buysBasket
 foodcoach:buysBasket rdf:type owl:ObjectProperty ;
                      rdfs:domain foodcoach:User ;
                      rdfs:range foodcoach:Basket ;
-                     rdfs:comment "specifies which user buys the basket."@en .
+                     rdfs:comment "Links a User to a Basket that was bought by the User."@en .
 
 
 ###  ANONYMIZATION:containsAllergen
 foodcoach:containsAllergen rdf:type owl:ObjectProperty ;
                            rdfs:domain foodcoach:Product ;
                            rdfs:range foodcoach:Allergen ;
-                           rdfs:comment "specifies an allergen a food product contains."@en .
+                           rdfs:comment "Links a Product to an allergen the Product contains."@en .
 
 
 ###  ANONYMIZATION:containsInformationOfBasket
 foodcoach:containsInformationOfBasket rdf:type owl:ObjectProperty ;
                                       rdfs:domain foodcoach:BasketAggInfo ;
                                       rdfs:range foodcoach:Basket ;
-                                      rdfs:comment "specifiies which basket the aggeregated information is of."@en .
+                                      rdfs:comment "Links aggregated information to a Basket."@en .
 
 
 ###  ANONYMIZATION:containsItem
 foodcoach:containsItem rdf:type owl:ObjectProperty ;
                        rdfs:domain foodcoach:Basket ;
                        rdfs:range foodcoach:Item ;
-                       rdfs:comment "specifies the items in a basket, i.e., the items that are shopped by a single user at the same time."@en .
+                       rdfs:comment "Links a shopped Basket to Items that are contained therein, i.e. to the Items that are shopped in a single transaction."@en .
 
 
 ###  ANONYMIZATION:containsNutritionInformation
@@ -172,112 +172,113 @@ foodcoach:containsNutritionInformation rdf:type owl:ObjectProperty ;
                                        rdfs:domain foodcoach:BasketAggInfo ,
                                                    foodcoach:Product ;
                                        rdfs:range foodcoach:NutritionInformation ;
-                                       rdfs:comment "A product contains nutrition information."@en .
+                                       rdfs:comment "Links a Product or Basket Aggregate to its Nutrition Information."@en .
 
 
 ###  ANONYMIZATION:distributesItem
 foodcoach:distributesItem rdf:type owl:ObjectProperty ;
                           rdfs:domain foodcoach:Retailer ;
                           rdfs:range foodcoach:Item ;
-                          rdfs:comment "specifies which retailer distributes or which retailers distribute an item."@en .
+                          rdfs:comment "Links a Retailer to the Items that can be bought at that Retailer."@en .
 
 
 ###  ANONYMIZATION:givesRecommendation
 foodcoach:givesRecommendation rdf:type owl:ObjectProperty ;
                               rdfs:domain foodcoach:Dietician ;
-                              rdfs:range foodcoach:Recommendation .
-
+                              rdfs:range foodcoach:Recommendation ;
+                              rdfs:comment "Links a Dietician to a Recommendation that was given by the Dietician."@en .
 
 ###  ANONYMIZATION:hasWeight
 foodcoach:hasWeight rdf:type owl:ObjectProperty ;
                     rdfs:domain foodcoach:Item ,
                                 foodcoach:Product ,
                                 foodcoach:User ;
-                    rdfs:range <http://qudt.org/schema/qudt/Quantity> .
+                    rdfs:range <http://qudt.org/schema/qudt/Quantity> ;
+                    rdfs:comment "Links a Product, Item, or User to their Weight."@en .
 
 
 ###  ANONYMIZATION:isAboutUser
 foodcoach:isAboutUser rdf:type owl:ObjectProperty ;
                       rdfs:domain foodcoach:Recommendation ;
                       rdfs:range foodcoach:User ;
-                      rdfs:comment "It indicates the recommendation regards which user, i.e., is based on the food purchasing data of which user."@en .
+                      rdfs:comment "Links a Recommendation to the User it is about, i.e., the Recommendation is based on the food purchasing data of this User."@en .
 
 
 ###  ANONYMIZATION:isAllergicTo
 foodcoach:isAllergicTo rdf:type owl:ObjectProperty ;
                        rdfs:domain foodcoach:User ;
                        rdfs:range foodcoach:Allergen ;
-                       rdfs:comment "specifies a user's allergens."@en .
+                       rdfs:comment "Links a User to an Allergen that is relevant for the User."@en .
 
 
 ###  ANONYMIZATION:isAtGeoLoc
 foodcoach:isAtGeoLoc rdf:type owl:ObjectProperty ;
                      rdfs:domain foodcoach:Office ;
                      rdfs:range foodcoach:OfficeGeoLoc ;
-                     rdfs:comment "specifies the geolocation of an office (a supermarket)."@en .
+                     rdfs:comment "Links an Office to its geographical location."@en .
 
 
 ###  ANONYMIZATION:isAvailableIn
 foodcoach:isAvailableIn rdf:type owl:ObjectProperty ;
                         rdfs:domain foodcoach:Product ;
                         rdfs:range foodcoach:MarketRegion ;
-                        rdfs:comment "specifies the market region(s) of a product."@en .
+                        rdfs:comment "Specifies a Market Region of a Product."@en .
 
 
 ###  ANONYMIZATION:isFromOffice
 foodcoach:isFromOffice rdf:type owl:ObjectProperty ;
                        rdfs:domain foodcoach:Basket ;
                        rdfs:range foodcoach:Office ;
-                       rdfs:comment "specifies from which office(s) (supermarket(s)) a basket is sold."@en .
+                       rdfs:comment "Specifies which Office a Basket was bought at."@en .
 
 
 ###  ANONYMIZATION:isInfluencedByDisorder
 foodcoach:isInfluencedByDisorder rdf:type owl:ObjectProperty ;
                                  rdfs:domain foodcoach:User ;
                                  rdfs:range foodcoach:Disorder ;
-                                 rdfs:comment "specifies the disorder(s) that influence a user."@en .
+                                 rdfs:comment "Links a User to Disorders that are relevant for the User."@en .
 
 
 ###  ANONYMIZATION:isOfDietCoachMajorCategory
 foodcoach:isOfDietCoachMajorCategory rdf:type owl:ObjectProperty ;
                                      rdfs:domain foodcoach:DietCoachMinorCategory ;
                                      rdfs:range foodcoach:DietCoachMajorCategory ;
-                                     rdfs:comment "It specifies which DietCoachMinorCategory belong to DietCoachMajorCategory."@en .
+                                     rdfs:comment "Specifies that a DietCoachMinorCategory belongs to a DietCoachMajorCategory."@en .
 
 
 ###  ANONYMIZATION:isOfDietCoachMinorCategory
 foodcoach:isOfDietCoachMinorCategory rdf:type owl:ObjectProperty ;
                                      rdfs:domain foodcoach:MinorCategory ;
                                      rdfs:range foodcoach:DietCoachMinorCategory ;
-                                     rdfs:comment "It specifies which MinorCategory on EatFit belong to DietCoachMinorCategory."@en .
+                                     rdfs:comment "Specifies that a MinorCategory belongs to a DietCoachMinorCategory."@en .
 
 
 ###  ANONYMIZATION:isOfMajorCategory
 foodcoach:isOfMajorCategory rdf:type owl:ObjectProperty ;
                             rdfs:domain foodcoach:MinorCategory ;
                             rdfs:range foodcoach:MajorCategory ;
-                            rdfs:comment "specifies which major food category a minor food category belongs to."@en .
+                            rdfs:comment "Specifies that a Minor Food Category belongs to a Major Food Category."@en .
 
 
 ###  ANONYMIZATION:isOfMinorCategory
 foodcoach:isOfMinorCategory rdf:type owl:ObjectProperty ;
                             rdfs:domain foodcoach:Product ;
                             rdfs:range foodcoach:MinorCategory ;
-                            rdfs:comment "specifies which minor food category a product belongs to."@en .
+                            rdfs:comment "Specifies that a Product is categorizes as a Minor Food Category."@en .
 
 
 ###  ANONYMIZATION:isOfNutriScoreCategory
 foodcoach:isOfNutriScoreCategory rdf:type owl:ObjectProperty ;
                                  rdfs:domain foodcoach:Product ;
                                  rdfs:range foodcoach:NutriScoreCategory ;
-                                 rdfs:comment "speficies which Nutri-Score category a product belongs to. Different categories correspond to different Nutri-Score calculation framework."@en .
+                                 rdfs:comment "Specifies that a Product is categorized as a Nutri-Score category. Different categories correspond to different letters in the Nutri-Score calculation framework."@en .
 
 
 ###  ANONYMIZATION:isOfUser
 foodcoach:isOfUser rdf:type owl:ObjectProperty ;
                    rdfs:domain foodcoach:PiiData ;
                    rdfs:range foodcoach:User ;
-                   rdfs:comment "specifies which user the piidata is of."@en .
+                   rdfs:comment "Links a User to their Privacy Information data."@en .
 
 
 ###  ANONYMIZATION:isProducedBy
@@ -485,7 +486,7 @@ foodcoach:endDateOfBaskets rdf:type owl:DatatypeProperty ;
 foodcoach:externalId rdf:type owl:DatatypeProperty ;
                      rdfs:domain foodcoach:PiiData ;
                      rdfs:range xsd:string ;
-                     rdfs:comment "A user gets assigned an externalId when he/she registers him/herself via BAM links. One BAM user (identified by e.g. userHash) could have multiple externalIds, if he/she registers multiple times using different links."@en .
+                     rdfs:comment "A user gets assigned an externalId when he/she registers him/herself via (anonymous) links. One user (identified by e.g. userHash) could have multiple externalIds, if he/she registers multiple times using different links."@en .
 
 
 ###  ANONYMIZATION:foodTrackingAppBefore
