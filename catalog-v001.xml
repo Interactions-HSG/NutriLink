@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.linkedmodel.org/schema/vaem" uri="relatedOntologies/vaem.ttl"/>
     <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/qudt" uri="relatedOntologies/qudt/SCHEMA_QUDT-v2.1.ttl"/>
     <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/qudt" uri="relatedOntologies/SCHEMA_QUDT-v2.1.ttl"/>
     <uri id="Imports Wizard Entry" name="http://www.linkedmodel.org/2.0/schema/vaem" uri="relatedOntologies/vaem.ttl"/>
@@ -18,6 +19,6 @@
     <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/qudt" uri="http://qudt.org/schema/qudt/"/>
     <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/qudt" uri="http://qudt.org/schema/qudt"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1711030921488" name="http://purl.obolibrary.org/obo/foodon.owl" uri="relatedOntologies/foodon.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1715093213711" name="http://purl.obolibrary.org/obo/foodon.owl" uri="relatedOntologies/foodon.owl"/>
     </group>
 </catalog>
