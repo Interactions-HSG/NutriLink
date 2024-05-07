@@ -1,0 +1,37 @@
+PREFIX nl: <https://purl.org/nutrilink#>
+PREFIX vaem: <http://www.linkedmodel.org/schema/vaem#>
+
+select distinct ?basket ?date ?itemName ?itemQuantity ?itemPrice ?productNutriScoreFinal ?basketNutriScoreCalculated ?basketOfComValue ?productImage
+where
+{
+    ?userData nl:isOfUser ?user.
+    ?userData nl:externalId "USER_IDENTIFIER".
+    ?userData nl:segmentId "SEGMENTID".
+    ?user nl:buysBasket ?basket.
+    
+	?basket nl:timestamp ?date FILTER ( ?date > START_TIMESTAMP && ?date <= END_TIMESTAMP).
+    ?basket nl:containsItem ?item.
+
+    ?item nl:amount ?itemQuantity.
+    ?item nl:simplePrice ?itemPrice.
+    ?item vaem:name ?itemName.
+        
+    optional {
+        ?item nl:matches ?product.
+        
+        ?product nl:hasImage ?productImage.
+        ?product nl:containsNutritionInformation ?productNutriScore.
+        ?productNutriScore nl:nutriScoreFinal ?productNutriScoreFinal.
+        
+        ?basketAggInfo a nl:BasketAggInfo.
+        #F stands for Nutri-Score unknown
+    	?basketNutriScore a nl:NutriScore;
+                      nl:nutriScoreCalculated ?basketNutriScoreCalculated filter (?basketNutriScoreCalculated != "F").
+        ?basketAggInfo nl:containsInformationOfBasket ?basket.
+        ?basketAggInfo nl:containsNutritionInformation ?basketNutriScore.  
+        ?basketAggInfo nl:containsNutritionInformation ?basketOfComDetail.
+        #-20.0 stands for FSA score unknown
+        ?basketOfComDetail nl:ofComValue ?basketOfComValue filter (?basketOfComValue != 20.0).  
+    }
+}
+ORDER BY DESC(?date)

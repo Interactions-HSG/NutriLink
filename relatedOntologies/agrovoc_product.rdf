@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skosxl="http://www.w3.org/2008/05/skos-xl#"
+         xmlns:void="http://rdfs.org/ns/void#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:ns0="http://aims.fao.org/aos/agrontology#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_en_1299486360046">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1981-01-09T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="en">products</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_tr_13588_1321792642209">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-11-20T20:37:22Z</dc:created>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-03-07T10:47:25Z</dc:modified>
+    <skosxl:literalForm xml:lang="tr">üretme</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">13588</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_ru_1299486360391">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-04-28T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="ru">продукция</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+  </skosxl:Label>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_330684">
+    <skos:prefLabel xml:lang="fr">produit à valeur ajoutée</skos:prefLabel>
+    <skos:prefLabel xml:lang="ro">produs cu valoare adăugată</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">продукция с добавленной стоимостью</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Prodotto a valore aggiunto</skos:prefLabel>
+    <skos:prefLabel xml:lang="tr">katma değerli ürün</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">منتجات القيمة المضافة</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Productos de valor agregado</skos:prefLabel>
+    <skos:prefLabel xml:lang="uk">продукція з доданою вартістю</skos:prefLabel>
+    <skos:prefLabel xml:lang="hi">मूल्य बर्धित उत्पाद</skos:prefLabel>
+    <skos:prefLabel xml:lang="zh">产值，价值附加的-</skos:prefLabel>
+    <skos:prefLabel xml:lang="sw">bidhaa zilizoongezwa thamani</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">value-added products</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">výrobek s přidanou hodnotou</skos:prefLabel>
+    <skos:prefLabel xml:lang="sr">производи са додатом вредношћу</skos:prefLabel>
+    <skos:prefLabel xml:lang="ms">Keluaran nilai tambah</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Mehrwertprodukt</skos:prefLabel>
+    <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:Concept>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_ka_f5f426dd">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-18T20:32:25.118+01:00</dc:created>
+    <skosxl:literalForm xml:lang="ka">ნაწარმი</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">f5f426dd</skos:notation>
+  </skosxl:Label>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_3049">
+    <skos:prefLabel xml:lang="uk">продукція лісового господарства</skos:prefLabel>
+    <skos:prefLabel xml:lang="sr">шумски производи</skos:prefLabel>
+    <skos:prefLabel xml:lang="lo">ຜະລິດຕະພັນປ່າໄມ້</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">produit forestier</skos:prefLabel>
+    <skos:prefLabel xml:lang="hi">वन उत्पाद</skos:prefLabel>
+    <skos:prefLabel xml:lang="th">วนผลิตภัณฑ์</skos:prefLabel>
+    <skos:prefLabel xml:lang="sk">lesné produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">منتجات الغابات</skos:prefLabel>
+    <skos:prefLabel xml:lang="ko">임산물</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Forstprodukt</skos:prefLabel>
+    <skos:prefLabel xml:lang="fa">فراورده‌های جنگلی</skos:prefLabel>
+    <skos:prefLabel xml:lang="sw">mazao ya misitu</skos:prefLabel>
+    <skos:prefLabel xml:lang="ms">Produk perhutanan</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Productos forestales</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt-BR">produto florestal</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">produto florestal</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Prodotti forestali</skos:prefLabel>
+    <skos:prefLabel xml:lang="te">అటవీ ఉత్పాదితాలు</skos:prefLabel>
+    <skos:prefLabel xml:lang="ja">林産物</skos:prefLabel>
+    <skos:prefLabel xml:lang="pl">Produkt leśny</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">forest products</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">лесная продукция</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">lesní produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="tr">orman ürünü</skos:prefLabel>
+    <skos:prefLabel xml:lang="zh">林产品</skos:prefLabel>
+    <skos:prefLabel xml:lang="ro">produse forestiere</skos:prefLabel>
+    <skos:prefLabel xml:lang="hu">erdei termék</skos:prefLabel>
+    <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:Concept>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_nb_21160880">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-05-29T22:26:16.81+02:00</dc:created>
+    <skosxl:literalForm xml:lang="nb">produkter</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+  </skosxl:Label>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_438">
+    <skos:prefLabel xml:lang="en">animal products</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">продукция животноводства</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">produit animal</skos:prefLabel>
+    <skos:prefLabel xml:lang="ro">produse animaliere</skos:prefLabel>
+    <skos:prefLabel xml:lang="pl">Produkty zwierzęce</skos:prefLabel>
+    <skos:prefLabel xml:lang="zh">动物产品</skos:prefLabel>
+    <skos:prefLabel xml:lang="sk">živočíšne produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">tierisches Produkt</skos:prefLabel>
+    <skos:prefLabel xml:lang="ka">ცხოველური პროდუქტი</skos:prefLabel>
+    <skos:prefLabel xml:lang="ko">축산물</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Prodotti di origine animale</skos:prefLabel>
+    <skos:prefLabel xml:lang="hi">पशु उत्पाद</skos:prefLabel>
+    <skos:prefLabel xml:lang="vi">sản phẩm động vật</skos:prefLabel>
+    <skos:prefLabel xml:lang="tr">hayvansal ürün</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt-BR">produto de origem animal</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">produto de origem animal</skos:prefLabel>
+    <skos:prefLabel xml:lang="sw">mazao ya mifugo</skos:prefLabel>
+    <skos:prefLabel xml:lang="th">ผลิตภัณฑ์สัตว์</skos:prefLabel>
+    <skos:prefLabel xml:lang="ms">Produk haiwan</skos:prefLabel>
+    <skos:prefLabel xml:lang="ja">動物生産物</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">منتجات حيوانية</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">živočišné produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Productos de origen animal</skos:prefLabel>
+    <skos:prefLabel xml:lang="fa">فراورده‌های جانوری</skos:prefLabel>
+    <skos:prefLabel xml:lang="sr">производи животињског порекла</skos:prefLabel>
+    <skos:prefLabel xml:lang="lo">ຜະລິດຕະພັນສັດ</skos:prefLabel>
+    <skos:prefLabel xml:lang="hu">állati termék</skos:prefLabel>
+    <skos:prefLabel xml:lang="uk">продукція тваринного походження</skos:prefLabel>
+    <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_15742">
+    <skos:prefLabel xml:lang="ja">加工製品</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">processed products</skos:prefLabel>
+    <skos:prefLabel xml:lang="pl">Przetwory</skos:prefLabel>
+    <skos:prefLabel xml:lang="th">ผลิตภัณฑ์ที่ผ่านกระบวนการผลิต</skos:prefLabel>
+    <skos:prefLabel xml:lang="sw">bidhaa zilizosindikwa</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt-BR">produto processado</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">produto processado</skos:prefLabel>
+    <skos:prefLabel xml:lang="hi">संसाधित उत्पाद</skos:prefLabel>
+    <skos:prefLabel xml:lang="sr">прерађени производи</skos:prefLabel>
+    <skos:prefLabel xml:lang="sk">spracované produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="tr">işlenmiş ürün</skos:prefLabel>
+    <skos:prefLabel xml:lang="ko">가공생산물</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">zpracované produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="fa">فراورده‌های فراوری‌شده</skos:prefLabel>
+    <skos:prefLabel xml:lang="zh">加工制品</skos:prefLabel>
+    <skos:prefLabel xml:lang="ms">Produk yang diproses</skos:prefLabel>
+    <skos:prefLabel xml:lang="nb">bearbeidede produkter</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Prodotti trasformati</skos:prefLabel>
+    <skos:prefLabel xml:lang="uk">продукти переробки</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">produit transformé</skos:prefLabel>
+    <skos:prefLabel xml:lang="ka">გადამუშავებული პროდუქტი</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">продукты переработки</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">verarbeitetes Produkt</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">منتجات معالجة</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Productos procesados</skos:prefLabel>
+    <skos:prefLabel xml:lang="hu">feldolgozott termék</skos:prefLabel>
+    <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_8323048d">
+    <skos:prefLabel xml:lang="de">biologisch abbaubares Produkt</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Prodotti biodegradabili</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">biodegradovatelné produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">биоразлагаемые продукты</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">biodegradable products</skos:prefLabel>
+    <skos:prefLabel xml:lang="ro">produse biodegradabile</skos:prefLabel>
+    <skos:prefLabel xml:lang="tr">biyobozunur ürün</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Productos biodegradables</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">المنتجات القابلة للتحلل الحيوي</skos:prefLabel>
+    <skos:prefLabel xml:lang="uk">біорозкладні продукти</skos:prefLabel>
+    <skos:prefLabel xml:lang="sr">биоразградиви производи</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">produit biodégradable</skos:prefLabel>
+    <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:Concept>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_sr_5329557b">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-02-04T08:17:09.024+01:00</dc:created>
+    <skosxl:literalForm xml:lang="sr">производи</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_hu_1299486361027">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2006-12-06T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="hu">termény</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">13588</skos:notation>
+  </skosxl:Label>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_27804">
+    <skos:prefLabel xml:lang="tr">yeni ürün</skos:prefLabel>
+    <skos:prefLabel xml:lang="ms">Produk baru</skos:prefLabel>
+    <skos:prefLabel xml:lang="sw">bidhaa mpya</skos:prefLabel>
+    <skos:prefLabel xml:lang="ro">produse noi</skos:prefLabel>
+    <skos:prefLabel xml:lang="sr">нови производи</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Nuovi prodotti</skos:prefLabel>
+    <skos:prefLabel xml:lang="pl">Produkt nowy</skos:prefLabel>
+    <skos:prefLabel xml:lang="hu">új termék</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">produit nouveau</skos:prefLabel>
+    <skos:prefLabel xml:lang="fa">فراورده‌های جدید</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt-BR">produto novo</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">produto novo</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">new products</skos:prefLabel>
+    <skos:prefLabel xml:lang="vi">sản phẩm mới</skos:prefLabel>
+    <skos:prefLabel xml:lang="ja">新製品</skos:prefLabel>
+    <skos:prefLabel xml:lang="uk">нова продукція</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">nové produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="zh">新产品</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">neues Produkt</skos:prefLabel>
+    <skos:prefLabel xml:lang="lo">ຜົນຜະລິດໃໝ່</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">منتجات جديدة</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">новая продукция</skos:prefLabel>
+    <skos:prefLabel xml:lang="th">ผลิตภัณฑ์ใหม่</skos:prefLabel>
+    <skos:prefLabel xml:lang="sk">nové výrobky</skos:prefLabel>
+    <skos:prefLabel xml:lang="hi">नये उत्पाद</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Productos nuevos</skos:prefLabel>
+    <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:Concept>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_es_1299486360065">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1981-01-23T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="es">Productos</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+  </skosxl:Label>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_9b1bc8be">
+    <skos:prefLabel xml:lang="es">Productos acuícolas</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Prodotti dell'acquacoltura</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Aquakulturerzeugnis</skos:prefLabel>
+    <skos:prefLabel xml:lang="nb">akvakulturprodukter</skos:prefLabel>
+    <skos:prefLabel xml:lang="da">akvakulturprodukter</skos:prefLabel>
+    <skos:prefLabel xml:lang="ka">აკვაკულტურის პროდუქცია</skos:prefLabel>
+    <skos:prefLabel xml:lang="zh">水产养殖产品</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">منتج تربية الأحياء المائية</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">produit de l’aquaculture</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">aquaculture products</skos:prefLabel>
+    <skos:prefLabel xml:lang="tr">su ürünleri yetiştiricilik ürünleri</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">produkty akvakultury</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">продукция аквакультуры</skos:prefLabel>
+    <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_8678">
+    <skos:prefLabel xml:lang="pl">Produkty rolnicze</skos:prefLabel>
+    <skos:prefLabel xml:lang="uk">сільськогосподарська продукція</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">produit agricole</skos:prefLabel>
+    <skos:prefLabel xml:lang="th">ผลิตภัณฑ์การเกษตร</skos:prefLabel>
+    <skos:prefLabel xml:lang="lo">ຜະລິດຕະພັນກະສິກຳ</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">сельскохозяйственная продукция</skos:prefLabel>
+    <skos:prefLabel xml:lang="sw">mazao ya kilimo</skos:prefLabel>
+    <skos:prefLabel xml:lang="fa">فراورده‌های کشاورزی</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Productos agrícolas</skos:prefLabel>
+    <skos:prefLabel xml:lang="zh">农产品</skos:prefLabel>
+    <skos:prefLabel xml:lang="sr">пољопривредни производи</skos:prefLabel>
+    <skos:prefLabel xml:lang="hi">कृषि उत्पाद</skos:prefLabel>
+    <skos:prefLabel xml:lang="sk">poľnohospodáraske produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="ro">produse agricole</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Agrarprodukt</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Prodotti agricoli</skos:prefLabel>
+    <skos:prefLabel xml:lang="ka">სასოფლო-სამეურნეო პროდუქცია</skos:prefLabel>
+    <skos:prefLabel xml:lang="ja">農産物</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">zemědělské produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="te">వ్యవసాయ ఉత్పత్తులు</skos:prefLabel>
+    <skos:prefLabel xml:lang="ms">Produk pertanian</skos:prefLabel>
+    <skos:prefLabel xml:lang="hu">mezõgazdasági termék</skos:prefLabel>
+    <skos:prefLabel xml:lang="tr">tarımsal ürün</skos:prefLabel>
+    <skos:prefLabel xml:lang="ko">농산물</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">agricultural products</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt-BR">produto agrícola</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">produto agrícola</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">منتجات زراعية</skos:prefLabel>
+    <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_1172">
+    <skos:prefLabel xml:lang="es">Subproductos</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Nebenprodukt</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">побочная продукция</skos:prefLabel>
+    <skos:prefLabel xml:lang="ro">subproduse</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">vedlejší produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="zh">副产品</skos:prefLabel>
+    <skos:prefLabel xml:lang="sw">mchakato wa kibaolojia pamoja na bidhaa kuu</skos:prefLabel>
+    <skos:prefLabel xml:lang="th">ผลพลอยได้</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Sottoprodotti</skos:prefLabel>
+    <skos:prefLabel xml:lang="sk">vedľajšie produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="ko">부산물</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">sous-produit</skos:prefLabel>
+    <skos:prefLabel xml:lang="vi">sản phẩm thứ cấp</skos:prefLabel>
+    <skos:prefLabel xml:lang="te">గుంతలు శుభ్రపరచడం</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">by-products</skos:prefLabel>
+    <skos:prefLabel xml:lang="nb">biprodukter</skos:prefLabel>
+    <skos:prefLabel xml:lang="fa">فراورده‌های فرعی</skos:prefLabel>
+    <skos:prefLabel xml:lang="sr">нуспроизводи</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt-BR">subproduto</skos:prefLabel>
+    <skos:prefLabel xml:lang="uk">побічні продукти</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">subproduto</skos:prefLabel>
+    <skos:prefLabel xml:lang="ms">Produk sampingan</skos:prefLabel>
+    <skos:prefLabel xml:lang="hu">melléktermék</skos:prefLabel>
+    <skos:prefLabel xml:lang="hi">उप-उत्पाद</skos:prefLabel>
+    <skos:prefLabel xml:lang="tr">yan ürün</skos:prefLabel>
+    <skos:prefLabel xml:lang="ja">副産物</skos:prefLabel>
+    <skos:prefLabel xml:lang="ka">თანაპროდუქტი</skos:prefLabel>
+    <skos:prefLabel xml:lang="lo">ຜົນຜະລິດຊ້ອນ</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">منتجات فرعية</skos:prefLabel>
+    <skos:prefLabel xml:lang="pl">Produkt uboczny</skos:prefLabel>
+    <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_2814">
+    <skos:prefLabel xml:lang="th">ผลิตภัณฑ์ไขมัน</skos:prefLabel>
+    <skos:prefLabel xml:lang="ja">脂肪製品</skos:prefLabel>
+    <skos:prefLabel xml:lang="hi">वसा उत्पाद</skos:prefLabel>
+    <skos:prefLabel xml:lang="fa">فرآورده‌هاي چربي</skos:prefLabel>
+    <skos:prefLabel xml:lang="sw">bidhaa za mafuta (kutoka kwa wanyama)</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Productos grasos</skos:prefLabel>
+    <skos:prefLabel xml:lang="tr">yağ ürünü</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">corps gras élaboré</skos:prefLabel>
+    <skos:prefLabel xml:lang="ko">지방산물</skos:prefLabel>
+    <skos:prefLabel xml:lang="te">కొవ్వు ఉత్పాదితాలు</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">fat products</skos:prefLabel>
+    <skos:prefLabel xml:lang="zh">脂肪产品</skos:prefLabel>
+    <skos:prefLabel xml:lang="pl">Produkty tłuszczowe</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">produto gordo</skos:prefLabel>
+    <skos:prefLabel xml:lang="sk">tukové výrobky</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">tukové výrobky</skos:prefLabel>
+    <skos:prefLabel xml:lang="hu">zsírtermék</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Fettprodukt</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Prodotti a base di grassi</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">منتجات الدهون</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">жировые продукты</skos:prefLabel>
+    <skos:prefLabel xml:lang="lo">ຜົນຜະລິດໄຂມັນ</skos:prefLabel>
+    <skos:prefLabel xml:lang="ms">Produk berlemak</skos:prefLabel>
+    <skos:prefLabel xml:lang="uk">жирові продукти</skos:prefLabel>
+    <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:Concept>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_cs_1299486360797">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2003-03-27T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="cs">výrobky</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">13588</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_hi_1299486360693">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1981-01-29T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="hi">उपज</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">13588</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_sk_1299486360430">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2005-12-16T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="sk">výrobky</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_uk_1337156563206">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-05-16T16:22:43Z</dc:created>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-11T20:54:14Z</dc:modified>
+    <skosxl:literalForm xml:lang="uk">продукція</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_en_1299486361157">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1981-01-29T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="en">produce</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">13588</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_fa_1299486360642">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-04-20T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="fa">فراورده</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">13588</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_it_1299486360967">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2006-12-19T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="it">Prodotto</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">13588</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_nn_61e93a78">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-05-29T22:26:45.765+02:00</dc:created>
+    <skosxl:literalForm xml:lang="nn">produkt</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+  </skosxl:Label>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_24887">
+    <skos:prefLabel xml:lang="nb">råvarer</skos:prefLabel>
+    <skos:prefLabel xml:lang="sk">suroviny</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">raw materials</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">suroviny</skos:prefLabel>
+    <skos:prefLabel xml:lang="ja">原料</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Materie prime</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Materias primas</skos:prefLabel>
+    <skos:prefLabel xml:lang="sw">mali ghafi</skos:prefLabel>
+    <skos:prefLabel xml:lang="pl">Surowiec</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">matière première</skos:prefLabel>
+    <skos:prefLabel xml:lang="ko">원료</skos:prefLabel>
+    <skos:prefLabel xml:lang="ro">materie primă</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">مواد خام</skos:prefLabel>
+    <skos:prefLabel xml:lang="fa">مواد خام</skos:prefLabel>
+    <skos:prefLabel xml:lang="hu">nyersanyag</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">raaka-aineet</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">råvaror</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">сырье</skos:prefLabel>
+    <skos:prefLabel xml:lang="uk">сировинні матеріали</skos:prefLabel>
+    <skos:prefLabel xml:lang="lo">ວັດຖຸດິບ</skos:prefLabel>
+    <skos:prefLabel xml:lang="tr">ham madde</skos:prefLabel>
+    <skos:prefLabel xml:lang="ka">ნედლეული</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Rohmaterial</skos:prefLabel>
+    <skos:prefLabel xml:lang="zh">原材料</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt-BR">matéria prima</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">matéria prima</skos:prefLabel>
+    <skos:prefLabel xml:lang="th">วัตถุดิบ</skos:prefLabel>
+    <skos:prefLabel xml:lang="hi">कच्चा माल/उपादान</skos:prefLabel>
+    <ns0:produces rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:Concept>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_pl_1299486361090">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2006-12-19T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="pl">Produkty</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">13588</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_it_1299486360189">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2006-12-27T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="it">Prodotti</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+  </skosxl:Label>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_15739">
+    <skos:prefLabel xml:lang="it">Prodotti freschi</skos:prefLabel>
+    <skos:prefLabel xml:lang="ro">produse proaspete</skos:prefLabel>
+    <skos:prefLabel xml:lang="sw">bidhaa bichi</skos:prefLabel>
+    <skos:prefLabel xml:lang="ko">신선제품</skos:prefLabel>
+    <skos:prefLabel xml:lang="hu">friss termék</skos:prefLabel>
+    <skos:prefLabel xml:lang="uk">свіжа продукція</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">свежая продукция</skos:prefLabel>
+    <skos:prefLabel xml:lang="hi">ताजे उत्पाद</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Productos frescos</skos:prefLabel>
+    <skos:prefLabel xml:lang="th">ผลิตภัณฑ์สด</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">fresh products</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">produit frais</skos:prefLabel>
+    <skos:prefLabel xml:lang="ms">Produk segar</skos:prefLabel>
+    <skos:prefLabel xml:lang="sk">čerstvé výrobky</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">منتجات طازجة</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">čerstvé výrobky</skos:prefLabel>
+    <skos:prefLabel xml:lang="pl">Produkt świeży</skos:prefLabel>
+    <skos:prefLabel xml:lang="sr">свежи производи</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Frischprodukt</skos:prefLabel>
+    <skos:prefLabel xml:lang="te">తాజా ఉత్పాదనలు</skos:prefLabel>
+    <skos:prefLabel xml:lang="tr">taze ürün</skos:prefLabel>
+    <skos:prefLabel xml:lang="ja">生鮮食品</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt-BR">produto fresco</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">produto fresco</skos:prefLabel>
+    <skos:prefLabel xml:lang="fa">فراورده‌های تازه</skos:prefLabel>
+    <skos:prefLabel xml:lang="zh">生鲜食品</skos:prefLabel>
+    <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:Concept>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_de_1299486361292">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1997-03-11T00:00:00Z</dc:created>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-03-01T16:29:20Z</dc:modified>
+    <skosxl:literalForm xml:lang="de">Erzeugnis</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">13588</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_ro_3e57e681">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-09-22T10:47:17Z</dc:created>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-03-15T12:48:47Z</dc:modified>
+    <skosxl:literalForm xml:lang="ro">produse</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+  </skosxl:Label>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_ko_1299486360250">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-12-02T00:00:00Z</dc:created>
+    <skosxl:literalForm xml:lang="ko">생산물</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+  </skosxl:Label>
+
+  <skos:ConceptScheme rdf:about="http://aims.fao.org/aos/agrovoc">
+    <skos:prefLabel xml:lang="en">AGROVOC</skos:prefLabel>
+    <skos:hasTopConcept rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+  </skos:ConceptScheme>
+
+  <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_fr_1299486360110">
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1981-01-21T00:00:00Z</dc:created>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-09-01T11:21:51</dc:modified>
+    <skosxl:literalForm xml:lang="fr">produit</skosxl:literalForm>
+    <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+  </skosxl:Label>
+
+  <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_6211">
+    <skos:narrower rdf:resource="http://aims.fao.org/aos/agrovoc/c_438"/>
+    <skos:narrower>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_33517">
+        <skos:prefLabel xml:lang="sw">bidhaa zisizo za chakula</skos:prefLabel>
+        <skos:prefLabel xml:lang="lo">ຜົນຜະລິດບໍ່ແມ່ນອາຫານ</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt">produto não alimentar</skos:prefLabel>
+        <skos:prefLabel xml:lang="hu">nem élelmiszeripari termék</skos:prefLabel>
+        <skos:prefLabel xml:lang="th">ผลิตภัณฑ์ที่ไม่ใช่อาหาร</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Prodotti non alimentari</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">produit non alimentaire</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">non-food products</skos:prefLabel>
+        <skos:prefLabel xml:lang="ja">非食品生産物</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">gıda dışı ürün</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">nepotravinářské produkty</skos:prefLabel>
+        <skos:prefLabel xml:lang="ms">Produk bukan makanan</skos:prefLabel>
+        <skos:prefLabel xml:lang="hi">अखाद्य उत्पाद</skos:prefLabel>
+        <skos:prefLabel xml:lang="ru">непищевая продукция</skos:prefLabel>
+        <skos:prefLabel xml:lang="sr">непрехранбени производи</skos:prefLabel>
+        <skos:prefLabel xml:lang="ar">منتجات غير غذائية</skos:prefLabel>
+        <skos:prefLabel xml:lang="sk">nepotravinárske výrobky</skos:prefLabel>
+        <skos:prefLabel xml:lang="zh">非食品产品</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Productos no alimentarios</skos:prefLabel>
+        <skos:prefLabel xml:lang="uk">нехарчова продукція</skos:prefLabel>
+        <skos:prefLabel xml:lang="ka">არასასურსათო პროდუქტი</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Non-Food-Produkt</skos:prefLabel>
+        <skos:prefLabel xml:lang="ro">produse nealimentare</skos:prefLabel>
+        <skos:prefLabel xml:lang="pl">Produkty nieżywnościowe</skos:prefLabel>
+        <skos:prefLabel xml:lang="fa">فراورده‌های غیر غذایی</skos:prefLabel>
+        <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:narrower>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_5331">
+        <skos:prefLabel xml:lang="te">నూనె ఉత్పత్తులు</skos:prefLabel>
+        <skos:prefLabel xml:lang="pl">Produkty olejarskie</skos:prefLabel>
+        <skos:prefLabel xml:lang="ro">produse oleaginoase</skos:prefLabel>
+        <skos:prefLabel xml:lang="uk">олійножирова продукція</skos:prefLabel>
+        <skos:prefLabel xml:lang="th">ผลิตภัณฑ์น้ำมัน</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">oil products</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">produit oléagineux</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Ölprodukt</skos:prefLabel>
+        <skos:prefLabel xml:lang="fa">فراورده‌هاي روغني</skos:prefLabel>
+        <skos:prefLabel xml:lang="sr">уљани производи</skos:prefLabel>
+        <skos:prefLabel xml:lang="sk">olejnaté produkty</skos:prefLabel>
+        <skos:prefLabel xml:lang="hu">olajtermék</skos:prefLabel>
+        <skos:prefLabel xml:lang="ru">масложировая продукция</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">olejnaté produkty</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Productos oleaginosos</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">yağ ürünü</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Prodotti oleari</skos:prefLabel>
+        <skos:prefLabel xml:lang="ar">منتوجات زيتية</skos:prefLabel>
+        <skos:prefLabel xml:lang="ko">기름생산물</skos:prefLabel>
+        <skos:prefLabel xml:lang="zh">油脂制品</skos:prefLabel>
+        <skos:prefLabel xml:lang="hi">तेल उत्पाद</skos:prefLabel>
+        <skos:prefLabel xml:lang="ms">Produk minyak</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt">produto oleaginoso</skos:prefLabel>
+        <skos:prefLabel xml:lang="lo">ຜະລິດຕະພັນນ້ຳມັນ</skos:prefLabel>
+        <skos:prefLabel xml:lang="ja">油製品</skos:prefLabel>
+        <skos:prefLabel xml:lang="sw">bidhaa za mafuta</skos:prefLabel>
+        <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:narrower rdf:resource="http://aims.fao.org/aos/agrovoc/c_8678"/>
+    <skos:narrower>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_49979">
+        <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+        <skos:prefLabel xml:lang="uk">синтетична продукція</skos:prefLabel>
+        <skos:prefLabel xml:lang="zh">人造产品</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">künstliches Produkt</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">produit artificiel</skos:prefLabel>
+        <skos:prefLabel xml:lang="ms">Produk tiruan</skos:prefLabel>
+        <skos:prefLabel xml:lang="ro">produse artificiale</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt">produto artificial</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">umělé výrobky</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">yapay ürün</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Prodotti artificiali</skos:prefLabel>
+        <skos:prefLabel xml:lang="ar">منتجات اصطناعية</skos:prefLabel>
+        <skos:prefLabel xml:lang="sr">вештачки производи</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Productos artificiales</skos:prefLabel>
+        <skos:prefLabel xml:lang="sw">bidhaa bandia</skos:prefLabel>
+        <skos:prefLabel xml:lang="ru">синтетическая продукция</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">artificial products</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:narrower rdf:resource="http://aims.fao.org/aos/agrovoc/c_15739"/>
+    <skos:narrower rdf:resource="http://aims.fao.org/aos/agrovoc/c_330684"/>
+    <skos:narrower rdf:resource="http://aims.fao.org/aos/agrovoc/c_2814"/>
+    <skos:narrower>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_8171">
+        <skos:prefLabel xml:lang="hu">növényi termék</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">plant products</skos:prefLabel>
+        <skos:prefLabel xml:lang="pl">Produkt roślinny</skos:prefLabel>
+        <skos:prefLabel xml:lang="ms">Produk tumbuhan</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Productos de origen vegetal</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">produit végétal</skos:prefLabel>
+        <skos:prefLabel xml:lang="sr">биљни производи</skos:prefLabel>
+        <skos:prefLabel xml:lang="hi">पौध उत्पाद</skos:prefLabel>
+        <skos:prefLabel xml:lang="ru">продукция растениеводства</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt">produto de origem vegetal</skos:prefLabel>
+        <skos:prefLabel xml:lang="th">ผลิตผลจากพืช</skos:prefLabel>
+        <skos:prefLabel xml:lang="ko">식물생산물</skos:prefLabel>
+        <skos:prefLabel xml:lang="zh">植物产品</skos:prefLabel>
+        <skos:prefLabel xml:lang="ro">produse de origine vegetală</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">rostlinné výrobky</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt-BR">produto vegetal</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">bitkisel ürün</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">pflanzliches Produkt</skos:prefLabel>
+        <skos:prefLabel xml:lang="nb">planteprodukter</skos:prefLabel>
+        <skos:prefLabel xml:lang="da">planteprodukter</skos:prefLabel>
+        <skos:prefLabel xml:lang="fa">فراورده‌های گیاهی</skos:prefLabel>
+        <skos:prefLabel xml:lang="sw">bidhaa za mimea</skos:prefLabel>
+        <skos:prefLabel xml:lang="lo">ຜະລິດຕະພັນພືດ</skos:prefLabel>
+        <skos:prefLabel xml:lang="uk">продукти рослинного походження</skos:prefLabel>
+        <skos:prefLabel xml:lang="sk">rastlinné výrobky</skos:prefLabel>
+        <skos:prefLabel xml:lang="ka">მცენარეული პროდუქტი</skos:prefLabel>
+        <skos:prefLabel xml:lang="ar">منتجات نباتية</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Prodotti di origine vegetale</skos:prefLabel>
+        <skos:prefLabel xml:lang="ja">植物生産物</skos:prefLabel>
+        <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:narrower>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_2843">
+        <skos:prefLabel xml:lang="sw">vyakula vya wanyama.</skos:prefLabel>
+        <skos:prefLabel xml:lang="hu">takarmány</skos:prefLabel>
+        <skos:prefLabel xml:lang="pl">Pasza</skos:prefLabel>
+        <skos:prefLabel xml:lang="ko">사료</skos:prefLabel>
+        <skos:prefLabel xml:lang="ar">أعلاف</skos:prefLabel>
+        <skos:prefLabel xml:lang="ru">корма</skos:prefLabel>
+        <skos:prefLabel xml:lang="te">దాణాలు</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">feeds</skos:prefLabel>
+        <skos:prefLabel xml:lang="th">อาหารสัตว์</skos:prefLabel>
+        <skos:prefLabel xml:lang="hi">खाद्य</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Futtermittel</skos:prefLabel>
+        <skos:prefLabel xml:lang="lo">ອາຫານສັດ</skos:prefLabel>
+        <skos:prefLabel xml:lang="sr">сточна храна</skos:prefLabel>
+        <skos:prefLabel xml:lang="sk">krmivá</skos:prefLabel>
+        <skos:prefLabel xml:lang="ja">飼料</skos:prefLabel>
+        <skos:prefLabel xml:lang="zh">饲料</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Piensos</skos:prefLabel>
+        <skos:prefLabel xml:lang="ro">furaje</skos:prefLabel>
+        <skos:prefLabel xml:lang="vi">thức ăn</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">aliment pour animaux</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Alimenti per gli animali</skos:prefLabel>
+        <skos:prefLabel xml:lang="fa">دام‌خوراک‌ها</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt-BR">alimento para animais</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt">alimento para animais</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">krmiva</skos:prefLabel>
+        <skos:prefLabel xml:lang="uk">корми</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">yem</skos:prefLabel>
+        <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:narrower rdf:resource="http://aims.fao.org/aos/agrovoc/c_9b1bc8be"/>
+    <skos:narrower rdf:resource="http://aims.fao.org/aos/agrovoc/c_3049"/>
+    <skos:narrower>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_6519">
+        <skos:prefLabel xml:lang="pl">Żywice</skos:prefLabel>
+        <skos:prefLabel xml:lang="lo">ຢາງເຣຊິນ</skos:prefLabel>
+        <skos:prefLabel xml:lang="sr">смола</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Resinas</skos:prefLabel>
+        <skos:prefLabel xml:lang="sk">živice</skos:prefLabel>
+        <skos:prefLabel xml:lang="ar">راتنجات</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Harz</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">reçine</skos:prefLabel>
+        <skos:prefLabel xml:lang="nb">resiner</skos:prefLabel>
+        <skos:prefLabel xml:lang="zh">树脂</skos:prefLabel>
+        <skos:prefLabel xml:lang="hi">किशमिश</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt-BR">resina</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt">resina</skos:prefLabel>
+        <skos:prefLabel xml:lang="uk">смоли</skos:prefLabel>
+        <skos:prefLabel xml:lang="ru">смолы</skos:prefLabel>
+        <skos:prefLabel xml:lang="fa">رزین‌ها</skos:prefLabel>
+        <skos:prefLabel xml:lang="ms">Damar</skos:prefLabel>
+        <skos:prefLabel xml:lang="ja">樹脂</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">resins</skos:prefLabel>
+        <skos:prefLabel xml:lang="ro">răşini</skos:prefLabel>
+        <skos:prefLabel xml:lang="th">ยางเรซิน</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">pryskyřice</skos:prefLabel>
+        <skos:prefLabel xml:lang="sw">utomvu</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">résine</skos:prefLabel>
+        <skos:prefLabel xml:lang="ko">수지</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Resine</skos:prefLabel>
+        <skos:prefLabel xml:lang="hu">gyanta</skos:prefLabel>
+        <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:narrower rdf:resource="http://aims.fao.org/aos/agrovoc/c_1172"/>
+    <skos:narrower>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_dfdb4a3f">
+        <skos:prefLabel xml:lang="de">nachhaltige Produkte</skos:prefLabel>
+        <skos:prefLabel xml:lang="uk">екологічні продукти</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">sustainable products</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Prodotti sostenibili</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">éco-produit</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">udržitelné produkty</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">sürdürülebilir ürün</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Eco-productos</skos:prefLabel>
+        <skos:prefLabel xml:lang="sr">еколошки производи</skos:prefLabel>
+        <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:narrower>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_56f8d869">
+        <skos:prefLabel xml:lang="ko">제품구분</skos:prefLabel>
+        <skos:prefLabel xml:lang="sk">skupiny výrobkov</skos:prefLabel>
+        <skos:prefLabel xml:lang="ja">生産物グループ</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">ürün grubu</skos:prefLabel>
+        <skos:prefLabel xml:lang="th">กลุ่มผลิตภัณฑ์</skos:prefLabel>
+        <skos:prefLabel xml:lang="ru">группы товаров</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt">grupo de produtos</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Grupos de productos</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">groupe de produits</skos:prefLabel>
+        <skos:prefLabel xml:lang="ro">grupe de produse</skos:prefLabel>
+        <skos:prefLabel xml:lang="nb">produktgrupper</skos:prefLabel>
+        <skos:prefLabel xml:lang="zh">产品组</skos:prefLabel>
+        <skos:prefLabel xml:lang="hu">termékcsoport</skos:prefLabel>
+        <skos:prefLabel xml:lang="sw">vikundi vya bidhaa</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">product groups</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Produktgruppe</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">skupiny produktů</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Gruppi di prodotti</skos:prefLabel>
+        <skos:prefLabel xml:lang="hi">उत्पाद वर्ग</skos:prefLabel>
+        <skos:prefLabel xml:lang="fa">گروه‌هاي فراورده</skos:prefLabel>
+        <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:narrower rdf:resource="http://aims.fao.org/aos/agrovoc/c_27804"/>
+    <skos:narrower>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_33118">
+        <skos:prefLabel xml:lang="en">stored products</skos:prefLabel>
+        <skos:prefLabel xml:lang="fa">فراورده‌های انبارشده</skos:prefLabel>
+        <skos:prefLabel xml:lang="ro">produse depozitate</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">denrée entreposée</skos:prefLabel>
+        <skos:prefLabel xml:lang="zh">储藏物</skos:prefLabel>
+        <skos:prefLabel xml:lang="sr">ускладиштени производи</skos:prefLabel>
+        <skos:prefLabel xml:lang="sk">skladované produkty</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">skladované produkty</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt-BR">produto armazenado</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt">produto armazenado</skos:prefLabel>
+        <skos:prefLabel xml:lang="th">ผลิตภัณฑ์ที่เก็บรักษา</skos:prefLabel>
+        <skos:prefLabel xml:lang="uk">збережувана продукція</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">depolanmış ürün</skos:prefLabel>
+        <skos:prefLabel xml:lang="hu">tárolt termék</skos:prefLabel>
+        <skos:prefLabel xml:lang="ru">хранящаяся продукция</skos:prefLabel>
+        <skos:prefLabel xml:lang="sw">bidhaa zilizohifadhiwa</skos:prefLabel>
+        <skos:prefLabel xml:lang="pl">Produkt przechowywany</skos:prefLabel>
+        <skos:prefLabel xml:lang="lo">ຜະລິດຕະພັນທີ່ເກັບຮັກສາ</skos:prefLabel>
+        <skos:prefLabel xml:lang="hi">संग्रहित उत्पाद</skos:prefLabel>
+        <skos:prefLabel xml:lang="ar">منتجات مخزونة</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Prodotti immagazzinati</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Productos almacenados</skos:prefLabel>
+        <skos:prefLabel xml:lang="ja">貯蔵製品</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Vorrat</skos:prefLabel>
+        <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:narrower>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_06d978c8">
+        <skos:prefLabel xml:lang="ro">produse industriale</skos:prefLabel>
+        <skos:prefLabel xml:lang="ar">المنتجات الصناعية</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">industrial products</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Prodotti industriali</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">endüstriyel ürün</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Productos industriales</skos:prefLabel>
+        <skos:prefLabel xml:lang="zh">工业产品</skos:prefLabel>
+        <skos:prefLabel xml:lang="uk">промислова продукіця</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">průmyslové výrobky</skos:prefLabel>
+        <skos:prefLabel xml:lang="sr">индустријски производи</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">produit industriel</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Industrieerzeugnis</skos:prefLabel>
+        <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:narrower rdf:resource="http://aims.fao.org/aos/agrovoc/c_8323048d"/>
+    <skos:narrower rdf:resource="http://aims.fao.org/aos/agrovoc/c_15742"/>
+    <skos:narrower>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_37be8c04">
+        <skos:prefLabel xml:lang="it">prodotti di base</skos:prefLabel>
+        <skos:prefLabel xml:lang="ja">産物</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">emtia</skos:prefLabel>
+        <skos:prefLabel xml:lang="hi">जिंस</skos:prefLabel>
+        <skos:prefLabel xml:lang="ro">produse de bază</skos:prefLabel>
+        <skos:prefLabel xml:lang="ru">сырьевые товары</skos:prefLabel>
+        <skos:prefLabel xml:lang="sr">робни производи</skos:prefLabel>
+        <skos:prefLabel xml:lang="hu">áru</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Productos básicos</skos:prefLabel>
+        <skos:prefLabel xml:lang="uk">сировинні товари</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">produit de base</skos:prefLabel>
+        <skos:prefLabel xml:lang="fi">hyödykkeet</skos:prefLabel>
+        <skos:prefLabel xml:lang="ko">상품</skos:prefLabel>
+        <skos:prefLabel xml:lang="sk">komodity</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">komodity</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Handelsware</skos:prefLabel>
+        <skos:prefLabel xml:lang="nb">varer</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">commodities</skos:prefLabel>
+        <skos:prefLabel xml:lang="fa">كالاها</skos:prefLabel>
+        <skos:prefLabel xml:lang="nl">basisproducten</skos:prefLabel>
+        <skos:prefLabel xml:lang="ar">السلع الأساسية</skos:prefLabel>
+        <skos:prefLabel xml:lang="zh">商品</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt">produto de base</skos:prefLabel>
+        <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:narrower>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_3032">
+        <skos:broader rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+        <skos:prefLabel xml:lang="ar">أغذية</skos:prefLabel>
+        <skos:prefLabel xml:lang="te">ఆహారాలు</skos:prefLabel>
+        <skos:prefLabel xml:lang="hi">भोजन</skos:prefLabel>
+        <skos:prefLabel xml:lang="zh">食品</skos:prefLabel>
+        <skos:prefLabel xml:lang="ja">食品</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Alimentos</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">produit alimentaire</skos:prefLabel>
+        <skos:prefLabel xml:lang="hu">élelmiszer</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">gıda</skos:prefLabel>
+        <skos:prefLabel xml:lang="sw">vyakula</skos:prefLabel>
+        <skos:prefLabel xml:lang="ro">produse alimentare</skos:prefLabel>
+        <skos:prefLabel xml:lang="ka">სურსათი</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Lebensmittel</skos:prefLabel>
+        <skos:prefLabel xml:lang="sk">potraviny</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Alimenti</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">potraviny</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt-BR">alimento</skos:prefLabel>
+        <skos:prefLabel xml:lang="th">อาหาร</skos:prefLabel>
+        <skos:prefLabel xml:lang="ru">продукты питания</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt">alimento</skos:prefLabel>
+        <skos:prefLabel xml:lang="vi">thực phẩm</skos:prefLabel>
+        <skos:prefLabel xml:lang="ms">Makanan</skos:prefLabel>
+        <skos:prefLabel xml:lang="uk">харчові продукти</skos:prefLabel>
+        <skos:prefLabel xml:lang="fa">غذاها</skos:prefLabel>
+        <skos:prefLabel xml:lang="ko">식품</skos:prefLabel>
+        <skos:prefLabel xml:lang="sr">храна</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">foods</skos:prefLabel>
+        <skos:prefLabel xml:lang="lo">ທັນຍາຫານ</skos:prefLabel>
+        <skos:prefLabel xml:lang="pl">Żywność</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:prefLabel xml:lang="nb">produkter</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">produkter</skos:prefLabel>
+    <skos:prefLabel xml:lang="nn">produkt</skos:prefLabel>
+    <skos:prefLabel xml:lang="vi">sản phẩm</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">منتجات</skos:prefLabel>
+    <skos:prefLabel xml:lang="tr">mamül ürün</skos:prefLabel>
+    <skos:prefLabel xml:lang="ro">produse</skos:prefLabel>
+    <skos:prefLabel xml:lang="hu">termék</skos:prefLabel>
+    <skos:prefLabel xml:lang="hi">उत्पाद</skos:prefLabel>
+    <skos:prefLabel xml:lang="sr">производи</skos:prefLabel>
+    <skos:prefLabel xml:lang="lo">ຜະລິດຕະພັນ</skos:prefLabel>
+    <skos:prefLabel xml:lang="es">Productos</skos:prefLabel>
+    <skos:prefLabel xml:lang="zh">产品</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt-BR">produtos</skos:prefLabel>
+    <skos:prefLabel xml:lang="sw">bidhaa</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Produkt</skos:prefLabel>
+    <skos:prefLabel xml:lang="pl">Produkt</skos:prefLabel>
+    <skos:prefLabel xml:lang="ka">პროდუქტი</skos:prefLabel>
+    <skos:prefLabel xml:lang="cs">produkty</skos:prefLabel>
+    <skos:prefLabel xml:lang="th">ผลิตภัณฑ์</skos:prefLabel>
+    <skos:prefLabel xml:lang="ko">생산물</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">produit</skos:prefLabel>
+    <skos:prefLabel xml:lang="ru">продукция</skos:prefLabel>
+    <skos:prefLabel xml:lang="uk">продукти</skos:prefLabel>
+    <skos:prefLabel xml:lang="fa">فراورده‌ها</skos:prefLabel>
+    <skos:prefLabel xml:lang="sk">výrobky</skos:prefLabel>
+    <skos:prefLabel xml:lang="pt">produto</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">products</skos:prefLabel>
+    <skos:prefLabel xml:lang="ms">Produk</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Prodotti</skos:prefLabel>
+    <skos:prefLabel xml:lang="ja">生産物</skos:prefLabel>
+    <skos:altLabel xml:lang="en">produce</skos:altLabel>
+    <skos:altLabel xml:lang="tr">üretme</skos:altLabel>
+    <skos:altLabel xml:lang="hi">उपज</skos:altLabel>
+    <skos:altLabel xml:lang="zh">生产加工</skos:altLabel>
+    <skos:altLabel xml:lang="uk">продукція</skos:altLabel>
+    <skos:altLabel xml:lang="cs">výrobky</skos:altLabel>
+    <skos:altLabel xml:lang="ka">ნაწარმი</skos:altLabel>
+    <skos:altLabel xml:lang="pl">Produkty</skos:altLabel>
+    <skos:altLabel xml:lang="it">Prodotto</skos:altLabel>
+    <skos:altLabel xml:lang="fa">فراورده</skos:altLabel>
+    <skos:altLabel xml:lang="hu">termény</skos:altLabel>
+    <skos:altLabel xml:lang="de">Erzeugnis</skos:altLabel>
+    <skos:altLabel xml:lang="th">ผลผลิตทางการเกษตร</skos:altLabel>
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_hu_1299486360161">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2006-12-06T00:00:00Z</dc:created>
+        <skosxl:literalForm xml:lang="hu">termék</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_ka_1b0917d0">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-18T20:31:51.107+01:00</dc:created>
+        <skosxl:literalForm xml:lang="ka">პროდუქტი</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_pl_1299486360318">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2006-12-19T00:00:00Z</dc:created>
+        <skosxl:literalForm xml:lang="pl">Produkt</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_nb_21160880"/>
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_sv_9824533e">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-05-29T22:27:25.807+02:00</dc:created>
+        <skosxl:literalForm xml:lang="sv">produkter</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_ko_1299486360250"/>
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_ja_1299486360219">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2005-08-09T00:00:00Z</dc:created>
+        <skosxl:literalForm xml:lang="ja">生産物</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_ru_1299486360391"/>
+    <skosxl:prefLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_nn_61e93a78"/>
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_pt_1299486360354">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1998-08-04T00:00:00Z</dc:created>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-04-02T18:38:27</dc:modified>
+        <skosxl:literalForm xml:lang="pt">produto</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_ar_1299486359995">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2002-12-12T00:00:00Z</dc:created>
+        <skosxl:literalForm xml:lang="ar">منتجات</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_zh_1299486360515">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2002-12-12T00:00:00Z</dc:created>
+        <skosxl:literalForm xml:lang="zh">产品</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_sw_4412e435">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-25T15:03:42Z</dc:created>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-12-18T13:26:45</dc:modified>
+        <skosxl:literalForm xml:lang="sw">bidhaa</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_fa_1299486360086">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-04-20T00:00:00Z</dc:created>
+        <skosxl:literalForm xml:lang="fa">فراورده‌ها</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_vi_30b9040e">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-31T12:23:42Z</dc:created>
+        <skosxl:literalForm xml:lang="vi">sản phẩm</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_cs_1299486360012">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2003-03-27T00:00:00Z</dc:created>
+        <skosxl:literalForm xml:lang="cs">produkty</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_es_1299486360065"/>
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_th_1299486360472">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2005-08-19T00:00:00Z</dc:created>
+        <skosxl:literalForm xml:lang="th">ผลิตภัณฑ์</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_it_1299486360189"/>
+    <skosxl:prefLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_en_1299486360046"/>
+    <skosxl:prefLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_fr_1299486360110"/>
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_lo_1299486360283">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2005-12-16T00:00:00Z</dc:created>
+        <skosxl:literalForm xml:lang="lo">ຜະລິດຕະພັນ</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_de_1299486360029">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1996-12-24T00:00:00Z</dc:created>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-03-01T16:29:20Z</dc:modified>
+        <skosxl:literalForm xml:lang="de">Produkt</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_tr_1329138831594">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-13T21:13:51Z</dc:created>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-22T14:07:37Z</dc:modified>
+        <skosxl:literalForm xml:lang="tr">mamül ürün</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_ro_3e57e681"/>
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_ms_1310373189569">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-07-11T16:33:09Z</dc:created>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-08-21T17:50:19Z</dc:modified>
+        <skosxl:literalForm xml:lang="ms">Produk</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">1310373189569</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_pt-BR_3999bdbe">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-29T15:22:35</dc:created>
+        <skosxl:literalForm xml:lang="pt-BR">produtos</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_hi_1299486360135">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1981-01-09T00:00:00Z</dc:created>
+        <skosxl:literalForm xml:lang="hi">उत्पाद</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_uk_3bbe8718">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-02-11T19:50:44Z</dc:created>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-11T20:54:04Z</dc:modified>
+        <skosxl:literalForm xml:lang="uk">продукти</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">6211</skos:notation>
+      </skosxl:Label>
+    </skosxl:prefLabel>
+
+    <skosxl:prefLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_sr_5329557b"/>
+    <skosxl:prefLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_sk_1299486360430"/>
+    <skos:scopeNote xml:lang="es">Use este descriptor solamente cuando otro más específico no sea el adecuado</skos:scopeNote>
+    <skos:scopeNote xml:lang="cs">Pokud možno použít specifiètìjší deskriptor</skos:scopeNote>
+    <skos:scopeNote xml:lang="lo">ໃຫ້ໃຊ້ຄຳສັບທີ່ມີຄວາມໝາຍສະເພາະເຈາະຈົງກວ່າ ເມື່ອເຫັນວ່າເໝາະສົມ</skos:scopeNote>
+    <skos:scopeNote xml:lang="th">ควรใช้คำที่เฉพาะเจาะจงกว่าเมื่อสามารถใช้ได้</skos:scopeNote>
+    <skos:scopeNote xml:lang="hu">Ha lehetséges, pontosabb meghatározást használjunk</skos:scopeNote>
+    <skos:scopeNote xml:lang="pl">Używaj specyficznych deskryptorów w miarę potrzeby</skos:scopeNote>
+    <skos:scopeNote xml:lang="fa">در صورت لزوم از توصیفگر خاص‌تری استفاده کنید.</skos:scopeNote>
+    <skos:scopeNote xml:lang="de">Spezifischeren Deskriptor benutzen, falls geeignet</skos:scopeNote>
+    <skos:scopeNote xml:lang="en">Use more specific descriptor when possible</skos:scopeNote>
+    <skos:scopeNote xml:lang="fr">Utiliser un ou des descripteurs plus spécifiques si possible</skos:scopeNote>
+    <skos:scopeNote xml:lang="it">Usare il descrittore più specifico possibile</skos:scopeNote>
+    <skos:scopeNote xml:lang="pt">Usar descritor mais específico sempre que possível</skos:scopeNote>
+    <skosxl:altLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_zh_1299486360909">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2002-12-12T00:00:00Z</dc:created>
+        <skosxl:literalForm xml:lang="zh">生产加工</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">13588</skos:notation>
+      </skosxl:Label>
+    </skosxl:altLabel>
+
+    <skosxl:altLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_ka_f5f426dd"/>
+    <skosxl:altLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_it_1299486360967"/>
+    <skosxl:altLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_cs_1299486360797"/>
+    <skosxl:altLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_uk_1337156563206"/>
+    <skosxl:altLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_hu_1299486361027"/>
+    <skosxl:altLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_en_1299486361157"/>
+    <skosxl:altLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_de_1299486361292"/>
+    <skosxl:altLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_hi_1299486360693"/>
+    <skosxl:altLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_tr_13588_1321792642209"/>
+    <skosxl:altLabel>
+      <skosxl:Label rdf:about="http://aims.fao.org/aos/agrovoc/xl_th_1299486360744">
+        <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+        <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2005-08-19T00:00:00Z</dc:created>
+        <skosxl:literalForm xml:lang="th">ผลผลิตทางการเกษตร</skosxl:literalForm>
+        <skos:notation rdf:datatype="http://aims.fao.org/aos/agrovoc/AgrovocCode">13588</skos:notation>
+      </skosxl:Label>
+    </skosxl:altLabel>
+
+    <skosxl:altLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_pl_1299486361090"/>
+    <skosxl:altLabel rdf:resource="http://aims.fao.org/aos/agrovoc/xl_fa_1299486360642"/>
+    <void:inDataset rdf:resource="http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc"/>
+    <ns0:isObjectOfActivity>
+      <skos:Concept rdf:about="http://aims.fao.org/aos/agrovoc/c_16018">
+        <skos:prefLabel xml:lang="sr">развој производа</skos:prefLabel>
+        <skos:prefLabel xml:lang="hi">उत्पाद विकास</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt-BR">desenvolvimento de produto</skos:prefLabel>
+        <skos:prefLabel xml:lang="pt">desenvolvimento de produto</skos:prefLabel>
+        <skos:prefLabel xml:lang="zh">产品开发</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">product development</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Sviluppo del prodotto</skos:prefLabel>
+        <skos:prefLabel xml:lang="tr">ürün geliştirme</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Produktentwicklung</skos:prefLabel>
+        <skos:prefLabel xml:lang="ar">تطوير المنتجات</skos:prefLabel>
+        <skos:prefLabel xml:lang="fa">توسعه تولید</skos:prefLabel>
+        <skos:prefLabel xml:lang="ja">新製品開発</skos:prefLabel>
+        <skos:prefLabel xml:lang="ko">제품개발</skos:prefLabel>
+        <skos:prefLabel xml:lang="ru">разработка продукции</skos:prefLabel>
+        <skos:prefLabel xml:lang="pl">Unowocześnianie produktów</skos:prefLabel>
+        <skos:prefLabel xml:lang="es">Desarrollo de un producto</skos:prefLabel>
+        <skos:prefLabel xml:lang="sk">vývoj výrobku</skos:prefLabel>
+        <skos:prefLabel xml:lang="cs">vývoj výrobku</skos:prefLabel>
+        <skos:prefLabel xml:lang="sw">maendeleo ya bidhaa</skos:prefLabel>
+        <skos:prefLabel xml:lang="th">การพัฒนาผลิตภัณฑ์</skos:prefLabel>
+        <skos:prefLabel xml:lang="hu">termékfejlesztés</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">développement de produit</skos:prefLabel>
+        <ns0:hasObjectOfActivity rdf:resource="http://aims.fao.org/aos/agrovoc/c_6211"/>
+      </skos:Concept>
+    </ns0:isObjectOfActivity>
+
+    <skos:exactMatch rdf:resource="http://zbw.eu/stw/descriptor/10016-0"/>
+    <skos:exactMatch rdf:resource="https://d-nb.info/gnd/4139399-5"/>
+    <skos:exactMatch rdf:resource="https://vocabularyserver.com/cnr/ml/earth/en/xml.php?skosTema=44120"/>
+    <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/6660"/>
+    <skos:topConceptOf rdf:resource="http://aims.fao.org/aos/agrovoc"/>
+    <ns0:isProducedBy rdf:resource="http://aims.fao.org/aos/agrovoc/c_24887"/>
+    <skos:closeMatch rdf:resource="https://lod.nal.usda.gov/nalt/4403"/>
+    <skos:inScheme rdf:resource="http://aims.fao.org/aos/agrovoc"/>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-11-20T20:37:22Z</dc:created>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-31T12:23:42Z</dc:modified>
+  </skos:Concept>
+
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel">
+    <rdfs:comment xml:lang="en">A resource has no more than one value of skos:prefLabel per language tag.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://aims.fao.org/aos/agrontology#isObjectOfActivity">
+    <rdfs:label xml:lang="fr">Est l'objet de l'activité</rdfs:label>
+    <rdfs:label xml:lang="es">Es objeto de la actividad</rdfs:label>
+    <rdfs:label xml:lang="zh">是活动...的对象</rdfs:label>
+    <rdfs:label xml:lang="en">Is object of activity</rdfs:label>
+    <rdfs:label xml:lang="ar">هو محور النشاط</rdfs:label>
+    <rdfs:label xml:lang="ru">является объектом деятельности</rdfs:label>
+    <rdfs:comment xml:lang="en">Y &lt;is object of activity&gt; X. Y is the focus of activity X.  E.g. “wool” &lt;is object of activity&gt; &quot;shearing”, “treaties&quot; &lt;is object of activity&gt; “ratification”.</rdfs:comment>
+    <rdfs:comment xml:lang="es">Y &lt;es objeto de la actividad&gt; X. La actividad Y tiene como foco el concepto X. Ej. “Lana” &lt;es objeto de la actividad&gt; &quot;Esquileo”, “Tratados&quot; &lt;es objeto de la actividad&gt; “Ratificación”. </rdfs:comment>
+    <rdfs:comment xml:lang="zh">X&lt;是活动...的对象&gt;Y。概念X是活动Y关注的对象。例如：“羊毛”&lt;是活动...的对象&gt;“剪毛”，“条约”&lt;是活动...的对象&gt;“批准”。</rdfs:comment>
+    <rdfs:comment xml:lang="ar">ع &lt;هو هدف النشاط&gt; س . ع هو محور النشاط س. 
+على سبيل المثال &quot;الصوف&quot; &lt;هو محور&gt; &quot;الجز&quot; ،
+ &quot;المعاهدات&quot; &lt;هي محور &gt; &quot;التصديق&quot;.</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Y &lt;является объектом деятельности&gt; X. Y является центром деятельности X. Например, &quot;шерсть&quot; &lt;является объектом деятельности&gt; &quot;стрижка&quot;, &quot;пакты&quot; &lt;является объектом деятельности&gt; &quot;ратификация&quot;.</rdfs:comment>
+    <rdfs:comment xml:lang="fr">Y &lt;est l'objet de l'activité&gt; X. Y est le centre de l'activité X. Par exemple, “laine&quot; &lt;est l'objet de l'activité&gt; &quot;tonte&quot;, “traité” &lt;est l'objet de l'activité&gt; “ratification”.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://aims.fao.org/aos/agrontology#causativeRelationship"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://aims.fao.org/aos/agrontology#isProducedBy">
+    <rdfs:label xml:lang="es">Es producido por</rdfs:label>
+    <rdfs:label xml:lang="zh">由...生产</rdfs:label>
+    <rdfs:label xml:lang="ru">производится</rdfs:label>
+    <rdfs:label xml:lang="ar">من إنتاج</rdfs:label>
+    <rdfs:label xml:lang="fr">Est produit par</rdfs:label>
+    <rdfs:label xml:lang="en">Is produced by</rdfs:label>
+    <rdfs:comment xml:lang="ru">X &lt;производится&gt; Y. Ограничьте использование естественными процессами (такими, как растущие на растениях плоды, яйца, молоко), а также химическими процессами. Например, &quot;мед&quot; &lt;производится&gt; &quot;медоносные пчелы&quot;, &quot;картофель (клубни)&quot; &lt;производится&gt; &quot;Solanum tuberosum&quot;. Однако &quot;сыры&quot; &lt;является продуктом&gt; &quot; сыроделие&quot;.</rdfs:comment>
+    <rdfs:comment xml:lang="en">X &lt;is produced by&gt; Y. Restrict use to natural processes (such as fruits growing on plants, eggs, milk) - but also chemical processes. E.g. “honey” &lt;is produced by&gt; “honey bees”, “potatoes” &lt;is produced by&gt; “Solanum tuberosum&quot;. However, “cheese” &lt;product of&gt; “cheese-making”.</rdfs:comment>
+    <rdfs:comment xml:lang="ar">س &lt;يُنتج من قبل&gt; ع. تقييد الاستخدام للعمليات الطبيعية (مثل الفاكهة التي تنمو على النباتات والبيض والحليب) - ولكن أيضًا العمليات الكيميائية 
+على سبيل المثال: &quot;العسل&quot; &lt;يُنتج من قبل&gt; &quot;نحل العسل&quot;
+البطاطا &lt;يُنتج من قبل&gt; &quot;Solanum tuberosum&quot;
+ومع ذلك ، &quot;الجبن&quot; &lt;هو نتاج&gt; &quot;صناعة الجبن&quot;. </rdfs:comment>
+    <rdfs:comment xml:lang="es">X &lt;es producido por&gt; Y. Restringir el uso a los procesos naturales (como los frutos que crecen en las plantas, los huevos, la leche), pero también a los procesos químicos.   Ej. “Miel” &lt;es producido por&gt; “Abeja melífera”, “Papa” &lt;es producido por&gt; “Solanum tuberosum&quot;.  Pero, “Queso” &lt;producto de&gt; “Fabricación del queso”.</rdfs:comment>
+    <rdfs:comment xml:lang="zh">X&lt;由...生产&gt;Y。限用于自然过程（如长在植物上的水果，蛋类，牛奶），也可用于化学过程。例如：“蜂蜜”&lt;由...生产&gt;“蜜蜂”，“马铃薯”&lt;由...生产&gt;“阳芋”。但是，“干酪”&lt;是...的产品&gt;“奶酪制作”。</rdfs:comment>
+    <rdfs:comment xml:lang="fr">X &lt;est produit par&gt; Y. Restreindre l'utilisation aux processus naturels (tels que les fruits poussant sur les plantes, les œufs, le lait) - mais aussi les processus chimiques. Par exemple, &quot;miel&quot; &lt;est produit par&gt; &quot;abeille domestique&quot;, &quot;pomme de terre&quot; &lt;est produit par&gt; &quot;Solanum tuberosum&quot;. Cependant, &quot;fromage&quot; &lt;produit de&gt; &quot;fabrication du fromage&quot;. </rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://aims.fao.org/aos/agrontology#causativeRelationship"/>
+  </rdf:Description>
+
+</rdf:RDF>

@@ -1,0 +1,19 @@
+PREFIX nl: <https://purl.org/nutrilink#>
+PREFIX vaem: <http://www.linkedmodel.org/schema/vaem#>
+PREFIX qudt: <http://qudt.org/schema/qudt#>
+
+select distinct ?gtin ?itemQuantity ?productSize ?productSizeUnit 
+where{ 
+    #item part
+    ?item vaem:name "Broccoli".
+    ?item nl:amount ?itemQuantity. 
+
+    optional {
+        #product part
+        ?item nl:matches ?product. 
+        ?product nl:gtin ?gtin.
+        ?product qudt:hasQuantity ?productQuantity.
+        ?productQuantity qudt:value ?productSize. 
+        ?productQuantity qudt:unit ?productSizeUnit.
+    }
+}

@@ -1,0 +1,17 @@
+PREFIX nl: <https://purl.org/nutrilink#>
+PREFIX vaem: <http://www.linkedmodel.org/schema/vaem#>
+
+#basket is the unique identifier
+#because the date is sanitized to only the day, not the exact timestamp.
+
+select distinct ?basket
+where { 
+    ?userData nl:externalId "USER_IDENTIFIER";
+        nl:segmentId "SEGMENT_ID";
+        nl:isOfUser ?user.
+
+    ?user nl:buysBasket ?basket.
+    ?basket nl:containsItem ?item.
+    }
+ORDER BY DESC(?date)
+LIMIT NUMBEROFBASKET

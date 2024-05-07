@@ -1,0 +1,47 @@
+PREFIX nl: <https://purl.org/nutrilink#>
+PREFIX vaem: <http://www.linkedmodel.org/schema/vaem#>
+PREFIX qudt: <http://qudt.org/schema/qudt#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+#basket is the unique identifier
+#because the date is sanitized to only the day, not the exact timestamp.
+
+select
+distinct ?basket ?date ?itemName ?itemQuantity ?itemPrice ?productQuantityValue
+?ofComValue ?ofComNEnergyKJ ?ofComNSugar ?ofComNSaturatedFat ?ofComNSodium ?ofComPFVPN ?ofComPDietaryFiber 
+?ofComPProtein ?nutrientName ?nutrientValue
+where {
+
+?basket nl:containsItem ?item FILTER (?basket = <BASKET_ID>).
+?basket nl:timestamp ?date.
+?item nl:amount ?itemQuantity.
+?item nl:simplePrice ?itemPrice.
+?item vaem:name ?itemName.
+	
+optional
+    {
+    ?item nl:matches ?product.
+
+    #In this way, it is faster to get the values, but each nutrient takes one row
+    #All nutrients are of unit qudt:GM
+    ?nutrient a nl:Nutrient.
+    ?product nl:containsNutritionInformation ?nutrient.
+    ?nutrient vaem:name ?nutrientName  filter (?nutrientName != "FVPN").
+    ?nutrient qudt:hasQuantity ?nutrientQuantity.
+    ?nutrientQuantity qudt:value ?nutrientValue.
+
+	?product nl:containsNutritionInformation ?ofComDetail.
+    ?ofComDetail nl:ofComValue ?ofComValue.
+	?ofComDetail nl:ofComNEnergyKJ ?ofComNEnergyKJ.
+	?ofComDetail nl:ofComNSugar ?ofComNSugar.
+	?ofComDetail nl:ofComNSaturatedFat ?ofComNSaturatedFat.
+	?ofComDetail nl:ofComNSalt ?ofComNSodium.
+	?ofComDetail nl:ofComPFVPN ?ofComPFVPN.
+	?ofComDetail nl:ofComPDietaryFiber ?ofComPDietaryFiber.
+	?ofComDetail nl:ofComPProtein ?ofComPProtein.
+
+    #All product are of unit qudt:GM
+    ?product qudt:hasQuantity ?productQuantity.
+    ?productQuantity qudt:value ?productQuantityValue.
+    }
+}

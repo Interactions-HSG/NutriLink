@@ -1,0 +1,110 @@
+PREFIX nl: <https://purl.org/nutrilink#>
+PREFIX vaem: <http://www.linkedmodel.org/schema/vaem#>
+PREFIX qudt: <http://qudt.org/schema/qudt#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+#basket is the unique identifier
+#because the date is sanitized to only the day, not the exact timestamp.
+
+select distinct 
+	?basket ?item ?date ?itemName ?gtin ?minorCategoryName ?majorCategoryName ?itemQuantity ?productQuantityValue 
+    ?energyKJValue ?energyKcalValue ?totalCarbohydrateValue ?sugarValue ?totalFatValue 
+	?saturatedFatValue ?saltValue ?sodiumValue ?dietaryFiberValue ?proteinValue ?fvpnValue 
+    ?itemPrice ?ofComValue ?ofComNEnergyKJ ?ofComNSugar ?ofComNSaturatedFat ?ofComNSodium 
+    ?ofComPFVPN  ?ofComPDietaryFiber ?ofComPProtein ?nutriScoreFinal
+where { 
+    ?userData nl:segmentId "SEGMENT_ID";
+        nl:isOfUser ?user;
+        nl:externalId ?id.
+
+    # The BASKETLIST comes from the results from CQ5_a.rq
+    ?user nl:buysBasket ?basket filter (str(?basket) in BASKETLIST).
+
+    ?basket nl:containsItem ?item;
+        nl:timestamp ?date.
+
+	?item nl:matches ?product;
+        nl:amount ?itemQuantity;
+        nl:simplePrice ?itemPrice;
+        vaem:name ?itemName.
+    
+    ?product nl:gtin ?gtin;
+        qudt:hasQuantity ?productQuantity;
+        nl:isOfMinorCategory ?minorCategory;
+        nl:containsNutritionInformation ?nutriScore;
+        nl:containsNutritionInformation ?salt;
+        nl:containsNutritionInformation ?protein;
+        nl:containsNutritionInformation ?energyKJ;
+        nl:containsNutritionInformation ?energyKcal;
+        nl:containsNutritionInformation ?totalCarbohydrate;
+        nl:containsNutritionInformation ?totalFat;
+        nl:containsNutritionInformation ?sugar;
+        nl:containsNutritionInformation ?saturatedFat;
+        nl:containsNutritionInformation ?sodium;
+        nl:containsNutritionInformation ?dietaryFiber;
+        nl:containsNutritionInformation ?FVPN;
+        nl:containsNutritionInformation ?ofComDetail.
+
+    ?productQuantity qudt:value ?productQuantityValue.
+    
+    ?minorCategory nl:isOfMajorCategory ?majorCategory;
+        rdfs:label ?minorCategoryName FILTER (LANG(?minorCategoryName) = "en").
+
+    ?majorCategory rdfs:label ?majorCategoryName FILTER (LANG(?majorCategoryName) = "en").
+
+    ?nutriScore nl:nutriScoreFinal ?nutriScoreFinal. 
+
+    ?salt vaem:name "salt";
+        qudt:hasQuantity ?saltQuantity.
+    ?saltQuantity qudt:value ?saltValue.
+    
+
+    ?protein vaem:name "protein";
+        qudt:hasQuantity ?proteinQuantity.
+    ?proteinQuantity qudt:value ?proteinValue.
+    
+    ?energyKJ vaem:name "energyKJ";
+        qudt:hasQuantity ?energyKJQuantity.
+    ?energyKJQuantity qudt:value ?energyKJValue.
+
+    ?energyKcal vaem:name "energyKcal";
+        qudt:hasQuantity ?energyKcalQuantity.
+    ?energyKcalQuantity qudt:value ?energyKcalValue.
+
+    ?totalCarbohydrate vaem:name "totalCarbohydrate";
+        qudt:hasQuantity ?totalCarbohydrateQuantity.
+    ?totalCarbohydrateQuantity qudt:value ?totalCarbohydrateValue.
+
+    ?totalFat vaem:name "totalFat";
+        qudt:hasQuantity ?totalFatQuantity.
+    ?totalFatQuantity qudt:value ?totalFatValue.
+
+    ?sugar vaem:name "sugar";
+        qudt:hasQuantity ?sugarQuantity.
+    ?sugarQuantity qudt:value ?sugarValue.
+
+    ?saturatedFat vaem:name "saturatedFat";
+        qudt:hasQuantity ?saturatedFatQuantity.
+    ?saturatedFatQuantity qudt:value ?saturatedFatValue.
+    
+    ?sodium vaem:name "sodium";
+        qudt:hasQuantity ?sodiumQuantity.
+    ?sodiumQuantity qudt:value ?sodiumValue.
+    
+    ?dietaryFiber vaem:name "dietaryFiber";
+        qudt:hasQuantity ?dietaryFiberQuantity.
+    ?dietaryFiberQuantity qudt:value ?dietaryFiberValue.
+    
+    ?FVPN vaem:name "FVPN";
+        qudt:hasQuantity ?FVPNQuantity.
+    ?FVPNQuantity qudt:value ?fvpnValue.
+
+    ?ofComDetail nl:ofComValue ?ofComValue;
+        nl:ofComNEnergyKJ ?ofComNEnergyKJ;
+        nl:ofComNSugar ?ofComNSugar;
+        nl:ofComNSaturatedFat ?ofComNSaturatedFat;
+        nl:ofComNSalt ?ofComNSodium;
+        nl:ofComPFVPN ?ofComPFVPN;
+        nl:ofComPDietaryFiber ?ofComPDietaryFiber;
+        nl:ofComPProtein ?ofComPProtein.
+}

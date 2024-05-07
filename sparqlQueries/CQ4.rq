@@ -1,0 +1,39 @@
+PREFIX nl: <https://purl.org/nutrilink#>
+PREFIX vaem: <http://www.linkedmodel.org/schema/vaem#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX qudt: <http://qudt.org/schema/qudt#>
+
+select distinct ?externalId ?bamId ?basketTimestamp ?gtin ?itemName ?itemQuantity ?finalPrice ?productSize ?energyKcalValue ?minorCategoryNameEn where { 
+	#user part 
+    ?user a nl:User.
+    ?user nl:userHash ?userHash.
+    ?piiData nl:isOfUser ?user.
+    ?piiData nl:segmentId ?segmentId FILTER (str(?segmentId) = "SEGMENT_ID").
+    ?piiData nl:bamId ?bamId.
+    ?piiData nl:externalId ?externalId.
+    ?user nl:buysBasket ?basket.
+    
+    #basket part
+    ?basket nl:containsItem ?item.
+    ?basket nl:timestamp ?basketTimestamp.
+    
+    #item part
+    ?item vaem:name ?itemName.
+    ?item nl:amount ?itemQuantity.  #should use qudt
+    ?item nl:price ?price. 
+    ?price qudt:value ?finalPrice.
+    ?item nl:matches ?product.
+    
+    #product part
+    ?product nl:gtin ?gtin.
+    ?product qudt:hasQuantity ?productQuantity.
+    ?productQuantity qudt:value ?productSize. 
+    ?product nl:isOfMinorCategory ?minorCategory.
+    ?minorCategory rdfs:label ?minorCategoryNameEn filter langMatches(lang(?minorCategoryNameEn), "en").
+   
+    ?product nl:containsNutritionInformation ?energyKcal.
+    ?energyKcal vaem:name ?energyKcalName FILTER (str(?energyKcalName) = "energyKcal").
+    ?energyKcal qudt:hasQuantity ?energyKcalQuantity.
+    ?energyKcalQuantity qudt:value ?energyKcalValue.
+
+}

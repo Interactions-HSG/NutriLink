@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/qudt" uri="relatedOntologies/qudt/SCHEMA_QUDT-v2.1.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/qudt" uri="relatedOntologies/SCHEMA_QUDT-v2.1.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.linkedmodel.org/2.0/schema/vaem" uri="relatedOntologies/vaem.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://github.com/FoodOntology/foodon/releases/download/v2024-02-03/foodon.owl" uri="relatedOntologies/foodon.owl"/>
+    <uri id="Imports Wizard Entry" name="http://xmlns.com/foaf/0.1/" uri="relatedOntologies/foaf.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/goodrelations/v1" uri="relatedOntologies/goodRelations.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/goodrelations/v1" uri="goodRelations.owl"/>
+    <uri id="Imports Wizard Entry" name="http://aims.fao.org/aos/agrontology" uri="https://aims.fao.org/aos/agrontology"/>
+    <uri id="Imports Wizard Entry" name="http://xmlns.com/foaf/0.1/" uri="http://xmlns.com/foaf/spec/"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/vocab/unit" uri="unit/VOCAB_QUDT-UNITS-ALL-v2.1.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/extensions/skos" uri="schema/extensions/SCHEMA_QUDT-skos-subset.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/extensions/imports" uri="schema/extensions/SCHEMA_QUDT-graph-imports.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/extensions/functions" uri="schema/extensions/FUNCTIONS_QUDT-v2.1.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/datatype" uri="schema/SCHEMA_QUDT-DATATYPE-v2.1.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/vocab/prefix" uri="http://qudt.org/2.1/vocab/prefix"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/qudt" uri="http://qudt.org/schema/qudt/"/>
+    <uri id="Imports Wizard Entry" name="http://qudt.org/2.1/schema/qudt" uri="http://qudt.org/schema/qudt"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1711030921488" name="http://purl.obolibrary.org/obo/foodon.owl" uri="relatedOntologies/foodon.owl"/>
+    </group>
+</catalog>
