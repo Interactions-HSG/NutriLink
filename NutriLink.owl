@@ -70,7 +70,7 @@
 <http://aims.fao.org/aos/agrontology#produces> rdf:type owl:AnnotationProperty .
 
 
-###  http://example.org#name
+###  http://purl.org/nutrilink#name
 nl:name rdf:type owl:AnnotationProperty ;
            rdfs:subPropertyOf <http://purl.org/dc/terms/title> .
 
@@ -173,49 +173,49 @@ nl:name rdf:type owl:AnnotationProperty ;
 #    Object Properties
 #################################################################
 
-###  http://example.org#abstainsFrom
+###  http://purl.org/nutrilink#abstainsFrom
 nl:abstainsFrom rdf:type owl:ObjectProperty ;
                    rdfs:domain nl:User ;
                    rdfs:range nl:Abstention ;
                    rdfs:comment "Links a User to their food Abstentions."@en .
 
 
-###  http://example.org#belongsToRetailer
+###  http://purl.org/nutrilink#belongsToRetailer
 nl:belongsToRetailer rdf:type owl:ObjectProperty ;
                         rdfs:domain nl:Office ;
                         rdfs:range nl:Retailer ;
                         rdfs:comment "Links a specific supermarket Office to its Retailer."@en .
 
 
-###  http://example.org#buysBasket
+###  http://purl.org/nutrilink#buysBasket
 nl:buysBasket rdf:type owl:ObjectProperty ;
                  rdfs:domain nl:User ;
                  rdfs:range nl:Basket ;
                  rdfs:comment "Links a User to a Basket that was bought by the User."@en .
 
 
-###  http://example.org#containsAllergen
+###  http://purl.org/nutrilink#containsAllergen
 nl:containsAllergen rdf:type owl:ObjectProperty ;
                        rdfs:domain nl:Product ;
                        rdfs:range nl:Allergen ;
                        rdfs:comment "Links a Product to an allergen the Product contains."@en .
 
 
-###  http://example.org#containsInformationOfBasket
+###  http://purl.org/nutrilink#containsInformationOfBasket
 nl:containsInformationOfBasket rdf:type owl:ObjectProperty ;
                                   rdfs:domain nl:BasketAggInfo ;
                                   rdfs:range nl:Basket ;
                                   rdfs:comment "Links aggregated information to a Basket."@en .
 
 
-###  http://example.org#containsItem
+###  http://purl.org/nutrilink#containsItem
 nl:containsItem rdf:type owl:ObjectProperty ;
                    rdfs:domain nl:Basket ;
                    rdfs:range nl:Item ;
                    rdfs:comment "Links a shopped Basket to Items that are contained therein, i.e. to the Items that are shopped in a single transaction."@en .
 
 
-###  http://example.org#containsNutritionInformation
+###  http://purl.org/nutrilink#containsNutritionInformation
 nl:containsNutritionInformation rdf:type owl:ObjectProperty ;
                                    rdfs:domain nl:BasketAggInfo ,
                                                nl:Product ;
@@ -223,28 +223,28 @@ nl:containsNutritionInformation rdf:type owl:ObjectProperty ;
                                    rdfs:comment "Links a Product or Basket Aggregate to its Nutrition Information."@en .
 
 
-###  http://example.org#distributesItem
+###  http://purl.org/nutrilink#distributesItem
 nl:distributesItem rdf:type owl:ObjectProperty ;
                       rdfs:domain nl:Retailer ;
                       rdfs:range nl:Item ;
                       rdfs:comment "Links a Retailer to the Items that can be bought at that Retailer."@en .
 
 
-###  http://example.org#givesRecommendation
+###  http://purl.org/nutrilink#givesRecommendation
 nl:givesRecommendation rdf:type owl:ObjectProperty ;
                           rdfs:domain nl:Dietician ;
                           rdfs:range nl:Recommendation ;
                           rdfs:comment "Links a Dietician to a Recommendation that was given by the Dietician."@en .
 
 
-###  http://example.org#hasImage
+###  http://purl.org/nutrilink#hasImage
 nl:hasImage rdf:type owl:ObjectProperty ;
                rdfs:domain nl:MinorCategory ,
                            nl:Product ;
                rdfs:range <http://purl.org/dc/dcmitype/StillImage> .
 
 
-###  http://example.org#hasWeight
+###  http://purl.org/nutrilink#hasWeight
 nl:hasWeight rdf:type owl:ObjectProperty ;
                 rdfs:domain nl:Item ,
                             nl:Product ,
@@ -253,112 +253,112 @@ nl:hasWeight rdf:type owl:ObjectProperty ;
                 rdfs:comment "Links a Product, Item, or User to their Weight."@en .
 
 
-###  http://example.org#isAboutUser
+###  http://purl.org/nutrilink#isAboutUser
 nl:isAboutUser rdf:type owl:ObjectProperty ;
                   rdfs:domain nl:Recommendation ;
                   rdfs:range nl:User ;
                   rdfs:comment "Links a Recommendation to the User it is about, i.e., the Recommendation is based on the food purchasing data of this User."@en .
 
 
-###  http://example.org#isAllergicTo
+###  http://purl.org/nutrilink#isAllergicTo
 nl:isAllergicTo rdf:type owl:ObjectProperty ;
                    rdfs:domain nl:User ;
                    rdfs:range nl:Allergen ;
                    rdfs:comment "Links a User to an Allergen that is relevant for the User."@en .
 
 
-###  http://example.org#isAtGeoLoc
+###  http://purl.org/nutrilink#isAtGeoLoc
 nl:isAtGeoLoc rdf:type owl:ObjectProperty ;
                  rdfs:domain nl:Office ;
                  rdfs:range nl:OfficeGeoLoc ;
                  rdfs:comment "Links an Office to its geographical location."@en .
 
 
-###  http://example.org#isAvailableIn
+###  http://purl.org/nutrilink#isAvailableIn
 nl:isAvailableIn rdf:type owl:ObjectProperty ;
                     rdfs:domain nl:Product ;
                     rdfs:range nl:MarketRegion ;
                     rdfs:comment "Specifies a Market Region of a Product."@en .
 
 
-###  http://example.org#isFromOffice
+###  http://purl.org/nutrilink#isFromOffice
 nl:isFromOffice rdf:type owl:ObjectProperty ;
                    rdfs:domain nl:Basket ;
                    rdfs:range nl:Office ;
                    rdfs:comment "Specifies which Office a Basket was bought at."@en .
 
 
-###  http://example.org#isInfluencedByDisorder
+###  http://purl.org/nutrilink#isInfluencedByDisorder
 nl:isInfluencedByDisorder rdf:type owl:ObjectProperty ;
                              rdfs:domain nl:User ;
                              rdfs:range nl:Disorder ;
                              rdfs:comment "Links a User to Disorders that are relevant for the User."@en .
 
 
-###  http://example.org#isOfDietCoachMajorCategory
+###  http://purl.org/nutrilink#isOfDietCoachMajorCategory
 nl:isOfDietCoachMajorCategory rdf:type owl:ObjectProperty ;
                                  rdfs:domain nl:DietCoachMinorCategory ;
                                  rdfs:range nl:DietCoachMajorCategory ;
                                  rdfs:comment "Specifies that a DietCoachMinorCategory belongs to a DietCoachMajorCategory."@en .
 
 
-###  http://example.org#isOfDietCoachMinorCategory
+###  http://purl.org/nutrilink#isOfDietCoachMinorCategory
 nl:isOfDietCoachMinorCategory rdf:type owl:ObjectProperty ;
                                  rdfs:domain nl:MinorCategory ;
                                  rdfs:range nl:DietCoachMinorCategory ;
                                  rdfs:comment "Specifies that a MinorCategory belongs to a DietCoachMinorCategory."@en .
 
 
-###  http://example.org#isOfMajorCategory
+###  http://purl.org/nutrilink#isOfMajorCategory
 nl:isOfMajorCategory rdf:type owl:ObjectProperty ;
                         rdfs:domain nl:MinorCategory ;
                         rdfs:range nl:MajorCategory ;
                         rdfs:comment "Specifies that a Minor Food Category belongs to a Major Food Category."@en .
 
 
-###  http://example.org#isOfMinorCategory
+###  http://purl.org/nutrilink#isOfMinorCategory
 nl:isOfMinorCategory rdf:type owl:ObjectProperty ;
                         rdfs:domain nl:Product ;
                         rdfs:range nl:MinorCategory ;
                         rdfs:comment "Specifies that a Product is categorizes as a Minor Food Category."@en .
 
 
-###  http://example.org#isOfNutriScoreCategory
+###  http://purl.org/nutrilink#isOfNutriScoreCategory
 nl:isOfNutriScoreCategory rdf:type owl:ObjectProperty ;
                              rdfs:domain nl:Product ;
                              rdfs:range nl:NutriScoreCategory ;
                              rdfs:comment "Specifies that a Product is categorized as a Nutri-Score category. Different categories correspond to different letters in the Nutri-Score calculation framework."@en .
 
 
-###  http://example.org#isOfUser
+###  http://purl.org/nutrilink#isOfUser
 nl:isOfUser rdf:type owl:ObjectProperty ;
                rdfs:domain nl:PiiData ;
                rdfs:range nl:User ;
                rdfs:comment "Links a User to their Privacy Information data."@en .
 
 
-###  http://example.org#isProducedBy
+###  http://purl.org/nutrilink#isProducedBy
 nl:isProducedBy rdf:type owl:ObjectProperty ;
                    rdfs:domain nl:Product ;
                    rdfs:range nl:Producer ;
                    rdfs:comment "specifies the producer of a product."@en .
 
 
-###  http://example.org#isRecruitedVia
+###  http://purl.org/nutrilink#isRecruitedVia
 nl:isRecruitedVia rdf:type owl:ObjectProperty ;
                      rdfs:domain nl:User ;
                      rdfs:range nl:Collaborator ;
                      rdfs:comment "This is to indicate from the channels of which collaborators the users are recruited."@en .
 
 
-###  http://example.org#isRegisteredIn
+###  http://purl.org/nutrilink#isRegisteredIn
 nl:isRegisteredIn rdf:type owl:ObjectProperty ;
                      rdfs:domain nl:User ;
                      rdfs:range nl:Project ;
                      rdfs:comment "specifies in which project(s) a user participates."@en .
 
 
-###  http://example.org#matches
+###  http://purl.org/nutrilink#matches
 nl:matches rdf:type owl:ObjectProperty ,
                        owl:SymmetricProperty ;
               rdfs:domain nl:Item ;
@@ -366,38 +366,38 @@ nl:matches rdf:type owl:ObjectProperty ,
               rdfs:comment "specifies which product in the EatFit (identifies by global trade item number (GTIN)) the item on receipts refers to (identified by item name)"@en .
 
 
-###  http://example.org#mayContainAllergen
+###  http://purl.org/nutrilink#mayContainAllergen
 nl:mayContainAllergen rdf:type owl:ObjectProperty ;
                          rdfs:domain nl:Product ;
                          rdfs:range nl:Allergen ;
                          rdfs:comment "specifies an allergen that the product may contain."@en .
 
 
-###  http://example.org#productCreatedAt
+###  http://purl.org/nutrilink#productCreatedAt
 nl:productCreatedAt rdf:type owl:ObjectProperty ;
                        rdfs:domain nl:Product .
 
 
-###  http://example.org#productUpdatedAt
+###  http://purl.org/nutrilink#productUpdatedAt
 nl:productUpdatedAt rdf:type owl:ObjectProperty ;
                        rdfs:domain nl:Product .
 
 
-###  http://example.org#targetsDietCoachMinorCategory
+###  http://purl.org/nutrilink#targetsDietCoachMinorCategory
 nl:targetsDietCoachMinorCategory rdf:type owl:ObjectProperty ;
                                     rdfs:domain nl:Recommendation ;
                                     rdfs:range nl:DietCoachMinorCategory ;
                                     rdfs:comment "It indicates which DietCoachMinorCategory the recommendation targets"@en .
 
 
-###  http://example.org#targetsNutrient
+###  http://purl.org/nutrilink#targetsNutrient
 nl:targetsNutrient rdf:type owl:ObjectProperty ;
                       rdfs:domain nl:Recommendation ;
                       rdfs:range nl:Nutrient ;
                       rdfs:comment "It indicates which FSA score categories (nutrients and other elements) the recommendation targets"@en .
 
 
-###  http://example.org#usesLoyaltyCard
+###  http://purl.org/nutrilink#usesLoyaltyCard
 nl:usesLoyaltyCard rdf:type owl:ObjectProperty ;
                       rdfs:domain nl:User ;
                       rdfs:range nl:LoyaltyCard ;
@@ -460,160 +460,160 @@ nl:usesLoyaltyCard rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://example.org#adults13Plus
+###  http://purl.org/nutrilink#adults13Plus
 nl:adults13Plus rdf:type owl:DatatypeProperty ;
                    rdfs:domain nl:User ;
                    rdfs:range xsd:integer ;
                    rdfs:comment "The number of people who are older than 13 and share the loyalty cards with the user, including himself/herself."@en .
 
 
-###  http://example.org#amount
+###  http://purl.org/nutrilink#amount
 nl:amount rdf:type owl:DatatypeProperty ;
              rdfs:domain nl:Item ;
              rdfs:range xsd:double ;
              rdfs:comment "The bought amount of an item. The unit depends on the item."@en .
 
 
-###  http://example.org#bamId
+###  http://purl.org/nutrilink#bamId
 nl:bamId rdf:type owl:DatatypeProperty ;
             rdfs:domain nl:PiiData ;
             rdfs:range xsd:string ;
             rdfs:comment "BitsAboutMe id."@en .
 
 
-###  http://example.org#basektAggEnergy
+###  http://purl.org/nutrilink#basektAggEnergy
 nl:basektAggEnergy rdf:type owl:DatatypeProperty ;
                       rdfs:domain nl:BasketAggInfo ;
                       rdfs:range xsd:double ;
                       rdfs:comment "The energy sum of a basket."@en .
 
 
-###  http://example.org#basketSimplePrice
+###  http://purl.org/nutrilink#basketSimplePrice
 nl:basketSimplePrice rdf:type owl:DatatypeProperty ;
                         rdfs:domain nl:BasketAggInfo ;
                         rdfs:range xsd:float .
 
 
-###  http://example.org#children0-7
+###  http://purl.org/nutrilink#children0-7
 nl:children0-7 rdf:type owl:DatatypeProperty ;
                   rdfs:domain nl:User ;
                   rdfs:range xsd:integer ;
                   rdfs:comment "The number of children who are of 0-7 years old and share the loyalty cards with the user."@en .
 
 
-###  http://example.org#consentRecordCreatedat
+###  http://purl.org/nutrilink#consentRecordCreatedat
 nl:consentRecordCreatedat rdf:type owl:DatatypeProperty ;
                              rdfs:domain nl:PiiData ;
                              rdfs:range xsd:dateTime ;
                              rdfs:comment "When the consent record is created."@en .
 
 
-###  http://example.org#consentRecordUid
+###  http://purl.org/nutrilink#consentRecordUid
 nl:consentRecordUid rdf:type owl:DatatypeProperty ;
                        rdfs:domain nl:PiiData ;
                        rdfs:range xsd:string ;
                        rdfs:comment "The consent record user id."@en .
 
 
-###  http://example.org#consentRequestUid
+###  http://purl.org/nutrilink#consentRequestUid
 nl:consentRequestUid rdf:type owl:DatatypeProperty ;
                         rdfs:domain nl:PiiData ;
                         rdfs:range xsd:string ;
                         rdfs:comment "The consent request user id."@en .
 
 
-###  http://example.org#coopCardUsagePercentage
+###  http://purl.org/nutrilink#coopCardUsagePercentage
 nl:coopCardUsagePercentage rdf:type owl:DatatypeProperty ;
                               rdfs:domain nl:User ;
                               rdfs:range xsd:integer ;
                               rdfs:comment "When a user shops at Coop, how often (in %) he/she remembers to use the Coop supercard."@en .
 
 
-###  http://example.org#coopShoppingFreqPercentage
+###  http://purl.org/nutrilink#coopShoppingFreqPercentage
 nl:coopShoppingFreqPercentage rdf:type owl:DatatypeProperty ;
                                  rdfs:domain nl:User ;
                                  rdfs:range xsd:integer ;
                                  rdfs:comment "How often (in %) a user shops at Coop."@en .
 
 
-###  http://example.org#dateOfBirth
+###  http://purl.org/nutrilink#dateOfBirth
 nl:dateOfBirth rdf:type owl:DatatypeProperty ;
                   rdfs:domain nl:User ;
                   rdfs:range xsd:dateTime ;
                   rdfs:comment "The date of birth of a user."@en .
 
 
-###  http://example.org#discount
+###  http://purl.org/nutrilink#discount
 nl:discount rdf:type owl:DatatypeProperty ;
                rdfs:domain nl:Item ;
                rdfs:range xsd:double ;
                rdfs:comment "The discount (in Swiss Francs) of a product."@en .
 
 
-###  http://example.org#endDateOfBaskets
+###  http://purl.org/nutrilink#endDateOfBaskets
 nl:endDateOfBaskets rdf:type owl:DatatypeProperty ;
                        rdfs:domain nl:Recommendation ;
                        rdfs:range xsd:dateTime ;
                        rdfs:comment "It indicates the end date of the time window that dieticians look at when she/he gives the recommendations."@en .
 
 
-###  http://example.org#externalId
+###  http://purl.org/nutrilink#externalId
 nl:externalId rdf:type owl:DatatypeProperty ;
                  rdfs:domain nl:PiiData ;
                  rdfs:range xsd:string ;
                  rdfs:comment "A user gets assigned an externalId when he/she registers him/herself via (anonymous) links. One user (identified by e.g. userHash) could have multiple externalIds, if he/she registers multiple times using different links."@en .
 
 
-###  http://example.org#foodTrackingAppBefore
+###  http://purl.org/nutrilink#foodTrackingAppBefore
 nl:foodTrackingAppBefore rdf:type owl:DatatypeProperty ;
                             rdfs:domain nl:User ;
                             rdfs:range xsd:string ;
                             rdfs:comment "The food tracking apps that a user used before."@en .
 
 
-###  http://example.org#foodTrackingAppNow
+###  http://purl.org/nutrilink#foodTrackingAppNow
 nl:foodTrackingAppNow rdf:type owl:DatatypeProperty ;
                          rdfs:domain nl:User ;
                          rdfs:range xsd:string ;
                          rdfs:comment "The food tracking apps that a user is using now."@en .
 
 
-###  http://example.org#fruitPercentage
+###  http://purl.org/nutrilink#fruitPercentage
 nl:fruitPercentage rdf:type owl:DatatypeProperty ;
                       rdfs:domain nl:FvpnFactor ;
                       rdfs:range xsd:decimal ;
                       rdfs:comment "The fruit content (in %) of a product."@en .
 
 
-###  http://example.org#fruitPercentageDried
+###  http://purl.org/nutrilink#fruitPercentageDried
 nl:fruitPercentageDried rdf:type owl:DatatypeProperty ;
                            rdfs:domain nl:FvpnFactor ;
                            rdfs:range xsd:decimal ;
                            rdfs:comment "The dried fruit content (in %) of a product."@en .
 
 
-###  http://example.org#fvpnTotalPercentage
+###  http://purl.org/nutrilink#fvpnTotalPercentage
 nl:fvpnTotalPercentage rdf:type owl:DatatypeProperty ;
                           rdfs:domain nl:FvpnFactor ;
                           rdfs:range xsd:decimal ;
                           rdfs:comment "The total fruit, vegetable, pulse and nut content (in %) of a product."@en .
 
 
-###  http://example.org#fvpnTotalPercentageEstimated
+###  http://purl.org/nutrilink#fvpnTotalPercentageEstimated
 nl:fvpnTotalPercentageEstimated rdf:type owl:DatatypeProperty ;
                                    rdfs:domain nl:FvpnFactor ;
                                    rdfs:range xsd:decimal ;
                                    rdfs:comment "The estimated total fruit, vegetable, pulse and nut (fvpn) content (in %) of a product applying machine learning algorithms to the ingredient text. This field is so far activiated. It could be useful if we plan to estimate fvpn content automatically in the future."@en .
 
 
-###  http://example.org#gender
+###  http://purl.org/nutrilink#gender
 nl:gender rdf:type owl:DatatypeProperty ;
              rdfs:domain nl:User ;
              rdfs:range xsd:string ;
              rdfs:comment "The gender of a user."@en .
 
 
-###  http://example.org#gtin
+###  http://purl.org/nutrilink#gtin
 nl:gtin rdf:type owl:DatatypeProperty ;
            owl:equivalentProperty <http://purl.org/goodrelations/v1#hasGTIN-14> ;
            rdfs:domain nl:Product ;
@@ -621,41 +621,41 @@ nl:gtin rdf:type owl:DatatypeProperty ;
            rdfs:comment "The global trade item number of a product."@en .
 
 
-###  http://example.org#hasImageUrl
+###  http://purl.org/nutrilink#hasImageUrl
 nl:hasImageUrl rdf:type owl:DatatypeProperty ;
                   rdfs:domain nl:MinorCategory ,
                               nl:Product ;
                   rdfs:range xsd:string .
 
 
-###  http://example.org#hasNoMatchedFoodItems
+###  http://purl.org/nutrilink#hasNoMatchedFoodItems
 nl:hasNoMatchedFoodItems rdf:type owl:DatatypeProperty ;
                             rdfs:domain nl:Basket ;
                             rdfs:range xsd:boolean .
 
 
-###  http://example.org#highestCompletedEducation
+###  http://purl.org/nutrilink#highestCompletedEducation
 nl:highestCompletedEducation rdf:type owl:DatatypeProperty ;
                                 rdfs:domain nl:User ;
                                 rdfs:range xsd:string ;
                                 rdfs:comment "The highest completed education of a user."@en .
 
 
-###  http://example.org#idFromCollaborator
+###  http://purl.org/nutrilink#idFromCollaborator
 nl:idFromCollaborator rdf:type owl:DatatypeProperty ;
                          rdfs:domain nl:User ;
                          rdfs:range xsd:string ;
                          rdfs:comment "A user has an idFromCollaborator if and only if he/she joins the study via a collaborator."@en .
 
 
-###  http://example.org#increaseContent
+###  http://purl.org/nutrilink#increaseContent
 nl:increaseContent rdf:type owl:DatatypeProperty ;
                       rdfs:domain nl:Recommendation ;
                       rdfs:range xsd:boolean ;
                       rdfs:comment "It indicates if users should increase or decrease the purchase of a nutrient from a food category."@en .
 
 
-###  http://example.org#ingredientString
+###  http://purl.org/nutrilink#ingredientString
 nl:ingredientString rdf:type owl:DatatypeProperty ;
                        rdfs:domain nl:Product ;
                        rdfs:range xsd:string ;
@@ -666,84 +666,84 @@ nl:ingredientString rdf:type owl:DatatypeProperty ;
                        rdfs:comment "A string that contains the ingredients of a product."@en .
 
 
-###  http://example.org#isFoundCount
+###  http://purl.org/nutrilink#isFoundCount
 nl:isFoundCount rdf:type owl:DatatypeProperty ;
                    rdfs:domain nl:Product ;
                    rdfs:range xsd:integer ;
                    rdfs:comment "The number of times a product has been queried using the EatFit API."@en .
 
 
-###  http://example.org#isNonFood
+###  http://purl.org/nutrilink#isNonFood
 nl:isNonFood rdf:type owl:DatatypeProperty ;
                 rdfs:domain nl:Item ;
                 rdfs:range xsd:boolean ;
                 rdfs:comment "This indicates whether an item is non-food."@en .
 
 
-###  http://example.org#isSentToUser
+###  http://purl.org/nutrilink#isSentToUser
 nl:isSentToUser rdf:type owl:DatatypeProperty ;
                    rdfs:domain nl:Recommendation ;
                    rdfs:range xsd:boolean ;
                    rdfs:comment "It indicates whether the recommendations are already sent to users, i.e., whether users actuallly receive the recommendations."@en .
 
 
-###  http://example.org#lat
+###  http://purl.org/nutrilink#lat
 nl:lat rdf:type owl:DatatypeProperty ;
           rdfs:domain nl:OfficeGeoLoc ;
           rdfs:range xsd:float ;
           rdfs:comment "The latitude of an office (a supermarket)."@en .
 
 
-###  http://example.org#long
+###  http://purl.org/nutrilink#long
 nl:long rdf:type owl:DatatypeProperty ;
            rdfs:domain nl:OfficeGeoLoc ;
            rdfs:range xsd:float ;
            rdfs:comment "The longitude of an office (a supermarket)."@en .
 
 
-###  http://example.org#migrosCardUsagePercentage
+###  http://purl.org/nutrilink#migrosCardUsagePercentage
 nl:migrosCardUsagePercentage rdf:type owl:DatatypeProperty ;
                                 rdfs:domain nl:User ;
                                 rdfs:range xsd:float ;
                                 rdfs:comment "When a user shops at Migros, how often (in %) he/she remembers to use the Migros Cumulus."@en .
 
 
-###  http://example.org#migrosShoppingFreqPercentage
+###  http://purl.org/nutrilink#migrosShoppingFreqPercentage
 nl:migrosShoppingFreqPercentage rdf:type owl:DatatypeProperty ;
                                    rdfs:domain nl:User ;
                                    rdfs:range xsd:float ;
                                    rdfs:comment "How often (in %) a user shops at Migros."@en .
 
 
-###  http://example.org#nutPercentage
+###  http://purl.org/nutrilink#nutPercentage
 nl:nutPercentage rdf:type owl:DatatypeProperty ;
                     rdfs:domain nl:FvpnFactor ;
                     rdfs:range xsd:decimal ;
                     rdfs:comment "The nut content (in %) of a product."@en .
 
 
-###  http://example.org#nutriScoreCalculated
+###  http://purl.org/nutrilink#nutriScoreCalculated
 nl:nutriScoreCalculated rdf:type owl:DatatypeProperty ;
                            rdfs:domain nl:NutriScore ;
                            rdfs:range xsd:string ;
                            rdfs:comment "The calculated Nutri-Score."@en .
 
 
-###  http://example.org#nutriScoreCalculatedMixed
+###  http://purl.org/nutrilink#nutriScoreCalculatedMixed
 nl:nutriScoreCalculatedMixed rdf:type owl:DatatypeProperty ;
                                 rdfs:domain nl:NutriScore ;
                                 rdfs:range xsd:string ;
                                 rdfs:comment "The calculated Nutri-Score, considering the product as a mixed product."@en .
 
 
-###  http://example.org#nutriScoreFinal
+###  http://purl.org/nutrilink#nutriScoreFinal
 nl:nutriScoreFinal rdf:type owl:DatatypeProperty ;
                       rdfs:domain nl:NutriScore ;
                       rdfs:range xsd:string ;
                       rdfs:comment "The final Nutri-Score."@en .
 
 
-###  http://example.org#nutriScoreNumberOfError
+###  http://purl.org/nutrilink#nutriScoreNumberOfError
 nl:nutriScoreNumberOfError rdf:type owl:DatatypeProperty ;
                               rdfs:domain nl:NutriScore ;
                               rdfs:range xsd:integer ;
@@ -752,174 +752,174 @@ nl:nutriScoreNumberOfError rdf:type owl:DatatypeProperty ;
 To calculate the product Nutri-Score, many properties are needed such as sodium content per 100 grams. Sometimes, there are errors, such as missing values, or sodium and salt not being similar (2.54 factor) etc. Also, the vegetable share is often missing."""@en .
 
 
-###  http://example.org#ofComNEnergyKJ
+###  http://purl.org/nutrilink#ofComNEnergyKJ
 nl:ofComNEnergyKJ rdf:type owl:DatatypeProperty ;
                      rdfs:domain nl:OfComDetail ;
                      rdfs:range xsd:integer ;
                      rdfs:comment "The energy ofcom point (Food Standard Agency FSA score) of a product."@en .
 
 
-###  http://example.org#ofComNEnergyKJMixed
+###  http://purl.org/nutrilink#ofComNEnergyKJMixed
 nl:ofComNEnergyKJMixed rdf:type owl:DatatypeProperty ;
                           rdfs:domain nl:OfComDetail ;
                           rdfs:range xsd:integer ;
                           rdfs:comment "The energy ofcom point (Food Standard Agency FSA score), considering the product as mixed of a product."@en .
 
 
-###  http://example.org#ofComNSaturatedFat
+###  http://purl.org/nutrilink#ofComNSaturatedFat
 nl:ofComNSaturatedFat rdf:type owl:DatatypeProperty ;
                          rdfs:domain nl:OfComDetail ;
                          rdfs:range xsd:integer ;
                          rdfs:comment "The saturated fat ofcom point (Food Standard Agency FSA score) of a product."@en .
 
 
-###  http://example.org#ofComNSaturatedFatMixed
+###  http://purl.org/nutrilink#ofComNSaturatedFatMixed
 nl:ofComNSaturatedFatMixed rdf:type owl:DatatypeProperty ;
                               rdfs:domain nl:OfComDetail ;
                               rdfs:range xsd:integer ;
                               rdfs:comment "The saturated fat ofcom point (Food Standard Agency FSA score) of a product, considering the product as mixed."@en .
 
 
-###  http://example.org#ofComNSodium
+###  http://purl.org/nutrilink#ofComNSodium
 nl:ofComNSodium rdf:type owl:DatatypeProperty ;
                    rdfs:domain nl:OfComDetail ;
                    rdfs:range xsd:integer ;
                    rdfs:comment "The sodium ofcom point (Food Standard Agency FSA score) of a product."@en .
 
 
-###  http://example.org#ofComNSodiumMixed
+###  http://purl.org/nutrilink#ofComNSodiumMixed
 nl:ofComNSodiumMixed rdf:type owl:DatatypeProperty ;
                         rdfs:domain nl:OfComDetail ;
                         rdfs:range xsd:integer ;
                         rdfs:comment "The sodium ofcom point (Food Standard Agency FSA score) of a product, considering the product as mixed."@en .
 
 
-###  http://example.org#ofComNSugar
+###  http://purl.org/nutrilink#ofComNSugar
 nl:ofComNSugar rdf:type owl:DatatypeProperty ;
                   rdfs:domain nl:OfComDetail ;
                   rdfs:range xsd:integer ;
                   rdfs:comment "The sugar ofcom point (Food Standard Agency FSA score) of a product."@en .
 
 
-###  http://example.org#ofComNSugarMixed
+###  http://purl.org/nutrilink#ofComNSugarMixed
 nl:ofComNSugarMixed rdf:type owl:DatatypeProperty ;
                        rdfs:domain nl:OfComDetail ;
                        rdfs:range xsd:integer ;
                        rdfs:comment "The sugar ofcom point (Food Standard Agency FSA score) of a product, considering the product as mixed."@en .
 
 
-###  http://example.org#ofComPDietaryFiber
+###  http://purl.org/nutrilink#ofComPDietaryFiber
 nl:ofComPDietaryFiber rdf:type owl:DatatypeProperty ;
                          rdfs:domain nl:OfComDetail ;
                          rdfs:range xsd:integer ;
                          rdfs:comment "The dietary fiber ofcom point (Food Standard Agency FSA score) of a product."@en .
 
 
-###  http://example.org#ofComPDietaryFiberMixed
+###  http://purl.org/nutrilink#ofComPDietaryFiberMixed
 nl:ofComPDietaryFiberMixed rdf:type owl:DatatypeProperty ;
                               rdfs:domain nl:OfComDetail ;
                               rdfs:range xsd:integer ;
                               rdfs:comment "The dietary fiber ofcom point (Food Standard Agency FSA score) of a product, considering the product as mixed."@en .
 
 
-###  http://example.org#ofComPFVPN
+###  http://purl.org/nutrilink#ofComPFVPN
 nl:ofComPFVPN rdf:type owl:DatatypeProperty ;
                  rdfs:domain nl:OfComDetail ;
                  rdfs:range xsd:integer ;
                  rdfs:comment "The fvpn (fruit, vegetable, pulse and nut) ofcom point (Food Standard Agency FSA score) of a product."@en .
 
 
-###  http://example.org#ofComPFVPNMixed
+###  http://purl.org/nutrilink#ofComPFVPNMixed
 nl:ofComPFVPNMixed rdf:type owl:DatatypeProperty ;
                       rdfs:domain nl:OfComDetail ;
                       rdfs:range xsd:integer ;
                       rdfs:comment "The fvpn (fruit, vegetable, pulse and nut) ofcom point (Food Standard Agency FSA score) of a product, considering the product as mixed."@en .
 
 
-###  http://example.org#ofComPProtein
+###  http://purl.org/nutrilink#ofComPProtein
 nl:ofComPProtein rdf:type owl:DatatypeProperty ;
                     rdfs:domain nl:OfComDetail ;
                     rdfs:range xsd:integer ;
                     rdfs:comment "The protein ofcom point (Food Standard Agency FSA score) of a product."@en .
 
 
-###  http://example.org#ofComPProteinMixed
+###  http://purl.org/nutrilink#ofComPProteinMixed
 nl:ofComPProteinMixed rdf:type owl:DatatypeProperty ;
                          rdfs:domain nl:OfComDetail ;
                          rdfs:range xsd:integer ;
                          rdfs:comment "The protein ofcom point (Food Standard Agency FSA score) of a product, considering the product as mixed."@en .
 
 
-###  http://example.org#ofComValue
+###  http://purl.org/nutrilink#ofComValue
 nl:ofComValue rdf:type owl:DatatypeProperty ;
                  rdfs:domain nl:OfComDetail ;
                  rdfs:range xsd:integer ;
                  rdfs:comment "The ofcom point (Food Standard Agency FSA score) of a product."@en .
 
 
-###  http://example.org#physicalActivityLevelAtWork
+###  http://purl.org/nutrilink#physicalActivityLevelAtWork
 nl:physicalActivityLevelAtWork rdf:type owl:DatatypeProperty ;
                                   rdfs:domain nl:User ;
                                   rdfs:range xsd:string ;
                                   rdfs:comment "The physical activity level at work of a user."@en .
 
 
-###  http://example.org#productCreatedAt
+###  http://purl.org/nutrilink#productCreatedAt
 nl:productCreatedAt rdf:type owl:DatatypeProperty .
 
 
-###  http://example.org#productUpdatedAt
+###  http://purl.org/nutrilink#productUpdatedAt
 nl:productUpdatedAt rdf:type owl:DatatypeProperty .
 
 
-###  http://example.org#pulsePercentage
+###  http://purl.org/nutrilink#pulsePercentage
 nl:pulsePercentage rdf:type owl:DatatypeProperty ;
                       rdfs:domain nl:FvpnFactor ;
                       rdfs:range xsd:decimal ;
                       rdfs:comment "The pulse content (in %) of a product."@en .
 
 
-###  http://example.org#pulsePercentageDried
+###  http://purl.org/nutrilink#pulsePercentageDried
 nl:pulsePercentageDried rdf:type owl:DatatypeProperty ;
                            rdfs:domain nl:FvpnFactor ;
                            rdfs:range xsd:decimal ;
                            rdfs:comment "The dried pulse content (in %) of a product."@en .
 
 
-###  http://example.org#recentBasketAggregationAttempt
+###  http://purl.org/nutrilink#recentBasketAggregationAttempt
 nl:recentBasketAggregationAttempt rdf:type owl:DatatypeProperty ;
                                      rdfs:domain nl:Basket ;
                                      rdfs:range xsd:integer .
 
 
-###  http://example.org#recentMatchAttempt
+###  http://purl.org/nutrilink#recentMatchAttempt
 nl:recentMatchAttempt rdf:type owl:DatatypeProperty ;
                          rdfs:domain nl:Item ;
                          rdfs:range xsd:long ;
                          rdfs:comment "The timestamp of the last unsuccessful matching attempt."@en .
 
 
-###  http://example.org#recommendationContent
+###  http://purl.org/nutrilink#recommendationContent
 nl:recommendationContent rdf:type owl:DatatypeProperty ;
                             rdfs:domain nl:Recommendation ;
                             rdfs:range xsd:string .
 
 
-###  http://example.org#recommendationPriority
+###  http://purl.org/nutrilink#recommendationPriority
 nl:recommendationPriority rdf:type owl:DatatypeProperty ;
                              rdfs:domain nl:Recommendation ;
                              rdfs:range xsd:int ;
                              rdfs:comment "The priorityRanking indicates which recommendation is of the highest importance. There are 5 recommendations with different rankings from dieticians at once."@en .
 
 
-###  http://example.org#segmentId
+###  http://purl.org/nutrilink#segmentId
 nl:segmentId rdf:type owl:DatatypeProperty ;
                 rdfs:domain nl:PiiData ;
                 rdfs:range xsd:string ;
                 rdfs:comment "A segmentId is used to differentiate different projects that users participate in. E.g., BF2021 stands for BrainFood2021"@en .
 
 
-###  http://example.org#simplePrice
+###  http://purl.org/nutrilink#simplePrice
 nl:simplePrice rdf:type owl:DatatypeProperty ;
                   rdfs:domain nl:BasketAggInfo ,
                               nl:Item ,
@@ -928,42 +928,42 @@ nl:simplePrice rdf:type owl:DatatypeProperty ;
                   rdfs:comment "Price"@en .
 
 
-###  http://example.org#source
+###  http://purl.org/nutrilink#source
 nl:source rdf:type owl:DatatypeProperty ;
              rdfs:domain nl:Product ;
              rdfs:range xsd:string ;
              rdfs:comment "This information source of a product."@en .
 
 
-###  http://example.org#sourceChecked
+###  http://purl.org/nutrilink#sourceChecked
 nl:sourceChecked rdf:type owl:DatatypeProperty ;
                     rdfs:domain nl:Product ;
                     rdfs:range xsd:boolean ;
                     rdfs:comment "The product information source has been manually checked."@en .
 
 
-###  http://example.org#sportFrequency
+###  http://purl.org/nutrilink#sportFrequency
 nl:sportFrequency rdf:type owl:DatatypeProperty ;
                      rdfs:domain nl:User ;
                      rdfs:range xsd:string ;
                      rdfs:comment "The frequency of users doing sports at least 30 minutes per week."@en .
 
 
-###  http://example.org#startDateOfBaskets
+###  http://purl.org/nutrilink#startDateOfBaskets
 nl:startDateOfBaskets rdf:type owl:DatatypeProperty ;
                          rdfs:domain nl:Recommendation ;
                          rdfs:range xsd:date ;
                          rdfs:comment "It indicates the start date of the time window that dieticians look at when she/he gives the recommendations."@en .
 
 
-###  http://example.org#teen3-13
+###  http://purl.org/nutrilink#teen3-13
 nl:teen3-13 rdf:type owl:DatatypeProperty ;
                rdfs:domain nl:User ;
                rdfs:range xsd:integer ;
                rdfs:comment "The number of teenagers aged 3-13 sharing the loyalty cards with the user."@en .
 
 
-###  http://example.org#timestamp
+###  http://purl.org/nutrilink#timestamp
 nl:timestamp rdf:type owl:DatatypeProperty ;
                 rdfs:domain nl:Basket ,
                             nl:Recommendation ;
@@ -971,35 +971,35 @@ nl:timestamp rdf:type owl:DatatypeProperty ;
                 rdfs:comment "It indicates the exact timestamps when the items/baskets were purchased or the recommendations were given."@en .
 
 
-###  http://example.org#userHash
+###  http://purl.org/nutrilink#userHash
 nl:userHash rdf:type owl:DatatypeProperty ;
                rdfs:domain nl:User ;
                rdfs:range xsd:string ;
                rdfs:comment "User hash."@en .
 
 
-###  http://example.org#vegetablePercentage
+###  http://purl.org/nutrilink#vegetablePercentage
 nl:vegetablePercentage rdf:type owl:DatatypeProperty ;
                           rdfs:domain nl:FvpnFactor ;
                           rdfs:range xsd:decimal ;
                           rdfs:comment "The vegetable content (in %) of a product."@en .
 
 
-###  http://example.org#vegetablePercentageDried
+###  http://purl.org/nutrilink#vegetablePercentageDried
 nl:vegetablePercentageDried rdf:type owl:DatatypeProperty ;
                                rdfs:domain nl:FvpnFactor ;
                                rdfs:range xsd:decimal ;
                                rdfs:comment "The dried vegetable content (in %) of a product."@en .
 
 
-###  http://example.org#weight
+###  http://purl.org/nutrilink#weight
 nl:weight rdf:type owl:DatatypeProperty ;
              rdfs:domain nl:User ;
              rdfs:range xsd:decimal ;
              rdfs:comment "The weight of a user."@en .
 
 
-###  http://example.org#weightedProduct
+###  http://purl.org/nutrilink#weightedProduct
 nl:weightedProduct rdf:type owl:DatatypeProperty ;
                       rdfs:domain nl:Product ;
                       rdfs:range xsd:boolean ;
@@ -1054,7 +1054,7 @@ The id of User and Project should be of type string."""@en .
 #    Classes
 #################################################################
 
-###  http://example.org#Abstention
+###  http://purl.org/nutrilink#Abstention
 nl:Abstention rdf:type owl:Class ;
                  owl:equivalentClass [ rdf:type owl:Class ;
                                        owl:oneOf ( nl:AbstentionMeat
@@ -1077,12 +1077,12 @@ nl:Abstention rdf:type owl:Class ;
                  rdfs:comment "Food that users do not eat."@en .
 
 
-###  http://example.org#AdditionalImage
+###  http://purl.org/nutrilink#AdditionalImage
 nl:AdditionalImage rdf:type owl:Class ;
                       rdfs:subClassOf <http://purl.org/dc/dcmitype/StillImage> .
 
 
-###  http://example.org#Allergen
+###  http://purl.org/nutrilink#Allergen
 nl:Allergen rdf:type owl:Class ;
                owl:equivalentClass [ rdf:type owl:Class ;
                                      owl:oneOf ( nl:AllergenCellery
@@ -1104,68 +1104,68 @@ nl:Allergen rdf:type owl:Class ;
                rdfs:comment "Food that cause allergic reactions of users."@en .
 
 
-###  http://example.org#BackImage
+###  http://purl.org/nutrilink#BackImage
 nl:BackImage rdf:type owl:Class ;
                 rdfs:subClassOf <http://purl.org/dc/dcmitype/StillImage> .
 
 
-###  http://example.org#Basket
+###  http://purl.org/nutrilink#Basket
 nl:Basket rdf:type owl:Class ;
              rdfs:comment "A basket contains all items that are shopped by a single user at a specific time."@en .
 
 
-###  http://example.org#BasketAggInfo
+###  http://purl.org/nutrilink#BasketAggInfo
 nl:BasketAggInfo rdf:type owl:Class ;
                     rdfs:comment "The aggregated information of a single basket."@en .
 
 
-###  http://example.org#Collaborator
+###  http://purl.org/nutrilink#Collaborator
 nl:Collaborator rdf:type owl:Class ;
                    rdfs:comment "A collaborator helps recruit users. Users recruited via collaborators might have different chracteristics."@en .
 
 
-###  http://example.org#DietCoachMajorCategory
+###  http://purl.org/nutrilink#DietCoachMajorCategory
 nl:DietCoachMajorCategory rdf:type owl:Class ;
                              rdfs:comment "Major categories that are created for DietCoach application, originally based on minor categories on EatFit food composition database."@en .
 
 
-###  http://example.org#DietCoachMinorCategory
+###  http://purl.org/nutrilink#DietCoachMinorCategory
 nl:DietCoachMinorCategory rdf:type owl:Class ;
                              rdfs:comment "Minor categories that are created for DietCoach application, based on minor categories on EatFit food composition database."@en .
 
 
-###  http://example.org#Dietician
+###  http://purl.org/nutrilink#Dietician
 nl:Dietician rdf:type owl:Class ;
                 rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
 
-###  http://example.org#Disorder
+###  http://purl.org/nutrilink#Disorder
 nl:Disorder rdf:type owl:Class ;
                rdfs:comment "A list of disorders that influence users."@en .
 
 
-###  http://example.org#FrontImage
+###  http://purl.org/nutrilink#FrontImage
 nl:FrontImage rdf:type owl:Class ;
                  rdfs:subClassOf <http://purl.org/dc/dcmitype/StillImage> .
 
 
-###  http://example.org#FvpnFactor
+###  http://purl.org/nutrilink#FvpnFactor
 nl:FvpnFactor rdf:type owl:Class ;
                  rdfs:subClassOf nl:Nutrient ;
                  rdfs:comment "A factor that describes the fruit, vegetable, pulse and nut (hence fvpn) composition of food products. The factor is needed to calculate FSA (Food Standards Agency) scores and Nutri-Scores of products."@en .
 
 
-###  http://example.org#Item
+###  http://purl.org/nutrilink#Item
 nl:Item rdf:type owl:Class ;
            rdfs:comment "An item that is documented on digital receipts."@en .
 
 
-###  http://example.org#LoyaltyCard
+###  http://purl.org/nutrilink#LoyaltyCard
 nl:LoyaltyCard rdf:type owl:Class ;
                   rdfs:comment "The loyalty programme(s) that a user participates in."@en .
 
 
-###  http://example.org#MajorCategory
+###  http://purl.org/nutrilink#MajorCategory
 nl:MajorCategory rdf:type owl:Class ;
                     nl:name ""@de ,
                                ""@en ,
@@ -1174,12 +1174,12 @@ nl:MajorCategory rdf:type owl:Class ;
                     rdfs:comment "Major categories of food products."@en .
 
 
-###  http://example.org#MarketRegion
+###  http://purl.org/nutrilink#MarketRegion
 nl:MarketRegion rdf:type owl:Class ;
                    rdfs:comment "Regions where the products are sold."@en .
 
 
-###  http://example.org#MinorCategory
+###  http://purl.org/nutrilink#MinorCategory
 nl:MinorCategory rdf:type owl:Class ;
                     nl:name ""@de ,
                                ""@en ,
@@ -1188,13 +1188,13 @@ nl:MinorCategory rdf:type owl:Class ;
                     rdfs:comment "Minor categories are used to categorize food products. It gives more detailed description of food compared to major food categories. E.g., major food category: fruits, minor food category: apples."@en .
 
 
-###  http://example.org#NutriScore
+###  http://purl.org/nutrilink#NutriScore
 nl:NutriScore rdf:type owl:Class ;
                  rdfs:subClassOf nl:NutritionInformation ;
                  rdfs:comment "Nutri-Score of food products."@en .
 
 
-###  http://example.org#NutriScoreCategory
+###  http://purl.org/nutrilink#NutriScoreCategory
 nl:NutriScoreCategory rdf:type owl:Class ;
                          owl:equivalentClass [ rdf:type owl:Class ;
                                                owl:oneOf ( nl:AddedFat
@@ -1208,44 +1208,44 @@ nl:NutriScoreCategory rdf:type owl:Class ;
                                              ] .
 
 
-###  http://example.org#Nutrient
+###  http://purl.org/nutrilink#Nutrient
 nl:Nutrient rdf:type owl:Class ;
                rdfs:subClassOf nl:NutritionInformation ;
                rdfs:comment "The nutrient composition of a food product. It refers to how many nutrients a product contain per 100 grams."@en .
 
 
-###  http://example.org#NutritionInformation
+###  http://purl.org/nutrilink#NutritionInformation
 nl:NutritionInformation rdf:type owl:Class ;
                            rdfs:comment "Nutrition informaion of a food product."@en .
 
 
-###  http://example.org#OfComDetail
+###  http://purl.org/nutrilink#OfComDetail
 nl:OfComDetail rdf:type owl:Class ;
                   rdfs:subClassOf nl:NutritionInformation ;
                   rdfs:comment "Detailed FSA (Food Standards Agency) scores."@en .
 
 
-###  http://example.org#Office
+###  http://purl.org/nutrilink#Office
 nl:Office rdf:type owl:Class ;
              rdfs:comment "Specific supermakets where the products were bought."@en .
 
 
-###  http://example.org#OfficeGeoLoc
+###  http://purl.org/nutrilink#OfficeGeoLoc
 nl:OfficeGeoLoc rdf:type owl:Class ;
                    rdfs:comment "The geolocation of specific supermakets."@en .
 
 
-###  http://example.org#PiiData
+###  http://purl.org/nutrilink#PiiData
 nl:PiiData rdf:type owl:Class ;
               rdfs:comment "Personal information identification data of users that we receive from BitsAboutMe."@en .
 
 
-###  http://example.org#Producer
+###  http://purl.org/nutrilink#Producer
 nl:Producer rdf:type owl:Class ;
                rdfs:comment "Producers that produce the products."@en .
 
 
-###  http://example.org#Product
+###  http://purl.org/nutrilink#Product
 nl:Product rdf:type owl:Class ;
               rdfs:subClassOf <http://purl.org/goodrelations/v1#ProductOrServiceModel> ;
               nl:name ""@de ,
@@ -1255,21 +1255,21 @@ nl:Product rdf:type owl:Class ;
               rdfs:comment "Products that are stored in our EatFit database. Here, we mainly refer to food products."@en .
 
 
-###  http://example.org#Project
+###  http://purl.org/nutrilink#Project
 nl:Project rdf:type owl:Class ;
               rdfs:comment "Projects which users participate in. One user can participate in multiple projects at the same time."@en .
 
 
-###  http://example.org#Recommendation
+###  http://purl.org/nutrilink#Recommendation
 nl:Recommendation rdf:type owl:Class .
 
 
-###  http://example.org#Retailer
+###  http://purl.org/nutrilink#Retailer
 nl:Retailer rdf:type owl:Class ;
                rdfs:comment "Retailers of products."@en .
 
 
-###  http://example.org#User
+###  http://purl.org/nutrilink#User
 nl:User rdf:type owl:Class ;
            rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
@@ -2642,291 +2642,291 @@ nl:User rdf:type owl:Class ;
                                                       <http://www.w3.org/2008/05/skos-xl#literalForm> "生产加工"@zh .
 
 
-###  http://example.org#AbstentionCellery
+###  http://purl.org/nutrilink#AbstentionCellery
 nl:AbstentionCellery rdf:type owl:NamedIndividual ,
                                  nl:Abstention .
 
 
-###  http://example.org#AbstentionCrustacean
+###  http://purl.org/nutrilink#AbstentionCrustacean
 nl:AbstentionCrustacean rdf:type owl:NamedIndividual ,
                                     nl:Abstention .
 
 
-###  http://example.org#AbstentionEgg
+###  http://purl.org/nutrilink#AbstentionEgg
 nl:AbstentionEgg rdf:type owl:NamedIndividual ,
                              nl:Abstention .
 
 
-###  http://example.org#AbstentionFish
+###  http://purl.org/nutrilink#AbstentionFish
 nl:AbstentionFish rdf:type owl:NamedIndividual ,
                               nl:Abstention .
 
 
-###  http://example.org#AbstentionGluten
+###  http://purl.org/nutrilink#AbstentionGluten
 nl:AbstentionGluten rdf:type owl:NamedIndividual ,
                                 nl:Abstention .
 
 
-###  http://example.org#AbstentionLupin
+###  http://purl.org/nutrilink#AbstentionLupin
 nl:AbstentionLupin rdf:type owl:NamedIndividual ,
                                nl:Abstention .
 
 
-###  http://example.org#AbstentionMeat
+###  http://purl.org/nutrilink#AbstentionMeat
 nl:AbstentionMeat rdf:type owl:NamedIndividual ,
                               nl:Abstention .
 
 
-###  http://example.org#AbstentionMilk
+###  http://purl.org/nutrilink#AbstentionMilk
 nl:AbstentionMilk rdf:type owl:NamedIndividual ,
                               nl:Abstention .
 
 
-###  http://example.org#AbstentionMollusc
+###  http://purl.org/nutrilink#AbstentionMollusc
 nl:AbstentionMollusc rdf:type owl:NamedIndividual ,
                                  nl:Abstention .
 
 
-###  http://example.org#AbstentionMustard
+###  http://purl.org/nutrilink#AbstentionMustard
 nl:AbstentionMustard rdf:type owl:NamedIndividual ,
                                  nl:Abstention .
 
 
-###  http://example.org#AbstentionPeanut
+###  http://purl.org/nutrilink#AbstentionPeanut
 nl:AbstentionPeanut rdf:type owl:NamedIndividual ,
                                 nl:Abstention .
 
 
-###  http://example.org#AbstentionSesameSeed
+###  http://purl.org/nutrilink#AbstentionSesameSeed
 nl:AbstentionSesameSeed rdf:type owl:NamedIndividual ,
                                     nl:Abstention .
 
 
-###  http://example.org#AbstentionSoy
+###  http://purl.org/nutrilink#AbstentionSoy
 nl:AbstentionSoy rdf:type owl:NamedIndividual ,
                              nl:Abstention .
 
 
-###  http://example.org#AbstentionSulphite
+###  http://purl.org/nutrilink#AbstentionSulphite
 nl:AbstentionSulphite rdf:type owl:NamedIndividual ,
                                   nl:Abstention .
 
 
-###  http://example.org#AbstentionTreeNut
+###  http://purl.org/nutrilink#AbstentionTreeNut
 nl:AbstentionTreeNut rdf:type owl:NamedIndividual ,
                                  nl:Abstention .
 
 
-###  http://example.org#AddedFat
+###  http://purl.org/nutrilink#AddedFat
 nl:AddedFat rdf:type owl:NamedIndividual ,
                         nl:NutriScoreCategory .
 
 
-###  http://example.org#AllergenCellery
+###  http://purl.org/nutrilink#AllergenCellery
 nl:AllergenCellery rdf:type owl:NamedIndividual .
 
 
-###  http://example.org#AllergenCrustacean
+###  http://purl.org/nutrilink#AllergenCrustacean
 nl:AllergenCrustacean rdf:type owl:NamedIndividual ,
                                   nl:Allergen .
 
 
-###  http://example.org#AllergenEgg
+###  http://purl.org/nutrilink#AllergenEgg
 nl:AllergenEgg rdf:type owl:NamedIndividual ,
                            nl:Allergen .
 
 
-###  http://example.org#AllergenFish
+###  http://purl.org/nutrilink#AllergenFish
 nl:AllergenFish rdf:type owl:NamedIndividual ,
                             nl:Allergen .
 
 
-###  http://example.org#AllergenGluten
+###  http://purl.org/nutrilink#AllergenGluten
 nl:AllergenGluten rdf:type owl:NamedIndividual ,
                               nl:Allergen .
 
 
-###  http://example.org#AllergenLupin
+###  http://purl.org/nutrilink#AllergenLupin
 nl:AllergenLupin rdf:type owl:NamedIndividual ,
                              nl:Allergen .
 
 
-###  http://example.org#AllergenMilk
+###  http://purl.org/nutrilink#AllergenMilk
 nl:AllergenMilk rdf:type owl:NamedIndividual ,
                             nl:Allergen .
 
 
-###  http://example.org#AllergenMollusc
+###  http://purl.org/nutrilink#AllergenMollusc
 nl:AllergenMollusc rdf:type owl:NamedIndividual ,
                                nl:Allergen .
 
 
-###  http://example.org#AllergenMustard
+###  http://purl.org/nutrilink#AllergenMustard
 nl:AllergenMustard rdf:type owl:NamedIndividual ,
                                nl:Allergen .
 
 
-###  http://example.org#AllergenPeanut
+###  http://purl.org/nutrilink#AllergenPeanut
 nl:AllergenPeanut rdf:type owl:NamedIndividual ,
                               nl:Allergen .
 
 
-###  http://example.org#AllergenSesameSeed
+###  http://purl.org/nutrilink#AllergenSesameSeed
 nl:AllergenSesameSeed rdf:type owl:NamedIndividual ,
                                   nl:Allergen .
 
 
-###  http://example.org#AllergenSoy
+###  http://purl.org/nutrilink#AllergenSoy
 nl:AllergenSoy rdf:type owl:NamedIndividual ,
                            nl:Allergen .
 
 
-###  http://example.org#AllergenSulphite
+###  http://purl.org/nutrilink#AllergenSulphite
 nl:AllergenSulphite rdf:type owl:NamedIndividual ,
                                 nl:Allergen .
 
 
-###  http://example.org#AllergenTreeNut
+###  http://purl.org/nutrilink#AllergenTreeNut
 nl:AllergenTreeNut rdf:type owl:NamedIndividual ,
                                nl:Allergen .
 
 
-###  http://example.org#Austria
+###  http://purl.org/nutrilink#Austria
 nl:Austria rdf:type owl:NamedIndividual ,
                        nl:MarketRegion .
 
 
-###  http://example.org#Beverage
+###  http://purl.org/nutrilink#Beverage
 nl:Beverage rdf:type owl:NamedIndividual ,
                         nl:NutriScoreCategory .
 
 
-###  http://example.org#Cheese
+###  http://purl.org/nutrilink#Cheese
 nl:Cheese rdf:type owl:NamedIndividual ,
                       nl:NutriScoreCategory .
 
 
-###  http://example.org#Food
+###  http://purl.org/nutrilink#Food
 nl:Food rdf:type owl:NamedIndividual ,
                     nl:NutriScoreCategory .
 
 
-###  http://example.org#France
+###  http://purl.org/nutrilink#France
 nl:France rdf:type owl:NamedIndividual ,
                       nl:MarketRegion .
 
 
-###  http://example.org#Germany
+###  http://purl.org/nutrilink#Germany
 nl:Germany rdf:type owl:NamedIndividual ,
                        nl:MarketRegion .
 
 
-###  http://example.org#Italy
+###  http://purl.org/nutrilink#Italy
 nl:Italy rdf:type owl:NamedIndividual ,
                      nl:MarketRegion .
 
 
-###  http://example.org#MineralWater
+###  http://purl.org/nutrilink#MineralWater
 nl:MineralWater rdf:type owl:NamedIndividual ,
                             nl:NutriScoreCategory .
 
 
-###  http://example.org#NoFood
+###  http://purl.org/nutrilink#NoFood
 nl:NoFood rdf:type owl:NamedIndividual ,
                       nl:NutriScoreCategory .
 
 
-###  http://example.org#Switzerland
+###  http://purl.org/nutrilink#Switzerland
 nl:Switzerland rdf:type owl:NamedIndividual ,
                            nl:MarketRegion .
 
 
-###  http://example.org#Unknown
+###  http://purl.org/nutrilink#Unknown
 nl:Unknown rdf:type owl:NamedIndividual ,
                        nl:NutriScoreCategory .
 
 
-###  http://example.org#coop
+###  http://purl.org/nutrilink#coop
 nl:coop rdf:type owl:NamedIndividual ,
                     nl:Retailer .
 
 
-###  http://example.org#denner
+###  http://purl.org/nutrilink#denner
 nl:denner rdf:type owl:NamedIndividual ,
                       nl:Retailer .
 
 
-###  http://example.org#dietaryFiber
+###  http://purl.org/nutrilink#dietaryFiber
 nl:dietaryFiber rdf:type owl:NamedIndividual ,
                             nl:Nutrient .
 
 
-###  http://example.org#edeka
+###  http://purl.org/nutrilink#edeka
 nl:edeka rdf:type owl:NamedIndividual ,
                      nl:Retailer .
 
 
-###  http://example.org#energyKJ
+###  http://purl.org/nutrilink#energyKJ
 nl:energyKJ rdf:type owl:NamedIndividual ,
                         nl:Nutrient .
 
 
-###  http://example.org#energyKcal
+###  http://purl.org/nutrilink#energyKcal
 nl:energyKcal rdf:type owl:NamedIndividual ,
                           nl:Nutrient .
 
 
-###  http://example.org#farmy
+###  http://purl.org/nutrilink#farmy
 nl:farmy rdf:type owl:NamedIndividual ,
                      nl:Retailer .
 
 
-###  http://example.org#fruitVeg
+###  http://purl.org/nutrilink#fruitVeg
 nl:fruitVeg rdf:type owl:NamedIndividual ,
                         nl:Nutrient .
 
 
-###  http://example.org#migros
+###  http://purl.org/nutrilink#migros
 nl:migros rdf:type owl:NamedIndividual ,
                       nl:Retailer .
 
 
-###  http://example.org#protein
+###  http://purl.org/nutrilink#protein
 nl:protein rdf:type owl:NamedIndividual ,
                        nl:Nutrient .
 
 
-###  http://example.org#salt
+###  http://purl.org/nutrilink#salt
 nl:salt rdf:type owl:NamedIndividual ,
                     nl:Nutrient .
 
 
-###  http://example.org#saturatedFat
+###  http://purl.org/nutrilink#saturatedFat
 nl:saturatedFat rdf:type owl:NamedIndividual ,
                             nl:Nutrient .
 
 
-###  http://example.org#sodium
+###  http://purl.org/nutrilink#sodium
 nl:sodium rdf:type owl:NamedIndividual ,
                       nl:Nutrient .
 
 
-###  http://example.org#sugars
+###  http://purl.org/nutrilink#sugars
 nl:sugars rdf:type owl:NamedIndividual ,
                       nl:Nutrient .
 
 
-###  http://example.org#totalCarbohydrate
+###  http://purl.org/nutrilink#totalCarbohydrate
 nl:totalCarbohydrate rdf:type owl:NamedIndividual ,
                                  nl:Nutrient .
 
 
-###  http://example.org#totalFat
+###  http://purl.org/nutrilink#totalFat
 nl:totalFat rdf:type owl:NamedIndividual ,
                         nl:Nutrient .
 
 
-###  http://example.org#volg
+###  http://purl.org/nutrilink#volg
 nl:volg rdf:type owl:NamedIndividual ,
                     nl:Retailer .
 
