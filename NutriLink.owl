@@ -468,6 +468,13 @@ nl:amount rdf:type owl:DatatypeProperty ;
           rdfs:comment "The bought amount of an item. The unit depends on the item but may not come with receipts."@en .
 
 
+###  http://purl.org/nutrilink#articleNumber
+nl:articleNumber rdf:type owl:DatatypeProperty ;
+                 rdfs:domain nl:Product ;
+                 rdfs:range xsd:int ;
+                 rdfs:comment "Article numbers of products at retailers. For certain retailers, article numbers can come together with receipt information (e.g., item name) as well. This item-article number link makes the unique map between receipt items and products easier."@en .
+
+
 ###  http://purl.org/nutrilink#bamId
 nl:bamId rdf:type owl:DatatypeProperty ;
          rdfs:range xsd:string ;
@@ -1009,6 +1016,7 @@ nl:saturatedFatsPoint rdf:type owl:DatatypeProperty ;
 
 ###  http://purl.org/nutrilink#segmentId
 nl:segmentId rdf:type owl:DatatypeProperty ;
+             rdfs:domain nl:User ;
              rdfs:range xsd:string ;
              rdfs:comment "A segmentId is used to differentiate different projects that users participate in. E.g., BF2021 stands for BrainFood2021"@en .
 
@@ -1079,13 +1087,6 @@ nl:timestamp rdf:type owl:DatatypeProperty ;
                          nl:Recommendation ;
              rdfs:range xsd:dateTime ;
              rdfs:comment "It indicates the exact timestamps when the items/baskets were purchased or the recommendations were given."@en .
-
-
-###  http://purl.org/nutrilink#userSegmentId
-nl:userSegmentId rdf:type owl:DatatypeProperty ;
-                 rdfs:domain nl:User ;
-                 rdfs:range xsd:string ;
-                 rdfs:comment "The segment id of a project where the user belongs to."@en .
 
 
 ###  http://purl.org/nutrilink#vegetablePercentage
@@ -3143,23 +3144,23 @@ nl:volg rdf:type owl:NamedIndividual ,
 #################################################################
 
 <http://purl.org/dc/dcmitype/> <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
-                               <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                <http://purl.org/dc/elements/1.1/publisher> "The Dublin Core Metadata Initiative"@en-us ;
+                               <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                <http://purl.org/dc/terms/requires> <http://purl.org/dc/elements/1.1/> ;
                                <http://purl.org/dc/elements/1.1/description> "The Dublin Core Types namespace provides URIs for the entries of the DCMI Type Vocabulary. Entries are declared using RDF Schema language to support RDF applications. The Schema will be updated according to dc-usage decisions."@en-us ;
                                <http://purl.org/dc/terms/requires> <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
                                <http://purl.org/dc/elements/1.1/title> "The DCMI Types namespace providing access to its content by means of an RDF Schema"@en-us ;
-                               <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/usage/terms/> ;
                                <http://purl.org/dc/terms/isReferencedBy> <http://purl.org/dc/terms/> ;
-                               <http://purl.org/dc/elements/1.1/language> "English"@en-us ;
-                               <http://purl.org/dc/terms/modified> "2002-05-22" .
+                               <http://purl.org/dc/elements/1.1/source> <http://dublincore.org/usage/terms/> ;
+                               <http://purl.org/dc/terms/modified> "2002-05-22" ;
+                               <http://purl.org/dc/elements/1.1/language> "English"@en-us .
 
 
 <http://purl.org/dc/dcmitype/Collection> <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Collection-002> ;
                                          <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                          <http://purl.org/dc/terms/issued> "2000-07-11" ;
-                                         rdfs:label "Collection"@en-us ;
                                          rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
+                                         rdfs:label "Collection"@en-us ;
                                          rdfs:comment "An aggregation of resources."@en-us .
 
 
@@ -3174,8 +3175,8 @@ nl:volg rdf:type owl:NamedIndividual ,
 <http://purl.org/dc/dcmitype/Event> <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                     <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Event-002> ;
                                     rdfs:comment "A non-persistent, time-based occurrence."@en-us ;
-                                    rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                     rdfs:label "Event"@en-us ;
+                                    rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> ;
                                     <http://purl.org/dc/terms/issued> "2000-07-11" .
 
 
@@ -3213,9 +3214,9 @@ nl:volg rdf:type owl:NamedIndividual ,
                                              <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#PhysicalObject-002> .
 
 
-<http://purl.org/dc/dcmitype/Service> <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Service-002> ;
+<http://purl.org/dc/dcmitype/Service> rdfs:label "Service"@en-us ;
                                       rdfs:comment "A system that provides one or more functions."@en-us ;
-                                      rdfs:label "Service"@en-us ;
+                                      <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#Service-002> ;
                                       <http://purl.org/dc/elements/1.1/type> <http://dublincore.org/usage/documents/principles/#vocabulary-term> ;
                                       <http://purl.org/dc/terms/issued> "2000-07-11" ;
                                       rdfs:isDefinedBy <http://purl.org/dc/dcmitype/> .
