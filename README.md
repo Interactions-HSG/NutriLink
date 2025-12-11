@@ -2,8 +2,7 @@
 
 ## Overview
 
-NutriLink is an ontology that links digital receipts from loyalty cards
-to comprehensive nutrition details of recorded products, and further to structured dietary recommendations. 
+NutriLink is an ontology that links digital receipts from loyalty cards to comprehensive nutrition details of recorded products, and further to structured dietary recommendations that are based on shopped baskets.
 
 NutriLink was created following the [Simplified Agile Methodology for Ontology Development](doi.org/10.6084/m9.figshare.3189769), based on 3 key components: 
 - digital receipts from loyalty cards; 
@@ -21,10 +20,9 @@ The purpose of the NutriLink Ontology is to:
 
 The NutriLink ontology is linked to the following established food ontologies
 
-- [FoodOn](https://github.com/FoodOntology/foodon)
-- [GoodRelations](https://purl.org/goodrelations)
-- [AGROVOC](https://agrovoc.fao.org/browse/agrovoc/en/)
-- schema.org
-    The integration of NutriLink with schema.org is done through integration with GoodRelations and FoodOn, which employ schema concepts.
+- [FoodOn](https://github.com/FoodOntology/foodon): Through equivalence between foodon:FoodProduct and nl:Product
+- [GoodRelations](https://purl.org/goodrelations/v1): Through gr:ProductOrServiceModel and gr:hasGTIN-14
+- [AGROVOC](https://agrovoc.fao.org/browse/agrovoc/en/): Through agrovoc:Products that are instances of nl:Product
+- [schema.org](https://schema.org): The integration of NutriLink with schema.org is done through integration with GoodRelations and FoodOn, which employ schema concepts.
 
 
