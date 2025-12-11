@@ -22,7 +22,7 @@ The purpose of the NutriLink Ontology is to:
 The NutriLink ontology is linked to the following established food ontologies
 
 - [FoodOn](https://github.com/FoodOntology/foodon)
-- [GoodRelations](purl.org/goodrelations)
+- [GoodRelations](https://purl.org/goodrelations)
 - [AGROVOC](https://agrovoc.fao.org/browse/agrovoc/en/)
 - schema.org
     The integration of NutriLink with schema.org is done through integration with GoodRelations and FoodOn, which employ schema concepts.
