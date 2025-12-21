@@ -25,4 +25,10 @@ The NutriLink ontology is linked to the following established food ontologies
 - [AGROVOC](https://agrovoc.fao.org/browse/agrovoc/en/): Through agrovoc:Products that are instances of nl:Product
 - [schema.org](https://schema.org): The integration of NutriLink with schema.org is done through integration with GoodRelations and FoodOn, which employ schema concepts.
 
+## License
 
+This ontology is licensed under the [Creative Commons Attribution 4.0
+International License (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/legalcode.en).
+
+You are free to use, modify, and redistribute the ontology for any purpose,
+provided appropriate credit is given.

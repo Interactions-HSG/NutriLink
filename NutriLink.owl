@@ -5,15 +5,20 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cc: <http://creativecommons.org/ns#> .
 @base <http://purl.org/nutrilink#> .
 
 <http://purl.org/nutrilink#> rdf:type owl:Ontology ;
-                              owl:imports <http://purl.org/goodrelations/v1> ,
+                                owl:imports <http://purl.org/goodrelations/v1> ,
                                           <http://qudt.org/2.1/schema/qudt> ,
                                           <http://www.linkedmodel.org/2.0/schema/vaem> ,
                                           <http://xmlns.com/foaf/0.1/> ,
                                           <https://github.com/FoodOntology/foodon/releases/download/v2024-02-03/foodon.owl> ;
-                              rdfs:comment "This is an ontology for FoodCoach project." .
+                                rdfs:comment "This is an ontology for FoodCoach project." ;
+                                dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                dcterms:rights "Creative Commons Attribution 4.0 International (CC BY 4.0)" .
 
 #################################################################
 #    Annotation properties
